@@ -1,0 +1,78 @@
+#gmsp-info-window #gmsp-info-text {
+	max-width:150px;
+	max-height:250px;
+	float: left;
+	color:#555;
+}
+
+#gmsp-info-window #gmsp-info-img {
+	float:left;
+	margin-right:10px;
+	width:80px;
+	height:80px;
+	background-repeat:no-repeat;
+	background-position-y:50%;
+	background-position-x:50%;
+}
+
+#gmsp-info-window {
+	width:100%;
+	height:100%;
+}
+
+div[id^="map-in-post-gmsp-map"] img {
+	max-width: inherit !important;
+	max-height: inherit !important;
+	min-height: inherit !important;
+	box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.gm-style-iw img.aligncenter {
+    display: block;
+    margin: 5px auto;
+}
+
+.gm-style-iw p:last-child {
+	margin-bottom: 0;
+}
+
+.gm-style-iw img.alignleft {
+    float: left;
+    margin: 5px 20px 5px 0;
+	margin-left: 0;
+}
+
+.gm-style-iw img.alignright {
+    float: right;
+    margin: 5px 0 5px 20px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+	
+}
+
+.gm-style-iw p {
+	overflow-wrap: break-word;
+}
+
+.gm-style-iw h1:first-child,
+.gm-style-iw h2:first-child,
+.gm-style-iw h3:first-child,
+.gm-style-iw h4:first-child,
+.gm-style-iw h5:first-child,
+.gm-style-iw h6:first-child  {
+	margin-top: 0;
+}
+
+@media screen and (max-width: 480px) {
+#gmsp-info-window #gmsp-info-text {
+	float: none;
+}
+div[id^="map-in-post-gmsp-map"] {
+	width: 100% !important;
+}
+}
