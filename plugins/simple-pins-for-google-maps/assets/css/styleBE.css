@@ -1,0 +1,293 @@
+.form-table th {
+	padding: 10px 5px 10px 0px;
+}
+.form-table td {
+	padding: 10px 5px;
+}
+#googleMap {
+	max-width:100%;
+}
+#postbox-container {
+	max-width:100%;
+}
+#coord_selector {
+	max-width:100%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.map_name_cell, .map_markers_cell, .map_properties_cell, .map_shortcode_cell, .map_actions_cell {
+	display: table-cell;
+	width: 18%;
+    padding: 1%;
+    vertical-align: top;
+}
+
+[class^="show-only-on-editing"] {
+	display:none;
+}
+
+.gmsp-properties {
+    padding: 0px 0px 8px 0px;
+}
+
+.gmsp-properties select {
+    height: auto;
+    font-size: 13px;
+}
+
+a.gmsp-ntdelbutton {
+	font-size: 0;	
+	vertical-align: sub;
+}
+
+.gmsp-ntdelbutton::before {
+	margin-top: 2px;
+	background: 0 0;
+    content: "\f153";
+    font: 400 16px/20px dashicons;
+    speak: none;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    border-radius: 50%;
+    color: #0073aa;
+    line-height: 1.28;
+	cursor: pointer;
+}
+
+.gmsp-ntdelbutton:hover:before {
+	color:red;
+}
+
+.gmsp-tagchecklist {
+	margin-left: 0px;
+}
+
+.gmsp-tagchecklist-ie a.gmsp-ntdelbutton {
+	font-size: 12px !important;	
+	vertical-align: sub;
+}
+
+*[id*="_gmsp_widget-__i__"] > div.widget-top > div.widget-title > h3:before {
+	font-family: "dashicons";
+	content: "\f230";
+	color: #e02b20;
+	width:33px;
+	float:left;
+	height:6px;
+	margin-top:-5px;
+	font-size:22px;
+}
+
+#user_icons_container, #all_icons_container, #icons_trash, #icon_upload_container  {
+    width: 350px;
+    height: 160px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+	overflow-y:scroll;
+}
+
+#user_icons_container, #all_icons_container {
+	float:left;
+	resize:horizontal;
+}
+
+#icons_trash, #icon_upload_container {
+	overflow: hidden;
+    width: 68px;
+	position: relative;
+}
+
+#all_icons_container, #icon_upload_container {
+    height: 180px;	
+}
+
+#icons_trash:after, #icon_upload_container:after {
+    font-family: "dashicons";
+    font-size: 72px;
+    left: 10%;
+    opacity: 0.3;
+	position: absolute;
+    z-index: -100;
+}
+
+#icon_upload_container  input {
+    position: absolute;
+    bottom: 6%;
+    left: 15%;
+}
+
+#icons_to_upload {
+    height: 80px;
+    overflow: visible;
+    width: 90px;
+}
+
+#icon_upload_container:after {
+	content: "\f317";
+	top: 55%;
+}
+
+#icons_trash:after {
+    content: "\f182";
+	top: 70%;
+}
+
+#user_icons_manager img {
+	padding:10px;
+	border:1px solid white;
+}
+
+span[id^="remove_map_style"] {
+	position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+span[id^="remove_map_style"]:after {
+	content: "\f182";
+    font-family: "dashicons";
+    font-size: 48px;
+    margin-top: 10px;
+    color: red;
+    position: absolute;
+	text-shadow: 1px 1px 5px white;
+}
+
+span[id^="remove_map_style"]:hover:after {
+	color: gray;
+}
+
+.thumb {
+    height: 35px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+
+#gmsp-map-details, #gmsp-marker-details {
+	display:none;
+	padding-left: 20px;
+}
+
+#advanced_export {
+	max-width: 360px;
+}
+
+#advanced_export ul { 
+    margin: 0;
+    padding-left: 2em;
+	list-style: disc;
+}
+
+#advanced_export li {
+	margin: 0;
+	padding: 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 5px 0;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 5px 20px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.gm-style-iw p {
+	overflow-wrap: break-word;
+}
+
+.gm-style-iw p {
+	margin-bottom: 12px;
+}
+
+.gm-style-iw p:last-child {
+	margin-bottom: 0;
+}
+
+.gm-style-iw p:first-child {
+    margin-top: 0;
+}
+
+.gm-style-iw ul {
+    list-style: square;
+    padding-left: 40px;
+}
+
+@media screen and (max-width: 782px) {
+	.map_name_cell, .map_markers_cell, .map_properties_cell, .map_shortcode_cell, .map_actions_cell {
+		display: block;
+		width: 100%;
+	}
+	
+	.tagchecklist:before {
+		content:'Markers currently on your map (click x to delete):';
+		float: left;
+		clear: both;
+		width: 100%;
+		font-size: 14px;
+		font-weight: 700;
+		padding-bottom: 5px;
+	}
+	div[id^="list_of_saved_markers"]:before {
+		content:'Add more markers:';
+		float: left;
+		clear: both;
+		width: 100%;
+		font-size: 14px;
+		font-weight: 700;
+		padding-bottom: 5px;
+	}
+	.map_properties_cell:before {
+		content:'Map properties:';
+		float: left;
+		clear: both;
+		width: 100%;
+		font-size: 14px;
+		font-weight: 700;
+		padding-bottom: 5px;
+	}
+	.map_shortcode_cell:before {
+		content:'Map shortcode:';
+		float: left;
+		clear: both;
+		width: 100%;
+		font-size: 14px;
+		font-weight: 700;
+		padding-bottom: 5px;
+	}
+	
+}
