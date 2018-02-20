@@ -285,3 +285,10 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
+/* start chris styles*/
+#property_details{
+	div:nth-child(even){
+			flex-direction: row-reverse;
+		}
+}
+

@@ -81,6 +81,7 @@ LINK STYLES
 
 a, a:visited {
 	color: $link-color;
+	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -264,15 +265,6 @@ POSTS & CONTENT STYLES
 			header {
 				border-bottom: 1px solid $light-gray;
 				padding: 1.5em;
-			}
-
-			footer {
-				padding: 1.5em;
-				border-top: 1px solid $light-gray;
-
-				p {
-					margin: 0;
-				}
 			}
 
 		} /* end .hentry */
@@ -887,3 +879,222 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+/* START CHRIS STYLES */
+
+#inner-content{
+	letter-spacing: .05em;
+	font-size: 2vw;
+}
+	
+/* START NAVIGATION AND HEADER */
+
+#header{
+	h1 {
+		display: inline-block;
+		font-size: 9vw;
+	}
+	a {
+		margin: 1vw;
+		font-size: 3vw; 
+	}
+	&.home_nav {
+		a, a:visited{
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	&.about_nav {
+		a, a:visited{
+	  	color: $bright-gray;
+	  	text-decoration: none;
+	  }
+	}
+
+	&.property_nav{
+		a, a:visited{
+			color: $black;
+			text-decoration: none;
+		}
+	}
+}
+#container{
+	&.about_page{
+		background-color: $dark-gray;
+		color: $bright-gray;
+	}
+	&.property_page{
+		background-color: $white;
+		color: $black;
+	}
+}
+
+/* END NAVIGATION AND HEADER */
+/* START TOOLTIPS */
+
+.tooltipped{
+    position:relative;
+    cursor:pointer;
+}
+
+.tooltip{
+    display:none;
+}
+
+.tooltipped:hover > .tooltip{    
+    display: block;
+    position: absolute;
+    background-color: rgba(10, 10, 10, .9);
+    border-radius: 10px 10px 10px 0px;
+    padding: 5px 10px;
+    left: 60%;
+    bottom: 80%;
+    z-index: 1;
+    min-width:130px;
+    color:white;
+}
+/* END TOOLTIPS */
+/* start image gallery */
+.image-gallery {
+	background-color: $white;
+	width: 100%;
+	margin: 20px 0px;
+	padding: 0px;
+	font-size: 0;
+	position: relative;
+
+	.gal_nav{
+		position: absolute;
+		top:225px;
+		font-size:50px;
+		vertical-align: top;
+		cursor:pointer;
+		text-align:center;
+		vertical-align: middle;
+
+		&.prev{
+		}
+		&.next{
+			right: 0px;
+		}
+		&.faded{
+			opacity:.5;
+		}
+	}
+
+	.gallery_images{
+		display:inline-block;
+		height: 500px;
+		overflow:hidden;
+	 		white-space: nowrap;
+		vertical-align: middle;
+		ul{
+			transition: margin-left .5s;
+		}
+			.gallery_image{
+				display:inline-block;
+  			vertical-align: middle;
+				width:100%;
+				img{
+					width:100%;
+					max-height:0px;
+					transition-delay: 1s;
+					transition: max-height 2s;
+				}
+				&.current img{
+					max-height:2000px;
+					transition-delay: 0s;
+					transition: max-height 1s;
+				}
+			}
+	}
+}
+
+/* end image gallery */
+
+/* START PROPERTY PAGE */
+#property_title {
+	margin-left: 15%;
+	font-size: 1.8em;
+}
+
+#stat_list{
+	margin-left: 10%;
+	li {
+		display: flex;
+		align-items: center;
+		font-size: 1.3em;
+		span{
+			margin: 0 20px;
+		}
+		.stat_image{
+			height: 3em;
+		}
+		.state_value{
+
+		}
+	}
+
+}
+
+.calander{
+	img{
+		overflow:hidden;
+	}
+}
+
+#property_details{
+	
+	.detail_row{
+		display:flex;
+		.detail{
+			padding: 15px 30px;
+		}
+		
+		.testimonial{
+			display: flex;
+			align-items: center;
+	    justify-content: center;
+	    background-color: $bright-gray;
+			overflow: hidden;
+			.testimonial-wrapper{
+				margin: 0px 10px;
+				p {
+					font-size: 1.5em;
+					margin: 0 5%;
+				}
+				.open_quote {
+			    font-size: 4em;
+			    position: relative;
+				}
+
+				.close_quote {
+			    position: relative;
+			    font-size: 4em;
+			    left: 95%;
+				}
+			}
+		}
+	}
+	div {
+		flex-direction: column;
+	}
+}
+/* END PROPERTY PAGE */
+/* START FOOTER STYLES */
+#footer {
+	div {
+		display: inline-block;
+		vertical-align:top;
+		img{
+			&.social_media {
+   			height: 30px;
+   		}
+		}
+	}
+}
+
+/* END FOOTER STYLES */
+
+/* END CHRIS STYLES */

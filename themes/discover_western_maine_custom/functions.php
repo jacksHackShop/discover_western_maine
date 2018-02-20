@@ -244,4 +244,105 @@ function bones_fonts() {
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
+/** START OF CUSTOM FUNCTIONS  **/
+function buildCustomNav(){
+  // initialize $nav_links
+  $nav_links = '';
+
+  // add homepage to nav_links
+  $page = get_page_by_title('Maine Away');
+  $url = get_permalink($page->ID);
+  $title = $page->post_title;
+  $font = get_field('font');
+  $nav_links .= "<a href='{$url}' style='font-family:{$font}'><h1>{$title}</h1></a>";
+  $menu_items = wp_get_nav_menu_items('Navigation');
+  /*
+  $properties = get_posts(['post_type' => 'property']);
+  $all_pages = get_pages();
+  
+  $pages = array_filter(array_merge($properties, $all_pages), navFilterCallback);
+  */
+
+  foreach ($menu_items as $item) {
+    $page = get_post($item->object_id);
+    $url = get_permalink($page->ID);
+    $title = $page->post_title;
+    $font = get_post_meta($page->ID, 'font')[0];
+    $nav_links .= "<a href='{$url}' style='font-family:{$font}'><span>{$title}</span></a>";
+  }
+  
+  return $nav_links;
+}
+
+function navFilterCallback($page){
+  $show_in_nav = get_post_meta($page->ID, 'show_in_navigation');
+  if (isset($show_in_nav) && isset($show_in_nav[0]) && $show_in_nav[0] == 1){
+    return true;
+  }  
+  else{
+    return false;
+  }
+
+}
+
+function navSort($a, $b){
+
+}
+
+function fontLoader(){
+  $post_font =  get_field('secondary_font') != NULL ? get_field('secondary_font') : get_field('font');
+  $fonts = isset($post_font) ? [$post_font] : [];
+  // add font for homepage
+  $page = get_page_by_title('Maine Away');
+  array_push($fonts, get_post_meta($page->ID, 'font')[0]);
+  // add fonts for navigation
+  $menu_items = wp_get_nav_menu_items('Navigation');
+
+  foreach ($menu_items as $item) {
+    $page = get_post($item->object_id);
+    $font = get_post_meta($page->ID, 'font')[0];
+    // if font not in fonts add it
+    if (!in_array($font, $fonts)){
+      array_push($fonts, $font); 
+    }   
+  }
+  
+  $link_tag = "<link href='https://fonts.googleapis.com/css?family=";
+  foreach ($fonts as $font) {
+    $encoded_font = str_replace(' ', '+', $font);
+    $link_tag .= $encoded_font.'|';
+  }
+  trim($link_tag, '|');
+  $link_tag .= "' rel='stylesheet'>";
+  return $link_tag;
+}
+
+// start image gallery code
+
+function buildImageGallery($class_list, $field_name){
+  $string_class_list = implode(' ', $class_list);
+  echo "<div class='image-gallery {$string_class_list}' data-image-target='0'>
+          <span class='gal_nav prev'>
+            &#60;
+          </span>
+          <ul class='gallery_images'>";
+
+        $images = get_field($field_name); 
+        foreach( $images as $image ){
+        
+          echo "<li class='gallery_image'><img src='{$image["image"]}'></li>";  
+        }
+    echo "</ul>
+          <span class='gal_nav next'>
+            &#62;
+          </span>
+        </div>";
+}
+// end image gallery code
+
+
+
+/** END OF CUSTOM FUNCTIONS  **/
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
