@@ -24,6 +24,7 @@ $alert-blue:        #d5edf8;
 
 $black:             #000000;
 $white:             #ffffff;
+$sheer:             rgba(255,255,255,.7);
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
@@ -51,3 +52,12 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+
+/* font sizes */
+$tiny:           12px;
+$small:          14px;
+$medium:         16px;
+$big:            24px;
+$huge:           32px;
+$gigantic:       48px;
+$epic:           72px;

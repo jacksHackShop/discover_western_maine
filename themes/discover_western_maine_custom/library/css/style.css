@@ -561,6 +561,7 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+/* font sizes */
 /******************************************************************
 Site Name:
 Author:
@@ -2148,43 +2149,87 @@ view.
 /* START CHRIS STYLES */
 /* line 885, ../scss/breakpoints/_base.scss */
 #inner-content {
-  letter-spacing: .05em;
-  font-size: 2vw;
+  letter-spacing: .1em;
+  font-size: 14px;
 }
 
 /* START NAVIGATION AND HEADER */
 /* line 893, ../scss/breakpoints/_base.scss */
 #header h1 {
   display: inline-block;
-  font-size: 9vw;
+  font-size: 48px;
+  margin: 5px 10px;
 }
-/* line 897, ../scss/breakpoints/_base.scss */
+/* line 898, ../scss/breakpoints/_base.scss */
+#header #pages {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  right: -110px;
+  top: 108px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: right .6s;
+}
+/* line 908, ../scss/breakpoints/_base.scss */
+#header #pages a {
+  margin-bottom: -40px;
+  color: #ffffff;
+  transition: margin-bottom .6s, color 1.5s;
+}
+/* line 912, ../scss/breakpoints/_base.scss */
+#header #pages a svg {
+  display: none;
+  width: 75px;
+  height: 5px;
+}
+/* line 918, ../scss/breakpoints/_base.scss */
+#header #pages a:hover svg {
+  display: block;
+}
+/* line 924, ../scss/breakpoints/_base.scss */
+#header #pages.show {
+  right: 0px;
+}
+/* line 926, ../scss/breakpoints/_base.scss */
+#header #pages.show a {
+  margin-bottom: 10px;
+  color: #000000;
+}
+/* line 934, ../scss/breakpoints/_base.scss */
+#header #hamburger {
+  height: 30px;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+}
+/* line 940, ../scss/breakpoints/_base.scss */
 #header a {
-  margin: 1vw;
-  font-size: 3vw;
+  margin: 0px 10px;
+  font-size: 24px;
 }
-/* line 902, ../scss/breakpoints/_base.scss */
+/* line 945, ../scss/breakpoints/_base.scss */
 #header.home_nav a, #header.home_nav a:visited {
   color: #ffffff;
   text-decoration: none;
 }
-/* line 909, ../scss/breakpoints/_base.scss */
+/* line 952, ../scss/breakpoints/_base.scss */
 #header.about_nav a, #header.about_nav a:visited {
   color: #cacaca;
   text-decoration: none;
 }
-/* line 916, ../scss/breakpoints/_base.scss */
+/* line 959, ../scss/breakpoints/_base.scss */
 #header.property_nav a, #header.property_nav a:visited {
   color: #000000;
   text-decoration: none;
 }
 
-/* line 923, ../scss/breakpoints/_base.scss */
+/* line 966, ../scss/breakpoints/_base.scss */
 #container.about_page {
   background-color: #484848;
   color: #cacaca;
 }
-/* line 927, ../scss/breakpoints/_base.scss */
+/* line 970, ../scss/breakpoints/_base.scss */
 #container.property_page {
   background-color: #ffffff;
   color: #000000;
@@ -2192,18 +2237,18 @@ view.
 
 /* END NAVIGATION AND HEADER */
 /* START TOOLTIPS */
-/* line 936, ../scss/breakpoints/_base.scss */
+/* line 979, ../scss/breakpoints/_base.scss */
 .tooltipped {
   position: relative;
   cursor: pointer;
 }
 
-/* line 941, ../scss/breakpoints/_base.scss */
+/* line 984, ../scss/breakpoints/_base.scss */
 .tooltip {
   display: none;
 }
 
-/* line 945, ../scss/breakpoints/_base.scss */
+/* line 988, ../scss/breakpoints/_base.scss */
 .tooltipped:hover > .tooltip {
   display: block;
   position: absolute;
@@ -2219,7 +2264,7 @@ view.
 
 /* END TOOLTIPS */
 /* start image gallery */
-/* line 959, ../scss/breakpoints/_base.scss */
+/* line 1002, ../scss/breakpoints/_base.scss */
 .image-gallery {
   background-color: #ffffff;
   width: 100%;
@@ -2228,7 +2273,7 @@ view.
   font-size: 0;
   position: relative;
 }
-/* line 967, ../scss/breakpoints/_base.scss */
+/* line 1010, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav {
   position: absolute;
   top: 225px;
@@ -2238,15 +2283,15 @@ view.
   text-align: center;
   vertical-align: middle;
 }
-/* line 978, ../scss/breakpoints/_base.scss */
+/* line 1021, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav.next {
   right: 0px;
 }
-/* line 981, ../scss/breakpoints/_base.scss */
+/* line 1024, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav.faded {
   opacity: .5;
 }
-/* line 986, ../scss/breakpoints/_base.scss */
+/* line 1029, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery_images {
   display: inline-block;
   height: 500px;
@@ -2254,24 +2299,24 @@ view.
   white-space: nowrap;
   vertical-align: middle;
 }
-/* line 992, ../scss/breakpoints/_base.scss */
+/* line 1035, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery_images ul {
   transition: margin-left .5s;
 }
-/* line 995, ../scss/breakpoints/_base.scss */
+/* line 1038, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery_images .gallery_image {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
 }
-/* line 999, ../scss/breakpoints/_base.scss */
+/* line 1042, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery_images .gallery_image img {
   width: 100%;
   max-height: 0px;
   transition-delay: 1s;
   transition: max-height 2s;
 }
-/* line 1005, ../scss/breakpoints/_base.scss */
+/* line 1048, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery_images .gallery_image.current img {
   max-height: 2000px;
   transition-delay: 0s;
@@ -2280,45 +2325,45 @@ view.
 
 /* end image gallery */
 /* START PROPERTY PAGE */
-/* line 1017, ../scss/breakpoints/_base.scss */
+/* line 1060, ../scss/breakpoints/_base.scss */
 #property_title {
   margin-left: 15%;
   font-size: 1.8em;
 }
 
-/* line 1022, ../scss/breakpoints/_base.scss */
+/* line 1065, ../scss/breakpoints/_base.scss */
 #stat_list {
   margin-left: 10%;
 }
-/* line 1024, ../scss/breakpoints/_base.scss */
+/* line 1067, ../scss/breakpoints/_base.scss */
 #stat_list li {
   display: flex;
   align-items: center;
   font-size: 1.3em;
 }
-/* line 1028, ../scss/breakpoints/_base.scss */
+/* line 1071, ../scss/breakpoints/_base.scss */
 #stat_list li span {
   margin: 0 20px;
 }
-/* line 1031, ../scss/breakpoints/_base.scss */
+/* line 1074, ../scss/breakpoints/_base.scss */
 #stat_list li .stat_image {
   height: 3em;
 }
 
-/* line 1042, ../scss/breakpoints/_base.scss */
-.calander img {
+/* line 1084, ../scss/breakpoints/_base.scss */
+.calender {
   overflow: hidden;
 }
 
-/* line 1049, ../scss/breakpoints/_base.scss */
+/* line 1091, ../scss/breakpoints/_base.scss */
 #property_details .detail_row {
   display: flex;
 }
-/* line 1051, ../scss/breakpoints/_base.scss */
+/* line 1093, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .detail {
   padding: 15px 30px;
 }
-/* line 1055, ../scss/breakpoints/_base.scss */
+/* line 1097, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial {
   display: flex;
   align-items: center;
@@ -2326,39 +2371,39 @@ view.
   background-color: #cacaca;
   overflow: hidden;
 }
-/* line 1061, ../scss/breakpoints/_base.scss */
+/* line 1103, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper {
   margin: 0px 10px;
 }
-/* line 1063, ../scss/breakpoints/_base.scss */
+/* line 1105, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper p {
   font-size: 1.5em;
   margin: 0 5%;
 }
-/* line 1067, ../scss/breakpoints/_base.scss */
+/* line 1109, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper .open_quote {
   font-size: 4em;
   position: relative;
 }
-/* line 1072, ../scss/breakpoints/_base.scss */
+/* line 1114, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper .close_quote {
   position: relative;
   font-size: 4em;
   left: 95%;
 }
-/* line 1080, ../scss/breakpoints/_base.scss */
+/* line 1122, ../scss/breakpoints/_base.scss */
 #property_details div {
   flex-direction: column;
 }
 
 /* END PROPERTY PAGE */
 /* START FOOTER STYLES */
-/* line 1087, ../scss/breakpoints/_base.scss */
+/* line 1129, ../scss/breakpoints/_base.scss */
 #footer div {
   display: inline-block;
   vertical-align: top;
 }
-/* line 1091, ../scss/breakpoints/_base.scss */
+/* line 1133, ../scss/breakpoints/_base.scss */
 #footer div img.social_media {
   height: 30px;
 }
@@ -2640,6 +2685,19 @@ you can add resource intensive styles.
   /* end .footer-links */
   /* start chris styles*/
   /* line 290, ../scss/breakpoints/_768up.scss */
+  #header #pages {
+    display: inline-block;
+  }
+  /* line 293, ../scss/breakpoints/_768up.scss */
+  #header #hamburger {
+    display: none;
+  }
+
+  /* line 298, ../scss/breakpoints/_768up.scss */
+  #property_details div {
+    flex-direction: unset;
+  }
+  /* line 301, ../scss/breakpoints/_768up.scss */
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }

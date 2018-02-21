@@ -254,7 +254,7 @@ function buildCustomNav(){
   $url = get_permalink($page->ID);
   $title = $page->post_title;
   $font = get_field('font');
-  $nav_links .= "<a href='{$url}' style='font-family:{$font}'><h1>{$title}</h1></a>";
+  $nav_links .= "<a href='{$url}' style='font-family:{$font}'><h1>{$title}</h1></a><div id='pages'>";
   $menu_items = wp_get_nav_menu_items('Navigation');
   /*
   $properties = get_posts(['post_type' => 'property']);
@@ -268,8 +268,13 @@ function buildCustomNav(){
     $url = get_permalink($page->ID);
     $title = $page->post_title;
     $font = get_post_meta($page->ID, 'font')[0];
-    $nav_links .= "<a href='{$url}' style='font-family:{$font}'><span>{$title}</span></a>";
+    $nav_links .= "<a href='{$url}' style='font-family:{$font}'><span>{$title}</span>";
+    $nav_links .= '<svg xmlns="http://www.w3.org/2000/svg">
+    <path stroke="#000000" fill="none" d="m 0,5 H 25 l 6,-4 3,0 6,4 H 100"></path>
+</svg></a>';
   }
+  $nav_links .= "</div><img id=hamburger src='".get_template_directory_uri()."/library/images/hamburger.svg'";
+  $nav_links .= " onclick=\"document.getElementById('pages').classList.toggle('show');\"'>";
   
   return $nav_links;
 }

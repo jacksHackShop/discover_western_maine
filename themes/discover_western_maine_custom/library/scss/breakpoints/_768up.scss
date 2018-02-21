@@ -286,9 +286,20 @@ mobile. Make sure to double check these!
 } /* end .footer-links */
 
 /* start chris styles*/
+#header{
+	#pages{
+		display: inline-block;
+	}
+	#hamburger{
+		display:none;
+	}
+}
 #property_details{
+	div{
+		flex-direction: unset;
+	}
 	div:nth-child(even){
-			flex-direction: row-reverse;
-		}
+		flex-direction: row-reverse;
+	}
 }
 

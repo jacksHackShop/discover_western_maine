@@ -883,8 +883,8 @@ FOOTER STYLES
 /* START CHRIS STYLES */
 
 #inner-content{
-	letter-spacing: .05em;
-	font-size: 2vw;
+	letter-spacing: .1em;
+	font-size: $small;
 }
 	
 /* START NAVIGATION AND HEADER */
@@ -892,11 +892,54 @@ FOOTER STYLES
 #header{
 	h1 {
 		display: inline-block;
-		font-size: 9vw;
+		font-size: $gigantic;
+		margin: 5px 10px;
+	}
+	#pages{
+		display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    right: -110px;
+    top:108px;
+    background-color: $sheer;
+    transition: right .6s;
+    
+    a{
+			margin-bottom: -40px;
+			color:$white;
+			transition: margin-bottom .6s, color 1.5s;
+			svg{
+				display:none;
+				width: 75px;
+				height: 5px;
+			}
+		}
+		a:hover svg{
+			display:block;
+				
+		}
+
+    
+		&.show{
+			right:0px;
+			a{
+				margin-bottom: 10px;
+				color:$black;
+				
+
+			}
+		}
+	}
+	#hamburger{    
+		height: 30px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
 	}
 	a {
-		margin: 1vw;
-		font-size: 3vw; 
+		margin: 0px 10px;
+		font-size: $big; 
 	}
 	&.home_nav {
 		a, a:visited{
@@ -1038,10 +1081,9 @@ FOOTER STYLES
 
 }
 
-.calander{
-	img{
-		overflow:hidden;
-	}
+.calender{
+	overflow:hidden;
+	
 }
 
 #property_details{

@@ -39,6 +39,7 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+/* font sizes */
 /******************************************************************
 Site Name:
 Author:
@@ -423,6 +424,19 @@ mobile. Make sure to double check these!
 /* end .footer-links */
 /* start chris styles*/
 /* line 290, ../scss/breakpoints/_768up.scss */
+#header #pages {
+  display: inline-block;
+}
+/* line 293, ../scss/breakpoints/_768up.scss */
+#header #hamburger {
+  display: none;
+}
+
+/* line 298, ../scss/breakpoints/_768up.scss */
+#property_details div {
+  flex-direction: unset;
+}
+/* line 301, ../scss/breakpoints/_768up.scss */
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
 }
