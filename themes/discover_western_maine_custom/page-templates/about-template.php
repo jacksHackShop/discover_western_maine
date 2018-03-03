@@ -16,9 +16,9 @@
 	get_header(); 
 	the_post(); 
 ?>
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class('about_page'); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container" class="cf about_page">
+		<div id="container" class="cf">
       <div id="header" class="about_nav">
 		
 				<?php 
@@ -30,25 +30,33 @@
 			<div id="content">
 
 				<div id="inner-content" class="cf">
-					<?php var_dump(get_field('font')); ?>
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<?php $text_image_pairs = get_field('image_text_pair'); 
+					foreach ($text_image_pairs as $pair){
+						echo "<div class='text_image_pair'>";
+						
+						// set text's class based whether or not we have a image to split the screen with
+						// NOTE that $pair == false, not null, if the field isn't set in wp.
+						$body_class = $pair['illustration'] ? 'text_body m-all t-all d-1of2' : 'text_body m-all t-all d-all' ;
 
-					<?php endwhile; else : ?>
+						echo "<div class='".$body_class."'>";
+						// if title is set
+						if($pair['text_title']){
+							echo '<h2 class>'.$pair['text_title'].'</h2>';
+						}
+						echo	"<p>".$pair['text_body']."</p></div>";
+						// if we have an image, drop it in
 
-							<article id="post-not-found" class="hentry cf">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-								</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-								</section>
-								<footer class="article-footer">
-										<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
-								</footer>
-							</article>
-
-					<?php endif; ?>
-
+						if ($pair['illustration']){
+							echo 
+							"<div class='illustration_container m-all t-all d-1of2'>".
+								"<img src=".$pair['illustration'].">".
+							"</div>";
+						}
+						echo "</div>";
+						
+					 } ?>
+					
+					<?php echo do_shortcode('[wpgmza id="'.get_field('map_id').'"]'); ?>
 
 				</div>
 

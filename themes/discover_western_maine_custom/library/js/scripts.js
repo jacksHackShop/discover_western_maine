@@ -154,10 +154,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function change_gallery_target( change_by ){
   var this_gallery = this;
   var current_index = this_gallery.dataset.imageTarget * 1;
-  var index = current_index + change_by;
   var image_lis = this_gallery.children[1];
-  if( index < 0 || index >= image_lis.children.length )
-    return false;
+  var index = (current_index + change_by) % image_lis.children.length;  
+  if (index < 0){
+    index = image_lis.children.length - 1;
+  }
   for( var i = 0; i < image_lis.children.length; i++ ){
     image_lis.children[i].classList.remove('current');
   }

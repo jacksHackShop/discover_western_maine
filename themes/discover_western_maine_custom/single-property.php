@@ -18,9 +18,9 @@
 	get_header(); 
 	the_post(); 
 ?>
-<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class('property_page'); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container" class="cf property_page">
+		<div id="container" class="cf">
       <div id="header" class="property_nav">
 		
 				<?php 

@@ -423,22 +423,171 @@ mobile. Make sure to double check these!
 
 /* end .footer-links */
 /* start chris styles*/
-/* line 290, ../scss/breakpoints/_768up.scss */
+/* add hover styles for icons */
+/* line 292, ../scss/breakpoints/_768up.scss */
+body.home_page .icon:hover {
+  border-radius: 10px;
+  background-color: #ffffff !important;
+  color: #484848;
+  stroke: #484848;
+  fill: #484848;
+}
+/* line 299, ../scss/breakpoints/_768up.scss */
+body.home_page #container {
+  position: static;
+}
+/* line 304, ../scss/breakpoints/_768up.scss */
+body.property_page .icon:hover {
+  border-radius: 10px;
+  background-color: #000000 !important;
+  color: #ffffff;
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+/* line 313, ../scss/breakpoints/_768up.scss */
+body.about_page .icon:hover {
+  border-radius: 10px;
+  background-color: #cacaca !important;
+  color: #484848;
+  stroke: #484848;
+  fill: #484848;
+}
+
+/* line 322, ../scss/breakpoints/_768up.scss */
+.no_mobile {
+  display: inherit;
+  font-size: 24px;
+}
+
+/* line 326, ../scss/breakpoints/_768up.scss */
+#container {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+/* line 330, ../scss/breakpoints/_768up.scss */
+#header {
+  display: flex;
+  align-items: baseline;
+}
+/* line 333, ../scss/breakpoints/_768up.scss */
+#header h1 {
+  font-size: 7vw;
+}
+/* line 337, ../scss/breakpoints/_768up.scss */
 #header #pages {
   display: inline-block;
+  position: inherit;
+  transition: unset;
+  margin: 0px auto;
+  background-color: rgba(255, 255, 255, 0);
 }
-/* line 293, ../scss/breakpoints/_768up.scss */
+/* line 343, ../scss/breakpoints/_768up.scss */
+#header #pages a {
+  color: inherit !important;
+  transition: unset;
+  margin: 0px 10px;
+  position: relative;
+}
+/* line 348, ../scss/breakpoints/_768up.scss */
+#header #pages a svg {
+  position: absolute;
+  bottom: -5px;
+  left: calc(calc(100% - 75px) / 2);
+}
+/* line 355, ../scss/breakpoints/_768up.scss */
+#header #pages a:hover svg {
+  display: inline-block;
+}
+/* line 359, ../scss/breakpoints/_768up.scss */
+#header #pages.show {
+  right: 0px;
+}
+/* line 361, ../scss/breakpoints/_768up.scss */
+#header #pages.show a {
+  margin-bottom: 0px;
+}
+/* line 367, ../scss/breakpoints/_768up.scss */
 #header #hamburger {
   display: none;
 }
 
-/* line 298, ../scss/breakpoints/_768up.scss */
+/* start home page */
+/* line 373, ../scss/breakpoints/_768up.scss */
+.image-gallery .gal_nav {
+  top: calc(50% - 40px);
+}
+/* line 375, ../scss/breakpoints/_768up.scss */
+.image-gallery .gal_nav svg {
+  height: 40px;
+  width: 40px;
+}
+/* line 379, ../scss/breakpoints/_768up.scss */
+.image-gallery .gal_nav.next {
+  right: 10px;
+}
+/* line 382, ../scss/breakpoints/_768up.scss */
+.image-gallery .gal_nav.prev {
+  left: 10px;
+}
+/* line 386, ../scss/breakpoints/_768up.scss */
+.image-gallery.fullscreen {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 394, ../scss/breakpoints/_768up.scss */
+.image-gallery.fullscreen .gal_nav {
+  display: none;
+}
+
+/* start property*/
+/* line 402, ../scss/breakpoints/_768up.scss */
 #property_details div {
   flex-direction: unset;
 }
-/* line 301, ../scss/breakpoints/_768up.scss */
+/* line 405, ../scss/breakpoints/_768up.scss */
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
+}
+
+/* start footer */
+/* line 411, ../scss/breakpoints/_768up.scss */
+#footer {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  align-items: center;
+  height: 60px;
+}
+/* line 418, ../scss/breakpoints/_768up.scss */
+#footer div {
+  position: relative;
+  margin: 0px auto;
+  display: inline-flex;
+}
+/* line 422, ../scss/breakpoints/_768up.scss */
+#footer div.footer_container {
+  flex-direction: row;
+}
+/* line 425, ../scss/breakpoints/_768up.scss */
+#footer div span {
+  margin: 0px 4px;
+}
+/* line 428, ../scss/breakpoints/_768up.scss */
+#footer div .social_media {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 2px;
+}
+/* line 431, ../scss/breakpoints/_768up.scss */
+#footer div .social_media svg {
+  height: 30px;
+  width: 30px;
+  margin: 0px 3px;
 }
 
 /******************************************************************
@@ -454,6 +603,17 @@ be seen on the Desktop.
 /* line 12, ../scss/breakpoints/_1030up.scss */
 .wrap {
   width: 1040px;
+}
+
+/*start chris styles*/
+/*start about page*/
+/* line 18, ../scss/breakpoints/_1030up.scss */
+.text_image_pair {
+  display: flex;
+}
+/* line 20, ../scss/breakpoints/_1030up.scss */
+.text_image_pair:nth-child(even) {
+  flex-direction: reverse-row;
 }
 
 /*

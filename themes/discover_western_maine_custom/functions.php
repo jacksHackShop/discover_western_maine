@@ -269,13 +269,24 @@ function buildCustomNav(){
     $title = $page->post_title;
     $font = get_post_meta($page->ID, 'font')[0];
     $nav_links .= "<a href='{$url}' style='font-family:{$font}'><span>{$title}</span>";
-    $nav_links .= '<svg xmlns="http://www.w3.org/2000/svg">
+    $nav_links .= '<svg width="75px" height="7px" xmlns="http://www.w3.org/2000/svg">
     <path stroke="#000000" fill="none" d="m 0,5 H 25 l 6,-4 3,0 6,4 H 100"></path>
-</svg></a>';
+    </svg></a>';
+    
   }
-  $nav_links .= "</div><img id=hamburger src='".get_template_directory_uri()."/library/images/hamburger.svg'";
-  $nav_links .= " onclick=\"document.getElementById('pages').classList.toggle('show');\"'>";
-  
+  $nav_links .= "</div><div id=hamburger class='icon' onclick=\"document.getElementById('pages').classList.toggle('show');\"'>";
+  $nav_links .= '<svg viewBox="0 0 32 22.5" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M25.07,5c0,0.69-0.5,1.25-1.117,1.25H7.266C6.649,6.25,6.148,5.69,6.148,5l0,0c0-0.69,0.5-1.25,1.118-1.25h16.688
+                C24.57,3.75,25.07,4.31,25.07,5L25.07,5z"/>
+                    <path d="M25.048,11.25c0,0.689-0.501,1.25-1.118,1.25H7.243c-0.618,0-1.118-0.561-1.118-1.25l0,0c0-0.689,0.5-1.25,1.118-1.25
+                H23.93C24.547,10,25.048,10.561,25.048,11.25L25.048,11.25z"/>
+                    <path d="M25.094,17.5c0,0.689-0.5,1.25-1.117,1.25H7.289c-0.617,0-1.118-0.561-1.118-1.25l0,0c0-0.689,0.5-1.25,1.118-1.25h16.688
+                C24.594,16.25,25.094,16.811,25.094,17.5L25.094,17.5z"/>
+                  </g>
+                </svg>
+              </div>';
+ 
   return $nav_links;
 }
 
@@ -287,10 +298,6 @@ function navFilterCallback($page){
   else{
     return false;
   }
-
-}
-
-function navSort($a, $b){
 
 }
 
@@ -326,22 +333,28 @@ function fontLoader(){
 
 function buildImageGallery($class_list, $field_name){
   $string_class_list = implode(' ', $class_list);
-  echo "<div class='image-gallery {$string_class_list}' data-image-target='0'>
-          <span class='gal_nav prev'>
-            &#60;
-          </span>
-          <ul class='gallery_images'>";
+  echo '<div class="image-gallery '.$string_class_list.'" data-image-target="0">
+          <div class="gal_nav prev">
+            <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" opacity=".7" r="16"></circle>
+              <polyline fill="none" points="21,3.5  8.5,16 21,28.5"></polyline> 
+            </svg>
+          </div>
+          <ul class="gallery_images">';
 
         $images = get_field($field_name); 
         foreach( $images as $image ){
         
-          echo "<li class='gallery_image'><img src='{$image["image"]}'></li>";  
+          echo "<li class='gallery_image' style='background-image:url(\"{$image['image']}\")'></li>";  
         }
-    echo "</ul>
-          <span class='gal_nav next'>
-            &#62;
-          </span>
-        </div>";
+    echo '</ul>
+          <div class="gal_nav next">
+            <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" opacity=".7" r="16"></circle>
+              <polyline fill="none" points="11.5,3.5  24,16 11.5,28.5"></polyline> 
+            </svg>
+          </div>
+        </div>';
 }
 // end image gallery code
 

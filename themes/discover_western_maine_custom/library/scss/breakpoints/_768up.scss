@@ -286,14 +286,118 @@ mobile. Make sure to double check these!
 } /* end .footer-links */
 
 /* start chris styles*/
+/* add hover styles for icons */
+body{
+	&.home_page{
+		.icon:hover{
+			border-radius:10px;
+		  background-color:$white !important;
+		  color:$dark-gray;
+		  stroke:$dark-gray;
+		  fill:$dark-gray;
+		}
+		#container{
+			position: static;
+		}
+	}
+	&.property_page{
+		.icon:hover{
+			border-radius:10px;
+		  background-color:$black !important;
+		  color:$white;
+		  stroke:$white;
+		  fill:$white;
+		}
+	}
+	&.about_page{
+		.icon:hover{
+			border-radius:10px;
+		  background-color:$bright-gray !important;
+		  color:$dark-gray;
+		  stroke:$dark-gray;
+		  fill:$dark-gray;
+		}
+	}
+}
+.no_mobile{
+	display:inherit;
+	font-size:$big;
+}
+#container{
+	position: relative;
+	padding-bottom:80px;
+}
 #header{
+	display: flex;
+  align-items: baseline;
+  h1{
+  	font-size:$h1-medium;
+  }
+
 	#pages{
 		display: inline-block;
+		position: inherit;
+		transition:unset;
+		margin: 0px auto;
+		background-color: $clear;
+		a {
+			color: inherit !important;
+			transition: unset;
+			margin: 0px 10px;
+			position: relative;
+			svg {
+				position: absolute;
+				bottom: -5px;
+				left: calc(calc(100% - 75px) / 2);
+			}
+
+		}
+		a:hover svg{
+			display:inline-block;
+
+		}
+		&.show{
+			right:0px;
+			a{
+				margin-bottom: 0px;
+			}
+		}
 	}
+
 	#hamburger{
 		display:none;
 	}
 }
+/* start home page */
+.image-gallery {
+	.gal_nav{
+		top:calc(50% - 40px);
+		svg{
+			height:40px;
+			width:40px;
+		}
+		&.next{
+			right: 10px;
+		}
+		&.prev{
+			left: 10px;
+		}
+	}
+	&.fullscreen{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: -1;
+		margin: 0px;
+	  height: 100%;
+	  overflow:hidden;
+	  .gal_nav{
+	  	display:none;
+	  }
+
+	}
+}
+/* start property*/
 #property_details{
 	div{
 		flex-direction: unset;
@@ -303,3 +407,32 @@ mobile. Make sure to double check these!
 	}
 }
 
+/* start footer */
+#footer {
+	display: flex;
+	position: absolute;	
+	bottom: 0px;
+	align-items: center;
+	height:60px;
+
+	div {
+		position: relative;
+		margin: 0px auto;
+		display: inline-flex;
+		&.footer_container{
+			flex-direction: row;
+		}
+		span{
+			margin: 0px 4px;
+		}
+		.social_media{
+			background-color: $clear;
+			padding: 2px;
+			svg{
+				height:30px;
+				width:30px;
+				margin: 0px 3px;
+			}
+		}
+	}
+}
