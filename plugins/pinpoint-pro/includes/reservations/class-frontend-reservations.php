@@ -81,6 +81,10 @@
                 global $DOPBSP;
                     
 // HOOK (dopbsp_action_book_before) *************************************** Add action before booking request.
+
+//Mason Debugging 
+
+                error_log($_POST);
                 do_action('dopbsp_action_book_before');
 
                 $calendar_id = $_POST['calendar_id'];

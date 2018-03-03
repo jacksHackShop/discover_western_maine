@@ -243,5 +243,36 @@ function bones_fonts() {
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
+/*Mason Functions*/
+function updateCalendars() {
+  error_log(var_export($form, true));
+  //Grab Post into array
+  $booking_info = $_POST;
+  //configure prices to make them free
+  //look at calendar ID
+  $booked_ID = $booking_info['calendar_id'];
+
+
+
+  /*$reservation_id = $DOPBSP->classes->backend_reservation->add($calendar_id,
+                                                                                 $language,
+                                                                                 $currency,
+                                                                                 $currency_code,
+                                                                                 $reservation,
+                                                                                 $form,
+                                                                                 $address_billing,
+                                                                                 $address_shipping,
+                                                                                 $payment_method,
+                                                                                 $token);
+ */ 
+  /*if ($booked_ID == 'joint') {
+    //Update lodge and cabin
+  } elseif($booked_ID == 'Lodge' || $booked_ID == 'Cabin') {
+    //Update joint
+  }
+  */
+} 
+
+add_action('dopbsp_action_book_after', 'updateCalendars');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
