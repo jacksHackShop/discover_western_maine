@@ -19,3 +19,12 @@ $highlightext:      desaturate(lighten($highlight, 50%), 18%);  // Text on highl
 
 $contentbg:         #fff;                                       // Content BG - Tabs (active state)
 $subtext:           #777;                                       // small, breadcrumbs etc
+
+/* font sizes */
+$tiny:           12px;
+$small:          14px;
+$medium:         16px;
+$big:            24px;
+$huge:           32px;
+$gigantic:       48px;
+$epic:           72px;
