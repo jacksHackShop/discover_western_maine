@@ -1,5 +1,15 @@
 <?php get_header(); ?>
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
+		<div id="container" class="wrap cf">
+      <div id="header" class="home_nav">
+		
+				<?php 
+          // custom navigation function
+          echo buildCustomNav();
+        ?>
+      </div>
+  
 			<div id="content">
 
 				<div id="inner-content" class="wrap cf">

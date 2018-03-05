@@ -12,3 +12,12 @@ be seen on the Desktop.
 .wrap {
   width: 1040px;
 }
+/*start chris styles*/
+
+/*start about page*/
+.text_image_pair{
+  display:flex;
+  &:nth-child(even){
+    flex-direction: reverse-row;
+  }
+}

@@ -275,4 +275,123 @@ function updateCalendars() {
 
 add_action('dopbsp_action_book_after', 'updateCalendars');
 
+/** START OF CUSTOM FUNCTIONS  **/
+function buildCustomNav(){
+  // initialize $nav_links
+  $nav_links = '';
+
+  // add homepage to nav_links
+  $page = get_page_by_title('Maine Away');
+  $url = get_permalink($page->ID);
+  $title = $page->post_title;
+  $font = get_field('font');
+  $nav_links .= "<a href='{$url}' style='font-family:{$font}'><h1>{$title}</h1></a><div id='pages'>";
+  $menu_items = wp_get_nav_menu_items('Navigation');
+  /*
+  $properties = get_posts(['post_type' => 'property']);
+  $all_pages = get_pages();
+  
+  $pages = array_filter(array_merge($properties, $all_pages), navFilterCallback);
+  */
+
+  foreach ($menu_items as $item) {
+    $page = get_post($item->object_id);
+    $url = get_permalink($page->ID);
+    $title = $page->post_title;
+    $font = get_post_meta($page->ID, 'font')[0];
+    $nav_links .= "<a href='{$url}' style='font-family:{$font}'><span>{$title}</span>";
+    $nav_links .= '<svg width="75px" height="7px" xmlns="http://www.w3.org/2000/svg">
+    <path stroke="#000000" fill="none" d="m 0,5 H 25 l 6,-4 3,0 6,4 H 100"></path>
+    </svg></a>';
+    
+  }
+  $nav_links .= "</div><div id=hamburger class='icon' onclick=\"document.getElementById('pages').classList.toggle('show');\"'>";
+  $nav_links .= '<svg viewBox="0 0 32 22.5" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M25.07,5c0,0.69-0.5,1.25-1.117,1.25H7.266C6.649,6.25,6.148,5.69,6.148,5l0,0c0-0.69,0.5-1.25,1.118-1.25h16.688
+                C24.57,3.75,25.07,4.31,25.07,5L25.07,5z"/>
+                    <path d="M25.048,11.25c0,0.689-0.501,1.25-1.118,1.25H7.243c-0.618,0-1.118-0.561-1.118-1.25l0,0c0-0.689,0.5-1.25,1.118-1.25
+                H23.93C24.547,10,25.048,10.561,25.048,11.25L25.048,11.25z"/>
+                    <path d="M25.094,17.5c0,0.689-0.5,1.25-1.117,1.25H7.289c-0.617,0-1.118-0.561-1.118-1.25l0,0c0-0.689,0.5-1.25,1.118-1.25h16.688
+                C24.594,16.25,25.094,16.811,25.094,17.5L25.094,17.5z"/>
+                  </g>
+                </svg>
+              </div>';
+ 
+  return $nav_links;
+}
+
+function navFilterCallback($page){
+  $show_in_nav = get_post_meta($page->ID, 'show_in_navigation');
+  if (isset($show_in_nav) && isset($show_in_nav[0]) && $show_in_nav[0] == 1){
+    return true;
+  }  
+  else{
+    return false;
+  }
+
+}
+
+function fontLoader(){
+  $post_font =  get_field('secondary_font') != NULL ? get_field('secondary_font') : get_field('font');
+  $fonts = isset($post_font) ? [$post_font] : [];
+  // add font for homepage
+  $page = get_page_by_title('Maine Away');
+  array_push($fonts, get_post_meta($page->ID, 'font')[0]);
+  // add fonts for navigation
+  $menu_items = wp_get_nav_menu_items('Navigation');
+
+  foreach ($menu_items as $item) {
+    $page = get_post($item->object_id);
+    $font = get_post_meta($page->ID, 'font')[0];
+    // if font not in fonts add it
+    if (!in_array($font, $fonts)){
+      array_push($fonts, $font); 
+    }   
+  }
+  
+  $link_tag = "<link href='https://fonts.googleapis.com/css?family=";
+  foreach ($fonts as $font) {
+    $encoded_font = str_replace(' ', '+', $font);
+    $link_tag .= $encoded_font.'|';
+  }
+  trim($link_tag, '|');
+  $link_tag .= "' rel='stylesheet'>";
+  return $link_tag;
+}
+
+// start image gallery code
+
+function buildImageGallery($class_list, $field_name){
+  $string_class_list = implode(' ', $class_list);
+  echo '<div class="image-gallery '.$string_class_list.'" data-image-target="0">
+          <div class="gal_nav prev">
+            <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" opacity=".7" r="16"></circle>
+              <polyline fill="none" points="21,3.5  8.5,16 21,28.5"></polyline> 
+            </svg>
+          </div>
+          <ul class="gallery_images">';
+
+        $images = get_field($field_name); 
+        foreach( $images as $image ){
+        
+          echo "<li class='gallery_image' style='background-image:url(\"{$image['image']}\")'></li>";  
+        }
+    echo '</ul>
+          <div class="gal_nav next">
+            <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" opacity=".7" r="16"></circle>
+              <polyline fill="none" points="11.5,3.5  24,16 11.5,28.5"></polyline> 
+            </svg>
+          </div>
+        </div>';
+}
+// end image gallery code
+
+
+
+/** END OF CUSTOM FUNCTIONS  **/
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>
