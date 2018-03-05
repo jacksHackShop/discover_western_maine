@@ -1148,8 +1148,9 @@ body{
 	overflow:hidden;
 	width: 100%;
 	.calendar{
-		&.hidden{
-			display: none;
+		display: none !important;
+		&.active{
+			display: block !important;
 		}
 	}
 	

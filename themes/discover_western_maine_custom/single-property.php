@@ -63,11 +63,11 @@
 					<?php if (get_field('alternate_calendar_id')): ?>
 						 <input type="checkbox" id="toggle_calendar" name="show_alternate">
 					<?php endif; ?>
-					<div id="primary_calendar" class="calendar">
+					<div id="primary_calendar" class="calendar active">
 						<?php echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
 					</div>
 					<?php if (get_field('alternate_calendar_id')): ?>
-						 <div id="alternate_calendar" class="calendar hidden">
+						 <div id="alternate_calendar" class="calendar">
 						 	<?php echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
 						 </div>
 					<?php endif; ?>
