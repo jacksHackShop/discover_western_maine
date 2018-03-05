@@ -335,11 +335,14 @@ body{
   }
 
 	#pages{
-		display: inline-block;
-		position: inherit;
-		transition:unset;
-		margin: 0px auto;
-		background-color: $clear;
+		display: block;
+    position: relative;
+    transition: none;
+    overflow: visible;
+    text-align: center;
+    background-color: $clear;
+    top: 0;
+    right: 0;
 		a {
 			color: inherit !important;
 			transition: unset;

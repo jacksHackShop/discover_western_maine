@@ -18,6 +18,13 @@ be seen on the Desktop.
 .text_image_pair{
   display:flex;
   &:nth-child(even){
-    flex-direction: reverse-row;
+    flex-direction: row-reverse;
+  }
+}
+
+
+#header{
+  #pages{
+    margin-left: 2%;
   }
 }

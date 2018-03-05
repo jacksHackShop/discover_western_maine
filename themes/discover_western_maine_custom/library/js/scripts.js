@@ -149,6 +149,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
             images_list.scrollLeft += diff;
     }, 15);
   }
+
+  // if toggle calendar exsists, set up listener for it
+  var calendar_toggle = document.getElementById('toggle_calendar');
+  if (calendar_toggle){
+    calendar_toggle.addEventListener('click', function(e){
+      if(calendar_toggle.checked){
+        document.getElementById('primary_calendar').classList.add('hidden');  
+        document.getElementById('alternate_calendar').classList.remove('hidden');
+      }
+      else {
+        document.getElementById('primary_calendar').classList.remove('hidden');  
+        document.getElementById('alternate_calendar').classList.add('hidden');
+      }
+    });
+  }
 });
 
 function change_gallery_target( change_by ){
