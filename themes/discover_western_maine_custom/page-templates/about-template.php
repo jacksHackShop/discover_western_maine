@@ -39,24 +39,23 @@
 						$body_class = $pair['illustration'] ? 'text_body m-all t-all d-1of2' : 'text_body m-all t-all d-all' ;
 
 						echo "<div class='".$body_class."'>";
-						// if title is set
-						if($pair['text_title']){
-							echo '<h2 class>'.$pair['text_title'].'</h2>';
-						}
-						echo	"<p>".$pair['text_body']."</p></div>";
+						
+						echo $pair['content']."</div>";
 						// if we have an image, drop it in
 
 						if ($pair['illustration']){
-							echo 
-							"<div class='illustration_container m-all t-all d-1of2'>".
-								"<img src=".$pair['illustration'].">".
-							"</div>";
+							echo 	"<div class='illustration_container m-all t-all d-1of2' style='background-image:url(\"{$pair['illustration']}\")'>";
+							// for img element;
+							//echo "<img src='{$pair['illustration']}'>";
+							echo "</div>";
 						}
 						echo "</div>";
 						
 					 } ?>
 					
-					<?php echo do_shortcode('[wpgmza id="'.get_field('map_id').'"]'); ?>
+					<div id="map">
+						<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1kKNL0uASSf5ujuSH-zWT4eJJ_7fnyo6F"></iframe>
+					</div>
 
 				</div>
 

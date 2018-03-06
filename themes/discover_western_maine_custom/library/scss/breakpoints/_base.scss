@@ -888,6 +888,10 @@ FOOTER STYLES
 
 /* START CHRIS STYLES */
 /* START PAGE STYLES */
+#container{
+	max-width:1100px;
+	margin: 0 auto;
+}
 .no_mobile{
 	display:none;
 }
@@ -902,6 +906,10 @@ body{
 		a, a:visited{
 			color: $white;
 			text-decoration: none;
+		}
+		.maine_svg{
+			fill:$white;
+			stroke: $white;
 		}
 		.icon{
 			fill: $white;
@@ -948,10 +956,14 @@ body{
 
 #header{
 	width:100%;
+	position: relative;
 	h1 {
 		display: inline-block;
 		font-size: $h1-big;
 		margin: 5px 10px;
+	}
+	.maine_svg{
+		display: none;
 	}
 	#pages{
 		display: flex;
@@ -960,7 +972,6 @@ body{
     overflow:hidden;
     z-index: 1;
     right: -110px;
-    top:108px;
     background-color: $sheer;
     transition: right .6s;
     
@@ -969,13 +980,14 @@ body{
 			color:$white;
 			transition: margin-bottom .6s, color 1.5s;
 
-			svg{
+
+			.underline{
 				display:none;
 				width: 75px;
 				height: 5px;
 			}
 		}
-		a:hover svg{
+		a:hover .underline{
 			display:block;
 				
 		}
@@ -992,10 +1004,12 @@ body{
 		}
 	}
 	#hamburger{    
-		height: 40px;
-		width:40px;
-    display:inline-block;
-    vertical-align:middle;
+		line-height: 0px;
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 5%;
 	}
 	a {
 		margin: 0px 10px;
@@ -1055,7 +1069,7 @@ body{
 	font-size: 0;
 	position: relative;
 	height: calc( 100vw - 80px );
-
+	max-height: 600px;
 	.gal_nav{
 		position: absolute;
 		top:calc(50% - 40px);
@@ -1102,7 +1116,6 @@ body{
 			
 			&.current{
 				height: 100%;
-				max-height:2000px;
 				transition-delay: 0s;
 				transition: max-height 1s;
 			}
@@ -1138,8 +1151,14 @@ body{
 
 }
 
-.calender{
+.calendar_container{
 	overflow:hidden;
+	width: 100%;
+	.calendar{
+		&.hidden{
+			display:none;
+		}
+	}
 	
 }
 
@@ -1183,10 +1202,19 @@ body{
 /* END PROPERTY PAGE */
 /* START ABOUT PAGE */
 .text_image_pair{
+	.text_body{
+		padding:2em;
+	}
 	.illustration_container{
-		img{
-			width:100%;
-		}
+		background-size:cover;
+		background-position:center;
+		height: 65vw;
+	}
+}
+#map{
+	iframe{
+		width: 100%;
+		height: 80vh;
 	}
 }
 /* END ABOUT PAGE */

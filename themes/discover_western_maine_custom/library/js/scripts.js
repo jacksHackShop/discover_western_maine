@@ -118,11 +118,15 @@ jQuery(document).ready(function($) {
 
 
 }); /* end of as page load scripts */
+
 /*Start mason*/
 
 jQuery( document ).ajaxComplete(function() {
   preselect_new_phone_fields();
   add_house_rules_section_to_new_calendars();
+  // make sure the calendar is showing, cause plugin is dumb
+  document.getElementById('primary_calendar').style.display = 'block'; 
+  document.getElementById('alternate_calendar').style.display = 'none';
 });
 
 function preselect_new_phone_fields() {
@@ -149,8 +153,12 @@ function add_house_rules_section_to_new_calendars(){
   }
 }
 
+/* END MASON */
+
 
 /* START CHRIS CODE */
+
+
 // Start gallery code
 document.addEventListener("DOMContentLoaded", function(event) { 
   var galleries = document.getElementsByClassName('image-gallery') || [];
@@ -178,6 +186,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
           else
             images_list.scrollLeft += diff;
     }, 15);
+  }
+
+  // if toggle calendar exsists, set up listener for it
+  var calendar_toggle = document.getElementById('toggle_calendar');
+  if (calendar_toggle){
+    calendar_toggle.addEventListener('click', function(e){
+      if(calendar_toggle.checked){
+        document.getElementById('primary_calendar').style.display = 'none';  
+        document.getElementById('alternate_calendar').style.display = 'block';
+      }
+      else {
+        document.getElementById('primary_calendar').style.display = 'block';  
+        document.getElementById('alternate_calendar').style.display = 'none';
+      }
+    });
   }
 });
 
