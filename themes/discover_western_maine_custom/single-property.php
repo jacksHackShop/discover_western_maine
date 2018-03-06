@@ -44,9 +44,11 @@
 							<li>
 								<span class="tooltipped">
 									<img class="stat_image" src="<?php echo $stat['icon']; ?>">
-									<span class="tooltip">
-									<?php echo $stat['stat_name']; ?>
-									</span>	
+									<?php if ($stat['stat_name']):?>
+										<span class="tooltip">
+											<?php echo $stat['stat_name']; ?>
+										</span>	
+									<?php endif;?>
 								</span>
 								<span class="stat_value"><?php echo $stat['stat_info']; ?></span>
 								
@@ -62,12 +64,13 @@
 				<div class="calendar_container">
 					<?php if (get_field('alternate_calendar_id')): ?>
 						 <input type="checkbox" id="toggle_calendar" name="show_alternate">
+						 <label>Check to rent both Lodge and Cabin</label>
 					<?php endif; ?>
 					<div id="primary_calendar" class="calendar active">
 						<?php echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
 					</div>
 					<?php if (get_field('alternate_calendar_id')): ?>
-						 <div id="alternate_calendar" class="calendar">
+						 <div id="alternate_calendar" class="calendar hidden">
 						 	<?php echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
 						 </div>
 					<?php endif; ?>

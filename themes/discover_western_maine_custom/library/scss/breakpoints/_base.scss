@@ -907,6 +907,10 @@ body{
 			color: $white;
 			text-decoration: none;
 		}
+		.maine_svg{
+			fill:$white;
+			stroke: $white;
+		}
 		.icon{
 			fill: $white;
 			stroke: $white;
@@ -958,6 +962,9 @@ body{
 		font-size: $h1-big;
 		margin: 5px 10px;
 	}
+	.maine_svg{
+		display: none;
+	}
 	#pages{
 		display: flex;
     flex-direction: column;
@@ -973,13 +980,14 @@ body{
 			color:$white;
 			transition: margin-bottom .6s, color 1.5s;
 
-			svg{
+
+			.underline{
 				display:none;
 				width: 75px;
 				height: 5px;
 			}
 		}
-		a:hover svg{
+		a:hover .underline{
 			display:block;
 				
 		}
@@ -1061,7 +1069,7 @@ body{
 	font-size: 0;
 	position: relative;
 	height: calc( 100vw - 80px );
-
+	max-height: 600px;
 	.gal_nav{
 		position: absolute;
 		top:calc(50% - 40px);
@@ -1108,7 +1116,6 @@ body{
 			
 			&.current{
 				height: 100%;
-				max-height:2000px;
 				transition-delay: 0s;
 				transition: max-height 1s;
 			}
@@ -1148,9 +1155,8 @@ body{
 	overflow:hidden;
 	width: 100%;
 	.calendar{
-		display: none !important;
-		&.active{
-			display: block !important;
+		&.hidden{
+			display:none;
 		}
 	}
 	

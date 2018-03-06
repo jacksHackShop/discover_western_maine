@@ -333,6 +333,18 @@ body{
   h1{
   	font-size:$h1-medium;
   }
+  a{
+  	position: relative;
+  }
+  .maine_svg {
+    display: inline-block !important; 
+    height: 37px;
+    width: 37px;
+    position: absolute;
+    left: 100%;
+    bottom: 50%;
+    stroke-width: 3px;
+  }
 
 	#pages{
 		display: block;
@@ -348,14 +360,15 @@ body{
 			transition: unset;
 			margin: 0px 10px;
 			position: relative;
-			svg {
+	   
+			.underline {
 				position: absolute;
 				bottom: -5px;
 				left: calc(calc(100% - 75px) / 2);
 			}
 
 		}
-		a:hover svg{
+		a:hover .underline{
 			display:inline-block;
 
 		}

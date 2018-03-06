@@ -119,8 +119,46 @@ jQuery(document).ready(function($) {
 
 }); /* end of as page load scripts */
 
+/*Start mason*/
+
+jQuery( document ).ajaxComplete(function() {
+  preselect_new_phone_fields();
+  add_house_rules_section_to_new_calendars();
+  // make sure the calendar is showing, cause plugin is dumb
+  document.getElementById('primary_calendar').style.display = 'block'; 
+  document.getElementById('alternate_calendar').style.display = 'none';
+});
+
+function preselect_new_phone_fields() {
+  var $phone_fields = jQuery('.dopbsp-phone-code');
+
+  for( var i = 0; i < $phone_fields.length; i++ ){
+    if( !$phone_fields[i].old ){
+      $phone_fields[i].old = true;
+      $phone_fields[i].children[0].value="United States";
+      $phone_fields[i].children[1].children[0].innerHTML = "US";
+    }
+  }
+}
+function add_house_rules_section_to_new_calendars(){
+  var side_bar_row_cells = 
+      jQuery('.DOPBSPCalendar-wrapper form table.dopbsp-sidebar-content table.dopbsp-sidebar-content tbody tr .dopbsp-column4');
+
+  for( var i = 0; i < side_bar_row_cells.length; i++ ){
+    if( !side_bar_row_cells[i].old ){
+      side_bar_row_cells[i].old = true;
+      var target_row = side_bar_row_cells[i].children[ side_bar_row_cells[i].children.length - 1 ];
+      target_row.innerHTML = "<div class='dopbsp-module'> <a href='http://patrickstewartsong.ytmnd.com/'>House Rules</a></div>"; 
+    }
+  }
+}
+
+/* END MASON */
+
 
 /* START CHRIS CODE */
+
+
 // Start gallery code
 document.addEventListener("DOMContentLoaded", function(event) { 
   var galleries = document.getElementsByClassName('image-gallery') || [];
