@@ -923,9 +923,14 @@ body{
 			color: $black;
 			text-decoration: none;
 		}
+		.maine_svg{
+			fill:$black;
+			stroke: $black;
+		}
 		.icon{
 			fill: $black;
 			stroke: $black;
+
 		}
 		.gal_nav{
 			svg{
@@ -945,6 +950,10 @@ body{
 	  	color: $bright-gray;
 	  	text-decoration: none;
 	  }
+	  .maine_svg{
+			fill:$bright-gray;
+			stroke: $bright-gray;
+		}
 		.icon{
 			fill: $bright-gray;
 			stroke: $bright-gray;
@@ -1208,7 +1217,8 @@ body{
 	.illustration_container{
 		background-size:cover;
 		background-position:center;
-		height: 65vw;
+		height: 40vw;
+		max-height: 600px;
 	}
 }
 #map{
