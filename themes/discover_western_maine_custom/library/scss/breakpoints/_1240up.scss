@@ -11,14 +11,29 @@ on larger screens.
 
 #header{
   h1{
-    font-size: $h1-small;
+    font-size: $h1-max;
   }
 }
 
-
+#container{
+	max-width:1400px;
+}
 
 #header{
   #pages{
-    margin-left: 15%;
+    margin-left: 10%;
   }
+}
+
+.home_page{
+	#container{
+		max-width:none;
+	}
+	#header{
+			width:80%;
+			margin:0 auto;
+		}
+		#footer{
+			width:100%;
+		}
 }

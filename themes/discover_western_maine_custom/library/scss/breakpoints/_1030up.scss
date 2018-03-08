@@ -28,3 +28,38 @@ be seen on the Desktop.
     margin-left: 2%;
   }
 }
+
+
+/* start footer */
+.no_mobile{
+	display:inherit;
+	font-size:$big;
+}
+#footer {
+	display: flex;
+	
+	align-items: center;
+	height:60px;
+
+	div {
+		position: relative;
+		margin: 0px auto;
+		display: inline-flex;
+		&.footer_container{
+			flex-direction: row;
+			margin:0;
+		}
+		span{
+			margin: 0px 4px;
+		}
+		.social_media{
+			background-color: $clear;
+			padding: 2px;
+			svg{
+				height:30px;
+				width:30px;
+				margin: 0px 3px;
+			}
+		}
+	}
+}

@@ -319,10 +319,7 @@ body{
 		}
 	}
 }
-.no_mobile{
-	display:inherit;
-	font-size:$big;
-}
+
 #container{
 	position: relative;
 	padding-bottom:80px;
@@ -405,11 +402,12 @@ body{
 		left: 0px;
 		z-index: -1;
 		margin: 0px;
-	  height: 100%;
-	  overflow:hidden;
-	  .gal_nav{
-	  	display:none;
-	  }
+	 	height: 100%;
+	  	overflow:hidden;
+	  	max-height: none;
+	 	.gal_nav{
+	  		display:none;
+	  	}
 
 	}
 }
@@ -423,32 +421,8 @@ body{
 	}
 }
 
-/* start footer */
-#footer {
-	display: flex;
+
+#footer{
 	position: absolute;	
 	bottom: 0px;
-	align-items: center;
-	height:60px;
-
-	div {
-		position: relative;
-		margin: 0px auto;
-		display: inline-flex;
-		&.footer_container{
-			flex-direction: row;
-		}
-		span{
-			margin: 0px 4px;
-		}
-		.social_media{
-			background-color: $clear;
-			padding: 2px;
-			svg{
-				height:30px;
-				width:30px;
-				margin: 0px 3px;
-			}
-		}
-	}
 }

@@ -148,7 +148,7 @@ function add_house_rules_section_to_new_calendars(){
     if( !side_bar_row_cells[i].old ){
       side_bar_row_cells[i].old = true;
       var target_row = side_bar_row_cells[i].children[ side_bar_row_cells[i].children.length - 1 ];
-      target_row.innerHTML = "<div class='dopbsp-module'> <a href='http://patrickstewartsong.ytmnd.com/'>House Rules</a></div>"; 
+      target_row.innerHTML = "<div class='dopbsp-module'> <a target='_blank' href='http://patrickstewartsong.ytmnd.com/'>House Rules</a></div>"; 
     }
   }
 }
@@ -167,25 +167,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   for( var i = 0; i < galleries.length; i++ ){
     var this_gallery = galleries[i];
-    var images_list = this_gallery.children[1];
     this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
-    this_gallery.children[2].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));
-    this_gallery.children[1].children[0].classList.add('current');
-
-    window.setInterval(function(){ 
-      var diff = images_list.getBoundingClientRect().width * this_gallery.dataset.imageTarget - images_list.scrollLeft;
-      if( diff > 0 )
-        if( diff > SMOOTH_SCROLL_STEP )
-          images_list.scrollLeft += SMOOTH_SCROLL_STEP;
-        else
-          images_list.scrollLeft += diff;
-      else
-        if( diff < 0 )
-          if( diff < -SMOOTH_SCROLL_STEP )
-            images_list.scrollLeft -= SMOOTH_SCROLL_STEP;
-          else
-            images_list.scrollLeft += diff;
-    }, 15);
+    this_gallery.children[1].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
   }
 
   // if toggle calendar exsists, set up listener for it
@@ -202,20 +185,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     });
   }
+
+  var auto_scroll_interval = window.setInterval(function(){
+    change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
+  }, 8000);
 });
 
 function change_gallery_target( change_by ){
   var this_gallery = this;
   var current_index = this_gallery.dataset.imageTarget * 1;
-  var image_lis = this_gallery.children[1];
-  var index = (current_index + change_by) % image_lis.children.length;  
+  var image_list = JSON.parse(this_gallery.dataset.imageSet);
+  // wrap around image set
+  var index = (current_index + change_by) % image_list.length;  
   if (index < 0){
-    index = image_lis.children.length - 1;
+    index = image_list.length - 1;
   }
-  for( var i = 0; i < image_lis.children.length; i++ ){
-    image_lis.children[i].classList.remove('current');
-  }
-  image_lis.children[index].classList.add('current');
+  this_gallery.style.backgroundImage = 'url('+image_list[index]+')';
   this_gallery.dataset.imageTarget = index;
 }
 // end gallery code

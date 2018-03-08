@@ -383,22 +383,22 @@ function fontLoader(){
 
 function buildImageGallery($class_list, $field_name){
   $string_class_list = implode(' ', $class_list);
-  echo '<div class="image-gallery '.$string_class_list.'" data-image-target="0">
-          <div class="gal_nav prev">
-            <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" opacity=".7" r="16"></circle>
-              <polyline fill="none" points="21,3.5  8.5,16 21,28.5"></polyline> 
+  $images_array = [];
+  $images = get_field($field_name);
+  // make the data a little cleaner
+  foreach ($images as $image) {
+    array_push($images_array, $image['image']);
+  }
+  $images_dataset = json_encode($images_array); 
+  echo "<div class='image-gallery {$string_class_list}' data-image-target='0' data-image-set='
+  {$images_dataset}' style='background-image:url(\"{$images_array[0]}\")'>
+          <div class='gal_nav prev'>
+            <svg viewbox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'>
+              <circle cx='16' cy='16' opacity='.7' r='16'></circle>
+              <polyline fill='none' points='21,3.5  8.5,16 21,28.5'></polyline> 
             </svg>
-          </div>
-          <ul class="gallery_images">';
-
-        $images = get_field($field_name); 
-        foreach( $images as $image ){
-        
-          echo "<li class='gallery_image' style='background-image:url(\"{$image['image']}\")'></li>";  
-        }
-    echo '</ul>
-          <div class="gal_nav next">
+          </div>";
+  echo    '<div class="gal_nav next">
             <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" opacity=".7" r="16"></circle>
               <polyline fill="none" points="11.5,3.5  24,16 11.5,28.5"></polyline> 
