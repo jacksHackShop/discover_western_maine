@@ -185,10 +185,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     });
   }
-
-  var auto_scroll_interval = window.setInterval(function(){
-    change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
-  }, 8000);
+  if (galleries){
+    var auto_scroll_interval = window.setInterval(function(){
+      change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
+    }, 8000);
+  }
 });
 
 function change_gallery_target( change_by ){

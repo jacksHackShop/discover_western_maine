@@ -67,11 +67,13 @@
 						 <label>Check to rent both Lodge and Cabin</label>
 					<?php endif; ?>
 					<div id="primary_calendar" class="calendar active">
-						<?php echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
+						<?php echo "<h3 class='calendar_title'>".get_field('calendar_display_name')."</h3>";
+						echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
 					</div>
 					<?php if (get_field('alternate_calendar_id')): ?>
 						 <div id="alternate_calendar" class="calendar hidden">
-						 	<?php echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
+						 	<?php echo "<h3 class='calendar_title'>".get_field('alternate_calendar_display_name')."</h3>";
+						 	echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
 						 </div>
 					<?php endif; ?>
 				</div>

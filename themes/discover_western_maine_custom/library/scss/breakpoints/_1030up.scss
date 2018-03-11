@@ -10,26 +10,36 @@ be seen on the Desktop.
 ******************************************************************/
 
 .wrap {
-  width: 1040px;
+	width: 1040px;
 }
 /*start chris styles*/
 
 /*start about page*/
 .text_image_pair{
-  display:flex;
-  &:nth-child(even){
-    flex-direction: row-reverse;
-  }
+	display:flex;
+	&:nth-child(even){
+		flex-direction: row-reverse;
+	}
 }
 
 
 #header{
-  #pages{
-    margin-left: 2%;
-  }
+	
+	#pages{
+    	margin-left: 2%;
+    	a{
+    		margin:0 7px;
+    		.maine_svg{
+    			height: 37px;
+    			width: 37px;
+    		}
+    	}
+  	}
 }
 
-
+#content {
+    margin-bottom: 0px;
+}
 /* start footer */
 .no_mobile{
 	display:inherit;
@@ -37,7 +47,7 @@ be seen on the Desktop.
 }
 #footer {
 	display: flex;
-	
+	width:100%;
 	align-items: center;
 	height:60px;
 

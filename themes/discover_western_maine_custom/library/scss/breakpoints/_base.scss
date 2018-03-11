@@ -895,11 +895,15 @@ FOOTER STYLES
 .no_mobile{
 	display:none;
 }
-#inner-content{
-	letter-spacing: .1em;
-	font-size: $small;
-	.text_body{
-		padding:2em;
+#content{
+	margin-bottom: 40px;
+
+	#inner-content{
+		letter-spacing: .1em;
+		font-size: $small;
+		.text_body{
+			padding:2em;
+		}
 	}
 }
 body{
@@ -1147,12 +1151,18 @@ body{
 
 }
 
+
 .calendar_container{
 	overflow:hidden;
 	width: 100%;
 	#toggle_calendar{
 		margin-left:2em;
 	}
+	.calendar_title {
+	    text-align: center;
+	    font-size: 2em;
+	}
+
 	.calendar{
 		&.hidden{
 			display:none;

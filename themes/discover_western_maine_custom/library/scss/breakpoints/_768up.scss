@@ -333,10 +333,11 @@ body{
   a{
   	position: relative;
   }
+
   .maine_svg {
     display: inline-block !important; 
     height: 37px;
-    width: 37px;
+	width: 37px;
     position: absolute;
     left: 100%;
     bottom: 50%;
@@ -345,13 +346,20 @@ body{
 
 	#pages{
 		display: block;
-    position: relative;
-    transition: none;
-    overflow: visible;
-    text-align: center;
-    background-color: $clear;
-    top: 0;
-    right: 0;
+	    position: relative;
+	    transition: none;
+	    overflow: visible;
+	    text-align: center;
+	    background-color: $clear;
+	    top: 0;
+	    right: 0;
+	    .maine_svg {
+	    	height: 24px;
+    		width: 24px;
+		    bottom: 50%;
+		    stroke-width: 3px;
+		 }
+
 		a {
 			color: inherit !important;
 			transition: unset;

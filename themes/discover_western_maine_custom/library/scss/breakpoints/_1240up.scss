@@ -10,9 +10,9 @@ on larger screens.
 ******************************************************************/
 
 #header{
-  h1{
-    font-size: $h1-max;
-  }
+	h1{
+		font-size: $epic;
+	}
 }
 
 #container{
@@ -20,9 +20,19 @@ on larger screens.
 }
 
 #header{
-  #pages{
-    margin-left: 10%;
-  }
+ 	#pages{
+    margin-left: 1%;
+	    a{
+			span{
+				font-size:$huge;
+				margin-right: 5px;
+			}
+			.underline{
+				left: calc(calc(100% - 100px) / 2);
+				width: 100px;
+			}
+		}
+  	}
 }
 
 .home_page{
@@ -30,10 +40,31 @@ on larger screens.
 		max-width:none;
 	}
 	#header{
-			width:80%;
-			margin:0 auto;
+		width:100%;
+		margin:0 auto;
+		h1{
+			margin-left: 50px;
+    		margin-top: 30px;
 		}
-		#footer{
-			width:100%;
+		.maine_svg{
+			height: 100px;
+	    	width: 100px;
+	        bottom: 25%;
 		}
+		#pages{
+			margin: 0 auto;
+			a{
+				span{
+					font-size:$huge;
+				}
+				.underline{
+					left: calc(calc(100% - 100px) / 2);
+					width: 100px;
+				}
+			}
+		}
+	}
+	#footer{
+		width:100%;
+	}
 }
