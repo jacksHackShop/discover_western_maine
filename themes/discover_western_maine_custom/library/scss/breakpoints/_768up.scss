@@ -319,10 +319,7 @@ body{
 		}
 	}
 }
-.no_mobile{
-	display:inherit;
-	font-size:$big;
-}
+
 #container{
 	position: relative;
 	padding-bottom:80px;
@@ -336,10 +333,11 @@ body{
   a{
   	position: relative;
   }
+
   .maine_svg {
     display: inline-block !important; 
     height: 37px;
-    width: 37px;
+	width: 37px;
     position: absolute;
     left: 100%;
     bottom: 50%;
@@ -348,13 +346,20 @@ body{
 
 	#pages{
 		display: block;
-    position: relative;
-    transition: none;
-    overflow: visible;
-    text-align: center;
-    background-color: $clear;
-    top: 0;
-    right: 0;
+	    position: relative;
+	    transition: none;
+	    overflow: visible;
+	    text-align: center;
+	    background-color: $clear;
+	    top: 0;
+	    right: 0;
+	    .maine_svg {
+	    	height: 24px;
+    		width: 24px;
+		    bottom: 50%;
+		    stroke-width: 3px;
+		 }
+
 		a {
 			color: inherit !important;
 			transition: unset;
@@ -405,11 +410,12 @@ body{
 		left: 0px;
 		z-index: -1;
 		margin: 0px;
-	  height: 100%;
-	  overflow:hidden;
-	  .gal_nav{
-	  	display:none;
-	  }
+	 	height: 100%;
+	  	overflow:hidden;
+	  	max-height: none;
+	 	.gal_nav{
+	  		display:none;
+	  	}
 
 	}
 }
@@ -423,32 +429,8 @@ body{
 	}
 }
 
-/* start footer */
-#footer {
-	display: flex;
+
+#footer{
 	position: absolute;	
 	bottom: 0px;
-	align-items: center;
-	height:60px;
-
-	div {
-		position: relative;
-		margin: 0px auto;
-		display: inline-flex;
-		&.footer_container{
-			flex-direction: row;
-		}
-		span{
-			margin: 0px 4px;
-		}
-		.social_media{
-			background-color: $clear;
-			padding: 2px;
-			svg{
-				height:30px;
-				width:30px;
-				margin: 0px 3px;
-			}
-		}
-	}
 }

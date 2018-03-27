@@ -115,6 +115,16 @@ This is for the larger monitors and possibly full screen viewers.
 
 	// styles in 1240up.scss
 	@import "breakpoints/1240up";
+}
+
+/*********************
+Full HD
+This is for people viewing full screen on a modern full hd display.
+*********************/
+@media only screen and (min-width: 1600px) {
+
+	// styles in 1240up.scss
+	@import "breakpoints/1600up";
 
 } // end of media query
 

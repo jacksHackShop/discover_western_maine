@@ -1,0 +1,23 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Full HD Stylesheet
+
+When handling retina screens you need to make adjustments, especially
+if you're not using font icons. Here you can add them in one neat
+place.
+
+******************************************************************/
+
+.home_page{
+	#header{
+		h1{
+			font-size:$h1-max;
+		}
+		#pages{
+		    margin-left: auto;
+			margin-right: 70px;			
+		}
+	}
+}

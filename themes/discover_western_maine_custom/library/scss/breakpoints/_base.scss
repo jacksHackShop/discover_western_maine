@@ -895,9 +895,16 @@ FOOTER STYLES
 .no_mobile{
 	display:none;
 }
-#inner-content{
-	letter-spacing: .1em;
-	font-size: $small;
+#content{
+	margin-bottom: 40px;
+
+	#inner-content{
+		letter-spacing: .1em;
+		font-size: $small;
+		.text_body{
+			padding:2em;
+		}
+	}
 }
 body{
 	&.home_page{
@@ -907,6 +914,7 @@ body{
 			color: $white;
 			text-decoration: none;
 		}
+
 		.maine_svg{
 			fill:$white;
 			stroke: $white;
@@ -1079,6 +1087,11 @@ body{
 	position: relative;
 	height: calc( 100vw - 80px );
 	max-height: 600px;
+	display: block;
+    vertical-align: middle;
+    background-position: center center;
+    background-size: cover;
+    transition: background-image .2s ease-in-out;
 	.gal_nav{
 		position: absolute;
 		top:calc(50% - 40px);
@@ -1108,29 +1121,7 @@ body{
 		}
 	}
 
-	.gallery_images{
-		display:block;
-		overflow:hidden;
-	 	white-space: nowrap;
-		vertical-align: middle;
-		height:100%;
-		ul{
-			transition: margin-left .5s;
-		}
-		.gallery_image{
-			display: block;
-	    vertical-align: middle;
-	    background-position: center center;
-	    background-size: cover;
-			
-			&.current{
-				height: 100%;
-				transition-delay: 0s;
-				transition: max-height 1s;
-			}
-		
-		}
-	}
+	
 }
 
 /* end image gallery */
@@ -1160,9 +1151,18 @@ body{
 
 }
 
+
 .calendar_container{
 	overflow:hidden;
 	width: 100%;
+	#toggle_calendar{
+		margin-left:2em;
+	}
+	.calendar_title {
+	    text-align: center;
+	    font-size: 2em;
+	}
+
 	.calendar{
 		&.hidden{
 			display:none;
@@ -1175,10 +1175,6 @@ body{
 	
 	.detail_row{
 		display:flex;
-		.detail{
-			padding: 15px 30px;
-		}
-		
 		.testimonial{
 			display: flex;
 			align-items: center;
@@ -1239,6 +1235,7 @@ body{
 	div {
 		position: relative;
 		display: inline-flex;
+		margin:auto;
 		&.footer_container{
 			margin: 0px auto;
 			flex-direction: column;
@@ -1246,6 +1243,12 @@ body{
 				flex-direction: row;
 				align-items:center;
 				align-self:center;
+				svg{
+					vertical-align:middle;
+				}
+				span{
+					vertical-align:middle;
+				}
 			}
 		}
 		&#contact_info{

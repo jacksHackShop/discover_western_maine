@@ -115,3 +115,15 @@ do they need tweaking?
 	}
 } /* end .footer-links */
 
+#stat_list{
+	margin:0;
+	li{
+		display:inline-flex;
+		width:45%;
+		margin:0;
+		margin-left:4%;
+		span{
+			margin:0 7px;
+		}
+	}
+}

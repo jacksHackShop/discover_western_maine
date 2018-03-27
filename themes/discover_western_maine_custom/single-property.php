@@ -58,7 +58,7 @@
 					?>
 					</ul>
 				</div>
-				<div class="blurb m-all t-1of2 d-1of2">
+				<div class="blurb text_body m-all t-1of2 d-1of2">
 					<?php the_field('property_intro'); ?>
 				</div>
 				<div class="calendar_container">
@@ -67,11 +67,13 @@
 						 <label>Check to rent both Lodge and Cabin</label>
 					<?php endif; ?>
 					<div id="primary_calendar" class="calendar active">
-						<?php echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
+						<?php echo "<h3 class='calendar_title'>".get_field('calendar_display_name')."</h3>";
+						echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
 					</div>
 					<?php if (get_field('alternate_calendar_id')): ?>
 						 <div id="alternate_calendar" class="calendar hidden">
-						 	<?php echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
+						 	<?php echo "<h3 class='calendar_title'>".get_field('alternate_calendar_display_name')."</h3>";
+						 	echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
 						 </div>
 					<?php endif; ?>
 				</div>
@@ -81,7 +83,7 @@
 					$info = get_field('detail_and_testimonials');
 					foreach ($info as $info_array) :?>
 						<div class='detail_row m-all t-all d-all'>
-							<div class='detail m-all t-1of2 d-1of2'><?php echo $info_array['detail']?></div>
+							<div class='detail text_body m-all t-1of2 d-1of2'><?php echo $info_array['detail']?></div>
 							<div class='testimonial m-all t-1of2 d-1of2'>
 					  		<div class="testimonial-wrapper">
 									<div class='open_quote'>"</div>
