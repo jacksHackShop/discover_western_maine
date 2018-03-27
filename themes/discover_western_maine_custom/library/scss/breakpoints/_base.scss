@@ -1088,10 +1088,10 @@ body{
 	height: calc( 100vw - 80px );
 	max-height: 600px;
 	display: block;
-    vertical-align: middle;
-    background-position: center center;
-    background-size: cover;
-    transition: background-image .2s ease-in-out;
+  vertical-align: middle;
+  background-position: center center;
+  background-size: cover;
+  transition: background-image .2s ease-in-out;
 	.gal_nav{
 		position: absolute;
 		top:calc(50% - 40px);
@@ -1130,6 +1130,8 @@ body{
 #property_title {
 	margin-left: 15%;
 	font-size: 1.8em;
+	margin-top:0;
+	margin-bottom:0;
 }
 
 #stat_list{
@@ -1172,6 +1174,9 @@ body{
 }
 
 #property_details{
+	h5{
+		font-size:1.1em;
+	}
 	
 	.detail_row{
 		display:flex;
@@ -1186,16 +1191,19 @@ body{
 				p {
 					font-size: 1.5em;
 					margin: 0 5%;
+					text-align: center;
+					padding: 0 60px;
 				}
-				.open_quote {
-			    font-size: 4em;
+				.quote {
+			    height: 60px;
+			    width: 60px;
 			    position: relative;
 				}
+				.open{
 
-				.close_quote {
-			    position: relative;
-			    font-size: 4em;
-			    left: 95%;
+				}
+				.close{
+					left: calc(100% - 60px);
 				}
 			}
 		}

@@ -35,7 +35,6 @@
 			<?php buildImageGallery(['property'], 'image_gallery');
 			?>
 			<div id="inner-content" class="cf">
-				<h3 id="property_title">The <?php the_field('title');?></h3>
 				<div class="stats m-all t-1of2 d-1of2">
 					<ul id="stat_list">
 					<?php 
@@ -58,24 +57,16 @@
 					?>
 					</ul>
 				</div>
-				<div class="blurb text_body m-all t-1of2 d-1of2">
-					<?php the_field('property_intro'); ?>
+				<div class="blurb m-all t-1of2 d-1of2">
+					<h3 id="property_title">The <?php the_field('title');?></h3>
+					<div class="text_body">
+						<?php the_field('property_intro'); ?>
+					</div>
 				</div>
 				<div class="calendar_container">
-					<?php if (get_field('alternate_calendar_id')): ?>
-						 <input type="checkbox" id="toggle_calendar" name="show_alternate">
-						 <label>Check to rent both Lodge and Cabin</label>
-					<?php endif; ?>
 					<div id="primary_calendar" class="calendar active">
-						<?php echo "<h3 class='calendar_title'>".get_field('calendar_display_name')."</h3>";
-						echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
+						<?php echo do_shortcode('[dopbsp id='.get_field('calendar_id').']'); ?>
 					</div>
-					<?php if (get_field('alternate_calendar_id')): ?>
-						 <div id="alternate_calendar" class="calendar hidden">
-						 	<?php echo "<h3 class='calendar_title'>".get_field('alternate_calendar_display_name')."</h3>";
-						 	echo do_shortcode('[dopbsp id='.get_field('alternate_calendar_id').']'); ?>
-						 </div>
-					<?php endif; ?>
 				</div>
 				<div id="property_details">
 					<!-- half quote  half about -->	
@@ -86,9 +77,13 @@
 							<div class='detail text_body m-all t-1of2 d-1of2'><?php echo $info_array['detail']?></div>
 							<div class='testimonial m-all t-1of2 d-1of2'>
 					  		<div class="testimonial-wrapper">
-									<div class='open_quote'>"</div>
-					  			<p><?php echo $info_array['testimonial']; echo $_SERVER['DOCUMENT_ROOT']; ?></p>
-					  			<div class='close_quote'>"</div>
+									<div class='open quote'>
+										<svg transform="scale(-1,1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" ><g><path d="M76.729,44.54c0.005-0.138,0.021-0.273,0.021-0.413c0-0.047-0.007-0.092-0.007-0.138c0.001-0.092,0.007-0.183,0.007-0.275    l-0.021,0.014c-0.212-6.166-5.265-11.103-11.481-11.103c-6.353,0-11.502,5.149-11.502,11.502c0,5.796,4.292,10.577,9.869,11.372    c-1.387,4.595-5.646,7.938-10.695,7.938v4.106C65.813,67.542,76.293,57.325,76.729,44.54z"/><path d="M46.893,44.54c0.005-0.138,0.021-0.273,0.021-0.413c0-0.047-0.007-0.092-0.007-0.138c0.001-0.092,0.007-0.183,0.007-0.275    l-0.021,0.014c-0.212-6.166-5.265-11.103-11.481-11.103c-6.353,0-11.502,5.149-11.502,11.502c0,5.796,4.292,10.577,9.869,11.372    c-1.386,4.595-5.645,7.938-10.694,7.938v4.106C35.978,67.542,46.456,57.325,46.893,44.54z"/></g></svg>
+									</div>
+					  			<p><?php echo $info_array['testimonial']; ?></p>
+					  			<div class='close quote'>
+					  				<svg transform="rotate(180) scale(-1,1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" ><g><path d="M76.729,44.54c0.005-0.138,0.021-0.273,0.021-0.413c0-0.047-0.007-0.092-0.007-0.138c0.001-0.092,0.007-0.183,0.007-0.275    l-0.021,0.014c-0.212-6.166-5.265-11.103-11.481-11.103c-6.353,0-11.502,5.149-11.502,11.502c0,5.796,4.292,10.577,9.869,11.372    c-1.387,4.595-5.646,7.938-10.695,7.938v4.106C65.813,67.542,76.293,57.325,76.729,44.54z"/><path d="M46.893,44.54c0.005-0.138,0.021-0.273,0.021-0.413c0-0.047-0.007-0.092-0.007-0.138c0.001-0.092,0.007-0.183,0.007-0.275    l-0.021,0.014c-0.212-6.166-5.265-11.103-11.481-11.103c-6.353,0-11.502,5.149-11.502,11.502c0,5.796,4.292,10.577,9.869,11.372    c-1.386,4.595-5.645,7.938-10.694,7.938v4.106C35.978,67.542,46.456,57.325,46.893,44.54z"/></g></svg>
+					  			</div>
 					  		</div>
 					 		</div>
 						</div>
