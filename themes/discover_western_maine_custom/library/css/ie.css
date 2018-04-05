@@ -479,6 +479,8 @@ body.about_page .icon:hover {
 #header {
   display: flex;
   align-items: baseline;
+  
+  /* For the maine next to the banner */
 }
 /* line 330, ../scss/breakpoints/_768up.scss */
 #header h1 {
@@ -508,6 +510,8 @@ body.about_page .icon:hover {
   background-color: rgba(255, 255, 255, 0);
   top: 0;
   right: 0;
+
+  /* For the maine next to the nav links */
 }
 /* line 356, ../scss/breakpoints/_768up.scss */
 #header #pages .maine_svg {
@@ -516,19 +520,20 @@ body.about_page .icon:hover {
   bottom: 50%;
   stroke-width: 3px;
 }
-/* line 363, ../scss/breakpoints/_768up.scss */
+
 #header #pages a {
   color: inherit !important;
   transition: unset;
   margin: 0px 10px;
   position: relative;
 }
-/* line 369, ../scss/breakpoints/_768up.scss */
+
 #header #pages a .underline {
   position: absolute;
   bottom: -5px;
   left: calc(calc(100% - 75px) / 2);
 }
+
 /* line 376, ../scss/breakpoints/_768up.scss */
 #header #pages a:hover .underline {
   display: inline-block;
@@ -547,24 +552,27 @@ body.about_page .icon:hover {
 }
 
 /* start home page */
-/* line 394, ../scss/breakpoints/_768up.scss */
+
+/* line 395, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav {
   top: calc(50% - 40px);
 }
-/* line 396, ../scss/breakpoints/_768up.scss */
+/* line 397, ../scss/breakpoints/_768up.scss */
+
 .image-gallery .gal_nav svg {
   height: 40px;
   width: 40px;
 }
-/* line 400, ../scss/breakpoints/_768up.scss */
+/* line 401, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav.next {
   right: 10px;
 }
-/* line 403, ../scss/breakpoints/_768up.scss */
+/* line 404, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav.prev {
   left: 10px;
 }
-/* line 407, ../scss/breakpoints/_768up.scss */
+/* line 408, ../scss/breakpoints/_768up.scss */
+
 .image-gallery.fullscreen {
   position: absolute;
   top: 0px;
@@ -575,22 +583,25 @@ body.about_page .icon:hover {
   overflow: hidden;
   max-height: none;
 }
+
 /* line 416, ../scss/breakpoints/_768up.scss */
+
 .image-gallery.fullscreen .gal_nav {
   display: none;
 }
 
 /* start property*/
-/* line 424, ../scss/breakpoints/_768up.scss */
+/* line 425, ../scss/breakpoints/_768up.scss */
 #property_details div {
   flex-direction: unset;
 }
-/* line 427, ../scss/breakpoints/_768up.scss */
+/* line 428, ../scss/breakpoints/_768up.scss */
+
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* line 433, ../scss/breakpoints/_768up.scss */
+
 #footer {
   position: absolute;
   bottom: 0px;
@@ -628,7 +639,8 @@ be seen on the Desktop.
 }
 /* line 30, ../scss/breakpoints/_1030up.scss */
 #header #pages a {
-  margin: 0 7px;
+  margin: 0 16px;
+
 }
 /* line 32, ../scss/breakpoints/_1030up.scss */
 #header #pages a .maine_svg {
