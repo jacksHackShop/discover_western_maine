@@ -2906,6 +2906,7 @@ you can add resource intensive styles.
     display: flex;
     align-items: baseline;
     /* For the maine next to the banner */
+
   }
   /* line 330, ../scss/breakpoints/_768up.scss */
   #header h1 {
@@ -2937,21 +2938,21 @@ you can add resource intensive styles.
     right: 0;
     /* For the maine next to the nav links */
   }
-  /* line 357, ../scss/breakpoints/_768up.scss */
+
   #header #pages .maine_svg {
     height: 24px;
     width: 24px;
     bottom: 50%;
     stroke-width: 3px;
   }
-  /* line 364, ../scss/breakpoints/_768up.scss */
+
   #header #pages a {
     color: inherit !important;
     transition: unset;
     margin: 0px 10px;
     position: relative;
   }
-  /* line 370, ../scss/breakpoints/_768up.scss */
+
   #header #pages a .underline {
     position: absolute;
     bottom: -5px;
@@ -2970,6 +2971,7 @@ you can add resource intensive styles.
     margin-bottom: 0px;
   }
   /* line 389, ../scss/breakpoints/_768up.scss */
+
   #header #hamburger {
     display: none;
   }
@@ -2980,6 +2982,7 @@ you can add resource intensive styles.
     top: calc(50% - 40px);
   }
   /* line 397, ../scss/breakpoints/_768up.scss */
+
   .image-gallery .gal_nav svg {
     height: 40px;
     width: 40px;
@@ -2993,6 +2996,7 @@ you can add resource intensive styles.
     left: 10px;
   }
   /* line 408, ../scss/breakpoints/_768up.scss */
+
   .image-gallery.fullscreen {
     position: absolute;
     top: 0px;
@@ -3003,7 +3007,7 @@ you can add resource intensive styles.
     overflow: hidden;
     max-height: none;
   }
-  /* line 417, ../scss/breakpoints/_768up.scss */
+
   .image-gallery.fullscreen .gal_nav {
     display: none;
   }
@@ -3014,11 +3018,12 @@ you can add resource intensive styles.
     flex-direction: unset;
   }
   /* line 428, ../scss/breakpoints/_768up.scss */
+
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  /* line 434, ../scss/breakpoints/_768up.scss */
+
   #footer {
     position: absolute;
     bottom: 0px;
@@ -3064,6 +3069,7 @@ you can add resource intensive styles.
   /* line 30, ../scss/breakpoints/_1030up.scss */
   #header #pages a {
     margin: 0 16px;
+
   }
   /* line 32, ../scss/breakpoints/_1030up.scss */
   #header #pages a .maine_svg {
@@ -3148,11 +3154,11 @@ This is for the larger monitors and possibly full screen viewers.
     margin-right: auto;
   }
   /* line 27, ../scss/breakpoints/_1240up.scss */
+
   #header #pages a span {
     font-size: 32px;
     margin-right: 5px;
   }
-  /* line 31, ../scss/breakpoints/_1240up.scss */
   #header #pages a .underline {
     left: calc(calc(100% - 100px) / 2);
     width: 100px;
@@ -3163,16 +3169,17 @@ This is for the larger monitors and possibly full screen viewers.
     max-width: none;
   }
   /* line 43, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header {
     width: 100%;
     margin: 0 auto;
   }
-  /* line 46, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header h1 {
     margin-left: 50px;
     margin-top: 30px;
   }
-  /* line 50, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header .maine_svg {
     height: 100px;
     width: 100px;
@@ -3187,11 +3194,12 @@ This is for the larger monitors and possibly full screen viewers.
     font-size: 32px;
   }
   /* line 61, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header #pages a .underline {
     left: calc(calc(100% - 100px) / 2);
     width: 100px;
   }
-  /* line 68, ../scss/breakpoints/_1240up.scss */
+
   .home_page #footer {
     width: 100%;
   }
