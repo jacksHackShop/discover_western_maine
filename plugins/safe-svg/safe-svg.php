@@ -3,7 +3,7 @@
 Plugin Name: Safe SVG
 Plugin URI:  https://wpsvg.com/
 Description: Allows SVG uploads into WordPress and sanitizes the SVG before saving it
-Version:     1.6.0
+Version:     1.6.1
 Author:      Daryll Doyle
 Author URI:  http://enshrined.co.uk
 Text Domain: safe-svg
@@ -186,8 +186,8 @@ if ( ! class_exists( 'safe_svg' ) ) {
 
 				foreach ( $possible_sizes as $size => $label ) {
 					$sizes[ $size ] = array(
-						'height'      => 2000,
-						'width'       => 2000,
+						'height'      => get_option( "{$size}_size_w", 2000 ),
+						'width'       => get_option( "{$size}_size_h", 2000 ),
 						'url'         => $response['url'],
 						'orientation' => 'portrait',
 					);
@@ -264,8 +264,21 @@ if ( ! class_exists( 'safe_svg' ) ) {
 			$mime = get_post_mime_type( $id );
 
 			if ( 'image/svg+xml' === $mime ) {
-				$html = str_replace( 'width="1" ', '', $html );
-				$html = str_replace( 'height="1" ', '', $html );
+			    if( is_array( $size ) ) {
+                    $width = $size[0];
+                    $height = $size[1];
+                } else {
+                    $width  = get_option( "{$size}_size_w", false );
+                    $height = get_option( "{$size}_size_h", false );
+                }
+
+                if( $height && $width ) {
+                    $html = str_replace( 'width="1" ', sprintf( 'width="%s" ', $width ), $html );
+                    $html = str_replace( 'height="1" ', sprintf( 'height="%s" ', $height ), $html );
+                } else {
+                    $html = str_replace( 'width="1" ', '', $html );
+                    $html = str_replace( 'height="1" ', '', $html );
+                }
 			}
 
 			return $html;
