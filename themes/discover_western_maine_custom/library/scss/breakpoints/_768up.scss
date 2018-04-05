@@ -333,7 +333,7 @@ body{
   a{
   	position: relative;
   }
-
+  /* For the maine next to the banner */
   .maine_svg {
     display: inline-block !important; 
     height: 37px;
@@ -353,6 +353,7 @@ body{
 	    background-color: $clear;
 	    top: 0;
 	    right: 0;
+	    /* For the maine next to the nav links */
 	    .maine_svg {
 	    	height: 24px;
     		width: 24px;
