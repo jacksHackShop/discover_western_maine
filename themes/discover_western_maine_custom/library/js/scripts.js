@@ -123,7 +123,8 @@ jQuery(document).ready(function($) {
 
 jQuery( document ).ajaxComplete(function() {
   preselect_new_phone_fields();
-  add_house_rules_section_to_new_calendars();
+  // commenting out for new terms of service
+  // add_house_rules_section_to_new_calendars();
   // make sure the calendar is showing, cause plugin is dumb
   document.getElementById('primary_calendar').style.display = 'block'; 
   document.getElementById('alternate_calendar').style.display = 'none';
