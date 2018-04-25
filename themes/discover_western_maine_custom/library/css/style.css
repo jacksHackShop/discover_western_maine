@@ -2905,6 +2905,8 @@ you can add resource intensive styles.
   #header {
     display: flex;
     align-items: baseline;
+    /* For the maine next to the banner */
+
   }
   /* line 330, ../scss/breakpoints/_768up.scss */
   #header h1 {
@@ -2934,63 +2936,67 @@ you can add resource intensive styles.
     background-color: rgba(255, 255, 255, 0);
     top: 0;
     right: 0;
+    /* For the maine next to the nav links */
   }
-  /* line 356, ../scss/breakpoints/_768up.scss */
+
   #header #pages .maine_svg {
     height: 24px;
     width: 24px;
     bottom: 50%;
     stroke-width: 3px;
   }
-  /* line 363, ../scss/breakpoints/_768up.scss */
+
   #header #pages a {
     color: inherit !important;
     transition: unset;
     margin: 0px 10px;
     position: relative;
   }
-  /* line 369, ../scss/breakpoints/_768up.scss */
+
   #header #pages a .underline {
     position: absolute;
     bottom: -5px;
     left: calc(calc(100% - 75px) / 2);
   }
-  /* line 376, ../scss/breakpoints/_768up.scss */
+  /* line 377, ../scss/breakpoints/_768up.scss */
   #header #pages a:hover .underline {
     display: inline-block;
   }
-  /* line 380, ../scss/breakpoints/_768up.scss */
+  /* line 381, ../scss/breakpoints/_768up.scss */
   #header #pages.show {
     right: 0px;
   }
-  /* line 382, ../scss/breakpoints/_768up.scss */
+  /* line 383, ../scss/breakpoints/_768up.scss */
   #header #pages.show a {
     margin-bottom: 0px;
   }
-  /* line 388, ../scss/breakpoints/_768up.scss */
+  /* line 389, ../scss/breakpoints/_768up.scss */
+
   #header #hamburger {
     display: none;
   }
 
   /* start home page */
-  /* line 394, ../scss/breakpoints/_768up.scss */
+  /* line 395, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav {
     top: calc(50% - 40px);
   }
-  /* line 396, ../scss/breakpoints/_768up.scss */
+  /* line 397, ../scss/breakpoints/_768up.scss */
+
   .image-gallery .gal_nav svg {
     height: 40px;
     width: 40px;
   }
-  /* line 400, ../scss/breakpoints/_768up.scss */
+  /* line 401, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav.next {
     right: 10px;
   }
-  /* line 403, ../scss/breakpoints/_768up.scss */
+  /* line 404, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav.prev {
     left: 10px;
   }
-  /* line 407, ../scss/breakpoints/_768up.scss */
+  /* line 408, ../scss/breakpoints/_768up.scss */
+
   .image-gallery.fullscreen {
     position: absolute;
     top: 0px;
@@ -3001,22 +3007,23 @@ you can add resource intensive styles.
     overflow: hidden;
     max-height: none;
   }
-  /* line 416, ../scss/breakpoints/_768up.scss */
+
   .image-gallery.fullscreen .gal_nav {
     display: none;
   }
 
   /* start property*/
-  /* line 424, ../scss/breakpoints/_768up.scss */
+  /* line 425, ../scss/breakpoints/_768up.scss */
   #property_details div {
     flex-direction: unset;
   }
-  /* line 427, ../scss/breakpoints/_768up.scss */
+  /* line 428, ../scss/breakpoints/_768up.scss */
+
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  /* line 433, ../scss/breakpoints/_768up.scss */
+
   #footer {
     position: absolute;
     bottom: 0px;
@@ -3061,7 +3068,8 @@ you can add resource intensive styles.
   }
   /* line 30, ../scss/breakpoints/_1030up.scss */
   #header #pages a {
-    margin: 0 7px;
+    margin: 0 16px;
+
   }
   /* line 32, ../scss/breakpoints/_1030up.scss */
   #header #pages a .maine_svg {
@@ -3142,53 +3150,56 @@ This is for the larger monitors and possibly full screen viewers.
 
   /* line 23, ../scss/breakpoints/_1240up.scss */
   #header #pages {
-    margin-left: 1%;
+    margin-left: auto;
+    margin-right: auto;
   }
-  /* line 26, ../scss/breakpoints/_1240up.scss */
+  /* line 27, ../scss/breakpoints/_1240up.scss */
+
   #header #pages a span {
     font-size: 32px;
     margin-right: 5px;
   }
-  /* line 30, ../scss/breakpoints/_1240up.scss */
   #header #pages a .underline {
     left: calc(calc(100% - 100px) / 2);
     width: 100px;
   }
 
-  /* line 39, ../scss/breakpoints/_1240up.scss */
+  /* line 40, ../scss/breakpoints/_1240up.scss */
   .home_page #container {
     max-width: none;
   }
-  /* line 42, ../scss/breakpoints/_1240up.scss */
+  /* line 43, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header {
     width: 100%;
     margin: 0 auto;
   }
-  /* line 45, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header h1 {
     margin-left: 50px;
     margin-top: 30px;
   }
-  /* line 49, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header .maine_svg {
     height: 100px;
     width: 100px;
     bottom: 25%;
   }
-  /* line 54, ../scss/breakpoints/_1240up.scss */
+  /* line 55, ../scss/breakpoints/_1240up.scss */
   .home_page #header #pages {
     margin: 0 auto;
   }
-  /* line 57, ../scss/breakpoints/_1240up.scss */
+  /* line 58, ../scss/breakpoints/_1240up.scss */
   .home_page #header #pages a span {
     font-size: 32px;
   }
-  /* line 60, ../scss/breakpoints/_1240up.scss */
+  /* line 61, ../scss/breakpoints/_1240up.scss */
+
   .home_page #header #pages a .underline {
     left: calc(calc(100% - 100px) / 2);
     width: 100px;
   }
-  /* line 67, ../scss/breakpoints/_1240up.scss */
+
   .home_page #footer {
     width: 100%;
   }

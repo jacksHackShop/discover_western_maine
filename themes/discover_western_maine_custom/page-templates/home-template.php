@@ -29,7 +29,7 @@
 
 				<div id="inner-content" class="cf">
 
-					<?php buildImageGallery(['fullscreen'], 'image_gallery'); ?>
+					<?php buildImageGallery(['fullscreen', 'attributed'], 'image_gallery'); ?>
 					
 
 				</div>
@@ -38,3 +38,4 @@
 
 
 <?php get_footer(); ?>
+<div></div>

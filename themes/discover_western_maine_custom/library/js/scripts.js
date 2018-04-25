@@ -162,35 +162,41 @@ function add_house_rules_section_to_new_calendars(){
 
 // Start gallery code
 document.addEventListener("DOMContentLoaded", function(event) { 
-  var galleries = document.getElementsByClassName('image-gallery') || [];
+    var galleries = document.getElementsByClassName('image-gallery') || [];
 
-  var SMOOTH_SCROLL_STEP = 30;
+    var SMOOTH_SCROLL_STEP = 30;
 
-  for( var i = 0; i < galleries.length; i++ ){
-    var this_gallery = galleries[i];
-    this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
-    this_gallery.children[1].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
-  }
+    for( var i = 0; i < galleries.length; i++ ){
+        var this_gallery = galleries[i];
+        this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
+        this_gallery.children[1].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
+    }
 
-  // if toggle calendar exsists, set up listener for it
-  var calendar_toggle = document.getElementById('toggle_calendar');
-  if (calendar_toggle){
-    calendar_toggle.addEventListener('click', function(e){
-      if(calendar_toggle.checked){
-        document.getElementById('primary_calendar').style.display = 'none';  
-        document.getElementById('alternate_calendar').style.display = 'block';
-      }
-      else {
-        document.getElementById('primary_calendar').style.display = 'block';  
-        document.getElementById('alternate_calendar').style.display = 'none';
-      }
+    // if toggle calendar exsists, set up listener for it
+    var calendar_toggle = document.getElementById('toggle_calendar');
+    if (calendar_toggle){
+        calendar_toggle.addEventListener('click', function(e){
+              if(calendar_toggle.checked){
+                    document.getElementById('primary_calendar').style.display = 'none';  
+                    document.getElementById('alternate_calendar').style.display = 'block';
+              }
+              else {
+                    document.getElementById('primary_calendar').style.display = 'block';  
+                    document.getElementById('alternate_calendar').style.display = 'none';
+              }
     });
-  }
-  if (galleries){
-    var auto_scroll_interval = window.setInterval(function(){
-      change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
-    }, 8000);
-  }
+    }
+    if (galleries){
+        var auto_scroll_interval = window.setInterval(function(){
+            change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
+        }, 8000);
+    }
+    var attributed_galleries = document.getElementsByClassName('attributed');
+    for (var i in attributed_galleries) {
+        attributed_galleries.addEventListener('contextmenu', function(){
+            
+        });
+    }
 });
 
 function change_gallery_target( change_by ){

@@ -408,6 +408,67 @@ function buildImageGallery($class_list, $field_name){
 }
 // end image gallery code
 
+add_role(
+  'Owner',
+  'Owner',
+  array(
+    'edit_others_pages' => true,
+    'edit_others_posts' => true,
+    'edit_pages' => true,
+    'edit_posts' => true,
+    'edit_private_pages' => true,
+    'edit_private_posts' => true,
+    'edit_published_pages' => true,
+    'edit_published_posts' => true,
+    'edit_plugins' => true,
+    'edit_theme_options' => true,
+    'read_private_pages' => true,
+    'read_private_posts' => true,
+    'read' => true,
+    'upload_files' => true,
+    'activate_plugins' => false,
+    'delete_others_pages' => false,
+    'delete_others_posts' => false,
+    'delete_pages' => false,
+    'delete_posts' => false,
+    'delete_private_pages' => false,
+    'delete_private_posts' => false,
+    'delete_published_pages' => false,
+    'delete_published_posts' => false,
+    'edit_dashboard' => false,
+    'export' => false,
+    'import' => false,
+    'list_users' => false,
+    'manage_categories' => false,
+    'manage_links' => false,
+    'manage_options' => false,
+    'moderate_comments' => false,
+    'promote_users' => false,
+    'publish_pages' => false,
+    'publish_posts' => false,
+    'remove_users' => false,
+    'switch_themes' => false,
+    'upload_files' => false,
+    'customize' => false,
+    'delete_site' => false,
+    'update_core' => false,
+    'update_plugins' => false,
+    'update_themes' => false,
+    'install_plugins' => false,
+    'install_themes' => false,
+    'upload_plugins' => false,
+    'upload_themes' => false,
+    'delete_themes' => false,
+    'delete_plugins' => false,
+    'edit_themes' => false,
+    'edit_files' => false,
+    'edit_users' => false,
+    'create_users' => false,
+    'delete_users' => false,
+    'unfiltered_html' => false
+  )
+);
+
 
 
 /** END OF CUSTOM FUNCTIONS  **/
