@@ -4,7 +4,7 @@ Donate link: https://wpsvg.com/
 Tags: svg, sanitize, upload, sanitise, security, svg upload, image, vector, file, graphic, media, mime
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ SVG Sanitization is done through the following library: [https://github.com/dary
 Install through the WordPress directory or download, unzip and upload the files to your `/wp-content/plugins/` directory
 
 == Changelog ==
+
+= 1.6.1 =
+* Images will now use the size chosen when inserted into the page rather than default to 2000px everytime.
 
 = 1.6.0 =
 * Fairly big new feature - The library now allows `<use>` elements as long as they don't reference external files!
