@@ -403,10 +403,114 @@ function buildImageGallery($class_list, $field_name){
               <circle cx="16" cy="16" opacity=".7" r="16"></circle>
               <polyline fill="none" points="11.5,3.5  24,16 11.5,28.5"></polyline> 
             </svg>
-          </div>
-        </div>';
+          </div>';
+
+  if (isset($image['text'])){
+    echo '<div class="reivew">';
+    if ($image['is_a_review']){
+      echo '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 2622.1 512" style="enable-background:new 0 0 2622.1 512;" xml:space="preserve">
+        <style type="text/css">
+          .st0{fill:#FFFFFF;}
+        </style>
+        <g>
+          <g id="star-rate">
+            <polygon class="st0" points="256,386.1 413.9,501.3 354.1,313.6 512,202.7 320,202.7 256,10.7 192,202.7 0,202.7 157.9,313.6 
+              98.1,501.3    "/>
+          </g>
+        </g>
+        <g>
+          <g id="star-rate_1_">
+            <polygon class="st0" points="1310.1,386.1 1467.9,501.3 1408.2,313.6 1566.1,202.7 1374.1,202.7 1310.1,10.7 1246.1,202.7 
+              1054.1,202.7 1211.9,313.6 1152.2,501.3    "/>
+          </g>
+        </g>
+        <g>
+          <g id="star-rate_2_">
+            <polygon class="st0" points="783,386.1 940.9,501.3 881.2,313.6 1039,202.7 847,202.7 783,10.7 719,202.7 527,202.7 684.9,313.6 
+              625.2,501.3     "/>
+          </g>
+        </g>
+        <g>
+          <g id="star-rate_3_">
+            <polygon class="st0" points="1838,386.1 1995.8,501.3 1936.1,313.6 2094,202.7 1902,202.7 1838,10.7 1774,202.7 1582,202.7 
+              1739.8,313.6 1680.1,501.3     "/>
+          </g>
+        </g>
+        <g>
+          <g id="star-rate_4_">
+            <polygon class="st0" points="2366.1,386.1 2524,501.3 2464.2,313.6 2622.1,202.7 2430.1,202.7 2366.1,10.7 2302.1,202.7 
+              2110.1,202.7 2268,313.6 2208.2,501.3    "/>
+          </g>
+        </g>
+        </svg>';
+    }
+    echo '<p class=review_text>'.$image['text'].'</p>';
+  }
+  echo '</div>';
 }
 // end image gallery code
+
+add_role(
+  'Owner',
+  'Owner',
+  array(
+    'edit_others_pages' => true,
+    'edit_others_posts' => true,
+    'edit_pages' => true,
+    'edit_posts' => true,
+    'edit_private_pages' => true,
+    'edit_private_posts' => true,
+    'edit_published_pages' => true,
+    'edit_published_posts' => true,
+    'edit_plugins' => true,
+    'edit_theme_options' => true,
+    'read_private_pages' => true,
+    'read_private_posts' => true,
+    'read' => true,
+    'upload_files' => true,
+    'activate_plugins' => false,
+    'delete_others_pages' => false,
+    'delete_others_posts' => false,
+    'delete_pages' => false,
+    'delete_posts' => false,
+    'delete_private_pages' => false,
+    'delete_private_posts' => false,
+    'delete_published_pages' => false,
+    'delete_published_posts' => false,
+    'edit_dashboard' => false,
+    'export' => false,
+    'import' => false,
+    'list_users' => false,
+    'manage_categories' => false,
+    'manage_links' => false,
+    'manage_options' => false,
+    'moderate_comments' => false,
+    'promote_users' => false,
+    'publish_pages' => false,
+    'publish_posts' => false,
+    'remove_users' => false,
+    'switch_themes' => false,
+    'upload_files' => false,
+    'customize' => false,
+    'delete_site' => false,
+    'update_core' => false,
+    'update_plugins' => false,
+    'update_themes' => false,
+    'install_plugins' => false,
+    'install_themes' => false,
+    'upload_plugins' => false,
+    'upload_themes' => false,
+    'delete_themes' => false,
+    'delete_plugins' => false,
+    'edit_themes' => false,
+    'edit_files' => false,
+    'edit_users' => false,
+    'create_users' => false,
+    'delete_users' => false,
+    'unfiltered_html' => false
+  )
+);
 
 
 

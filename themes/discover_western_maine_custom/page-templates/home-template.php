@@ -29,7 +29,7 @@
 
 				<div id="inner-content" class="cf">
 
-					<?php buildImageGallery(['fullscreen'], 'image_gallery'); ?>
+					<?php buildImageGallery(['fullscreen', 'attributed'], 'image_gallery'); ?>
 					
 
 				</div>
@@ -38,3 +38,4 @@
 
 
 <?php get_footer(); ?>
+<span id="yeahbud">Like these photos of Maine as much as we do?  Find more at <a href="www.yeahbudphotography.com">Yeah Bud! Photography</a></span>
