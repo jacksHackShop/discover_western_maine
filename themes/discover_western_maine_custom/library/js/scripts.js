@@ -191,15 +191,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
         }, 8000);
     }
-    var attributed_galleries = document.getElementsByClassName('attributed');
-    for (var i in attributed_galleries) {
-        attributed_galleries.addEventListener('contextmenu', function(){
-            
-        });
-    }
 });
 
-function change_gallery_target( change_by ){
+
+// TODO depricated, update ACF for property image gallery
+function change_gallery_target_old( change_by ){
   var this_gallery = this;
   var current_index = this_gallery.dataset.imageTarget * 1;
   var image_list = JSON.parse(this_gallery.dataset.imageSet);
@@ -211,5 +207,34 @@ function change_gallery_target( change_by ){
   this_gallery.style.backgroundImage = 'url('+image_list[index]+')';
   this_gallery.dataset.imageTarget = index;
 }
+
+function change_gallery_target( change_by ){
+  var this_gallery = this;
+  var current_index = this_gallery.dataset.imageTarget * 1;
+  var image_list = JSON.parse(this_gallery.dataset.imageSet);
+  // wrap around image set
+  var index = (current_index + change_by) % image_list.length;  
+  if (index < 0){
+    index = image_list.length - 1;
+  }
+  this_gallery.dataset.imageTarget = index;
+  
+  new_img_div = this_gallery.getElementsByClassName('gallery-image inactive')[0];
+  current_img_div = this_gallery.getElementsByClassName('gallery-image active')[0];
+  new_img_div.style.backgroundImage = 'url('+image_list[index]['image']+')';
+  new_img_div.dataset.imageTarget = index;
+  new_img_div.getElementsByClassName('review-text')[0].innerHTML = image_list[index]['text'];
+  if (image_list[index]['is_a_review']){
+    new_img_div.getElementsByClassName('five-star')[0].classList.add('active');
+  } else {
+    new_img_div.getElementsByClassName('five-star')[0].classList.remove('active');
+  }
+  // swap the divs
+  new_img_div.classList.remove('inactive');
+  new_img_div.classList.add('active');
+  current_img_div.classList.remove('active');
+  current_img_div.classList.add('inactive');
+}
+
 // end gallery code
 /* END CHRIS CODE */

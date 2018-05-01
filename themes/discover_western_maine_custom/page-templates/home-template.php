@@ -38,4 +38,4 @@
 
 
 <?php get_footer(); ?>
-<span id="yeahbud">Like these photos of Maine as much as we do?  Find more at <a href="www.yeahbudphotography.com">Yeah Bud! Photography</a></span>
+<span id="yeahbud">Like these photos of Maine as much as we do?  Find more at <a href="http://www.yeahbudphotography.com" target="_blank">Yeah Bud! Photography</a></span>
