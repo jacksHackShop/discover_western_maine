@@ -915,6 +915,15 @@ body{
 			text-decoration: none;
 		}
 
+		#container{
+			max-width: none;
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		}
+
 		.maine_svg{
 			fill:$white;
 			stroke: $white;
@@ -932,6 +941,9 @@ body{
     		a {
     			text-decoration: underline;
     		}
+		}
+		.gal_nav{
+			display: none;
 		}
 	}
 	&.property_page{
@@ -1142,6 +1154,7 @@ body{
 		cursor: pointer;
 		text-align: center;
 		vertical-align: middle;
+
 		svg{
 			height:20px;
 			width:20px;
