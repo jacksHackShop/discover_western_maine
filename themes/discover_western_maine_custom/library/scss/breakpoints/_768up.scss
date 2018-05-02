@@ -291,31 +291,29 @@ body{
 	&.home_page{
 		.icon:hover{
 			border-radius:10px;
-		  background-color:$white !important;
-		  color:$dark-gray;
-		  stroke:$dark-gray;
-		  fill:$dark-gray;
+			background-color:$white !important;
+			color:$dark-gray;
+			stroke:$dark-gray;
+			fill:$dark-gray;
 		}
-		#container{
-			position: static;
-		}
+		
 	}
 	&.property_page{
 		.icon:hover{
 			border-radius:10px;
-		  background-color:$black !important;
-		  color:$white;
-		  stroke:$white;
-		  fill:$white;
+			background-color:$black !important;
+			color:$white;
+			stroke:$white;
+			fill:$white;
 		}
 	}
 	&.about_page{
 		.icon:hover{
 			border-radius:10px;
-		  background-color:$bright-gray !important;
-		  color:$dark-gray;
-		  stroke:$dark-gray;
-		  fill:$dark-gray;
+			background-color:$bright-gray !important;
+			color:$dark-gray;
+			stroke:$dark-gray;
+			fill:$dark-gray;
 		}
 	}
 }
@@ -324,6 +322,7 @@ body{
 	position: relative;
 	padding-bottom:80px;
 }
+
 #header{
 	display: flex;
   align-items: baseline;
