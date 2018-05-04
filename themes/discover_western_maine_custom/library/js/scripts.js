@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     for( var i = 0; i < galleries.length; i++ ){
         var this_gallery = galleries[i];
         this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
-        this_gallery.children[1].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
+        this_gallery.children[3].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
     }
 
     // if toggle calendar exsists, set up listener for it
@@ -189,9 +189,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var auto_scroll_interval = window.setInterval(function(){
             change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
         }, 8000);
+        imageGalleryPreload('image-gallery');
     }
 });
 
+// returns the appropriate image size based on the size if the gallery div
+function getImageSize(element){
+    var width = element.offesetWidth;
+    if (width < 490) {
+        return 'thumbnail';
+    } else if (width < 740) {
+        return 'medium';
+    } else if (width < 1400) {
+        return 'large';
+    } else {
+        return 'hd';
+    }
+
+}
+
+// preloads images for image gallery
+function imageGalleryPreload(gallery_class){
+    var galleries = document.getElementsByClassName(gallery_class);
+    for (var i = 0; i < galleries.length; i++) {
+        var gallery_images = JSON.parse(galleries[i].dataset.imageSet);
+        var size = getImageSize(galleries[i]);
+        for (var j = 0; j < gallery_images.length; j++) {
+            var image = new Image;
+            image.src =gallery_images[j]['image']['sizes'][size];
+        }
+    }
+}
 
 function change_gallery_target( change_by ){
   var this_gallery = this;
