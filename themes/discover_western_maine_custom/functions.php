@@ -413,7 +413,7 @@ function fontLoader(){
     $encoded_font = str_replace(' ', '+', $font);
     $link_tag .= $encoded_font.'|';
   }
-  trim($link_tag, '|');
+  $link_tag = trim($link_tag, '|');
   $link_tag .= "' rel='stylesheet'>";
   return $link_tag;
 }

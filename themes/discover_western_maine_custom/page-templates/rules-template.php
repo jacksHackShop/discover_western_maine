@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Rules
+ Template Name: About
  *
  * This is your custom page template. You can create as many of these as you need.
  * Simply name is "page-whatever.php" and in add the "Template Name" title at the
@@ -16,10 +16,10 @@
 	get_header(); 
 	the_post(); 
 ?>
-<body <?php body_class('rule_page'); ?> itemscope itemtype="http://schema.org/WebPage">
+<body <?php body_class('about_page'); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container" class="cf">
-      <div id="header" class="about_nav">
+	<div id="container" class="cf">
+      <div id="header">
 		
 				<?php 
           // custom navigation function
@@ -30,7 +30,9 @@
 			<div id="content">
 
 				<div id="inner-content" class="cf">
-					
+					<h2><?php echo get_field('property_title'); ?> Rules</h2>
+					<div id="rules_text"><?php echo get_field('rules'); ?></div>
+
 				</div>
 
 			</div>

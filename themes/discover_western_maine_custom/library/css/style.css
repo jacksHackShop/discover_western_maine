@@ -2419,27 +2419,26 @@ body.about_page .icon {
 }
 /* line 1130, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review {
-  width: 40%;
-  font-size: 12pt;
-  max-width: 300px;
-  text-shadow: 1px 1px black;
+  width: 60%;
+  font-size: 12px;
+  text-shadow: 0px 0px 1px #929292;
 }
-/* line 1135, ../scss/breakpoints/_base.scss */
+/* line 1134, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review .five-star {
   display: none;
   margin: 0 auto;
   width: 50%;
   height: 1em;
 }
-/* line 1140, ../scss/breakpoints/_base.scss */
+/* line 1139, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review .five-star.active {
   display: block;
 }
-/* line 1144, ../scss/breakpoints/_base.scss */
+/* line 1143, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review .review-text {
   text-align: center;
 }
-/* line 1149, ../scss/breakpoints/_base.scss */
+/* line 1148, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav {
   position: absolute;
   top: calc(50% - 40px);
@@ -2449,18 +2448,22 @@ body.about_page .icon {
   text-align: center;
   vertical-align: middle;
 }
-/* line 1158, ../scss/breakpoints/_base.scss */
+/* line 1157, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav svg {
   height: 20px;
   width: 20px;
 }
-/* line 1161, ../scss/breakpoints/_base.scss */
+/* line 1160, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav svg polyline {
   fill: none !important;
 }
-/* line 1164, ../scss/breakpoints/_base.scss */
+/* line 1163, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav svg circle {
   stroke: none !important;
+}
+/* line 1168, ../scss/breakpoints/_base.scss */
+.image-gallery .gal_nav.prev {
+  z-index: 1;
 }
 /* line 1171, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav.next {
@@ -2748,6 +2751,12 @@ tweeners.
   /* line 125, ../scss/breakpoints/_481up.scss */
   #stat_list li span {
     margin: 0 7px;
+  }
+
+  /* line 133, ../scss/breakpoints/_481up.scss */
+  .image-gallery .gallery-image .review {
+    font-size: 18px;
+    width: 50%;
   }
 }
 /*********************
@@ -3051,7 +3060,16 @@ you can add resource intensive styles.
   .image-gallery .gal_nav.prev {
     left: 10px;
   }
-  /* line 407, ../scss/breakpoints/_768up.scss */
+  /* line 408, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gallery-image .review {
+    font-size: 30px;
+    width: 600px;
+  }
+  /* line 411, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gallery-image .review .five-star {
+    margin-bottom: 50px;
+  }
+  /* line 417, ../scss/breakpoints/_768up.scss */
   .image-gallery.fullscreen {
     position: absolute;
     top: 0px;
@@ -3062,22 +3080,22 @@ you can add resource intensive styles.
     overflow: hidden;
     max-height: none;
   }
-  /* line 416, ../scss/breakpoints/_768up.scss */
+  /* line 426, ../scss/breakpoints/_768up.scss */
   .image-gallery.fullscreen .gal_nav {
     display: none;
   }
 
   /* start property*/
-  /* line 424, ../scss/breakpoints/_768up.scss */
+  /* line 434, ../scss/breakpoints/_768up.scss */
   #property_details div {
     flex-direction: unset;
   }
-  /* line 427, ../scss/breakpoints/_768up.scss */
+  /* line 437, ../scss/breakpoints/_768up.scss */
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  /* line 433, ../scss/breakpoints/_768up.scss */
+  /* line 443, ../scss/breakpoints/_768up.scss */
   #footer {
     position: absolute;
     bottom: 0px;
