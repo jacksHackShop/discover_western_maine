@@ -268,6 +268,12 @@ do they need tweaking?
   margin: 0 7px;
 }
 
+/* line 133, ../scss/breakpoints/_481up.scss */
+.image-gallery .gallery-image .review {
+  font-size: 18px;
+  width: 50%;
+}
+
 /******************************************************************
 Site Name:
 Author:
@@ -562,7 +568,16 @@ body.about_page .icon:hover {
 .image-gallery .gal_nav.prev {
   left: 10px;
 }
-/* line 407, ../scss/breakpoints/_768up.scss */
+/* line 408, ../scss/breakpoints/_768up.scss */
+.image-gallery .gallery-image .review {
+  font-size: 30px;
+  width: 600px;
+}
+/* line 411, ../scss/breakpoints/_768up.scss */
+.image-gallery .gallery-image .review .five-star {
+  margin-bottom: 50px;
+}
+/* line 417, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen {
   position: absolute;
   top: 0px;
@@ -573,22 +588,22 @@ body.about_page .icon:hover {
   overflow: hidden;
   max-height: none;
 }
-/* line 416, ../scss/breakpoints/_768up.scss */
+/* line 426, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen .gal_nav {
   display: none;
 }
 
 /* start property*/
-/* line 424, ../scss/breakpoints/_768up.scss */
+/* line 434, ../scss/breakpoints/_768up.scss */
 #property_details div {
   flex-direction: unset;
 }
-/* line 427, ../scss/breakpoints/_768up.scss */
+/* line 437, ../scss/breakpoints/_768up.scss */
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* line 433, ../scss/breakpoints/_768up.scss */
+/* line 443, ../scss/breakpoints/_768up.scss */
 #footer {
   position: absolute;
   bottom: 0px;

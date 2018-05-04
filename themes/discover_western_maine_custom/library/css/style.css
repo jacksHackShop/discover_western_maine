@@ -2419,27 +2419,26 @@ body.about_page .icon {
 }
 /* line 1130, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review {
-  width: 40%;
-  font-size: 12pt;
-  max-width: 300px;
-  text-shadow: 1px 1px black;
+  width: 60%;
+  font-size: 12px;
+  text-shadow: 0px 0px 1px #929292;
 }
-/* line 1135, ../scss/breakpoints/_base.scss */
+/* line 1134, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review .five-star {
   display: none;
   margin: 0 auto;
   width: 50%;
   height: 1em;
 }
-/* line 1140, ../scss/breakpoints/_base.scss */
+/* line 1139, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review .five-star.active {
   display: block;
 }
-/* line 1144, ../scss/breakpoints/_base.scss */
+/* line 1143, ../scss/breakpoints/_base.scss */
 .image-gallery .gallery-image .review .review-text {
   text-align: center;
 }
-/* line 1149, ../scss/breakpoints/_base.scss */
+/* line 1148, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav {
   position: absolute;
   top: calc(50% - 40px);
@@ -2449,35 +2448,35 @@ body.about_page .icon {
   text-align: center;
   vertical-align: middle;
 }
-/* line 1158, ../scss/breakpoints/_base.scss */
+/* line 1157, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav svg {
   height: 20px;
   width: 20px;
 }
-/* line 1161, ../scss/breakpoints/_base.scss */
+/* line 1160, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav svg polyline {
   fill: none !important;
 }
-/* line 1164, ../scss/breakpoints/_base.scss */
+/* line 1163, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav svg circle {
   stroke: none !important;
 }
-/* line 1169, ../scss/breakpoints/_base.scss */
+/* line 1168, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav.prev {
   z-index: 1;
 }
-/* line 1172, ../scss/breakpoints/_base.scss */
+/* line 1171, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav.next {
   right: 0px;
 }
-/* line 1175, ../scss/breakpoints/_base.scss */
+/* line 1174, ../scss/breakpoints/_base.scss */
 .image-gallery .gal_nav.faded {
   opacity: .5;
 }
 
 /* end image gallery */
 /* START PROPERTY PAGE */
-/* line 1186, ../scss/breakpoints/_base.scss */
+/* line 1185, ../scss/breakpoints/_base.scss */
 #property_title {
   margin-left: 15%;
   font-size: 1.8em;
@@ -2485,53 +2484,53 @@ body.about_page .icon {
   margin-bottom: 0;
 }
 
-/* line 1193, ../scss/breakpoints/_base.scss */
+/* line 1192, ../scss/breakpoints/_base.scss */
 #stat_list {
   margin-left: 10%;
 }
-/* line 1195, ../scss/breakpoints/_base.scss */
+/* line 1194, ../scss/breakpoints/_base.scss */
 #stat_list li {
   display: flex;
   align-items: center;
   font-size: 1.3em;
 }
-/* line 1199, ../scss/breakpoints/_base.scss */
+/* line 1198, ../scss/breakpoints/_base.scss */
 #stat_list li span {
   margin: 0 20px;
 }
-/* line 1202, ../scss/breakpoints/_base.scss */
+/* line 1201, ../scss/breakpoints/_base.scss */
 #stat_list li .stat_image {
   height: 3em;
 }
 
-/* line 1213, ../scss/breakpoints/_base.scss */
+/* line 1212, ../scss/breakpoints/_base.scss */
 .calendar_container {
   overflow: hidden;
   width: 100%;
 }
-/* line 1216, ../scss/breakpoints/_base.scss */
+/* line 1215, ../scss/breakpoints/_base.scss */
 .calendar_container #toggle_calendar {
   margin-left: 2em;
 }
-/* line 1219, ../scss/breakpoints/_base.scss */
+/* line 1218, ../scss/breakpoints/_base.scss */
 .calendar_container .calendar_title {
   text-align: center;
   font-size: 2em;
 }
-/* line 1225, ../scss/breakpoints/_base.scss */
+/* line 1224, ../scss/breakpoints/_base.scss */
 .calendar_container .calendar.hidden {
   display: none;
 }
 
-/* line 1233, ../scss/breakpoints/_base.scss */
+/* line 1232, ../scss/breakpoints/_base.scss */
 #property_details h5 {
   font-size: 1.1em;
 }
-/* line 1237, ../scss/breakpoints/_base.scss */
+/* line 1236, ../scss/breakpoints/_base.scss */
 #property_details .detail_row {
   display: flex;
 }
-/* line 1239, ../scss/breakpoints/_base.scss */
+/* line 1238, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial {
   display: flex;
   align-items: center;
@@ -2539,39 +2538,39 @@ body.about_page .icon {
   background-color: #cacaca;
   overflow: hidden;
 }
-/* line 1245, ../scss/breakpoints/_base.scss */
+/* line 1244, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper {
   margin: 0px 10px;
 }
-/* line 1247, ../scss/breakpoints/_base.scss */
+/* line 1246, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper p {
   font-size: 1.5em;
   margin: 0 5%;
   text-align: center;
   padding: 0 60px;
 }
-/* line 1253, ../scss/breakpoints/_base.scss */
+/* line 1252, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper .quote {
   height: 60px;
   width: 60px;
   position: relative;
 }
-/* line 1261, ../scss/breakpoints/_base.scss */
+/* line 1260, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper .close {
   left: calc(100% - 60px);
 }
-/* line 1267, ../scss/breakpoints/_base.scss */
+/* line 1266, ../scss/breakpoints/_base.scss */
 #property_details div {
   flex-direction: column;
 }
 
 /* END PROPERTY PAGE */
 /* START ABOUT PAGE */
-/* line 1274, ../scss/breakpoints/_base.scss */
+/* line 1273, ../scss/breakpoints/_base.scss */
 .text_image_pair .text_body {
   padding: 2em;
 }
-/* line 1277, ../scss/breakpoints/_base.scss */
+/* line 1276, ../scss/breakpoints/_base.scss */
 .text_image_pair .illustration_container {
   background-size: cover;
   background-position: center;
@@ -2579,7 +2578,7 @@ body.about_page .icon {
   max-height: 600px;
 }
 
-/* line 1285, ../scss/breakpoints/_base.scss */
+/* line 1284, ../scss/breakpoints/_base.scss */
 #map iframe {
   width: 100%;
   height: 80vh;
@@ -2587,7 +2586,7 @@ body.about_page .icon {
 
 /* END ABOUT PAGE */
 /* START FOOTER STYLES */
-/* line 1292, ../scss/breakpoints/_base.scss */
+/* line 1291, ../scss/breakpoints/_base.scss */
 #footer {
   display: flex;
   position: absolute;
@@ -2596,45 +2595,45 @@ body.about_page .icon {
   margin: 10px 0px;
   width: 100%;
 }
-/* line 1300, ../scss/breakpoints/_base.scss */
+/* line 1299, ../scss/breakpoints/_base.scss */
 #footer div {
   position: relative;
   display: inline-flex;
   margin: auto;
 }
-/* line 1304, ../scss/breakpoints/_base.scss */
+/* line 1303, ../scss/breakpoints/_base.scss */
 #footer div.footer_container {
   margin: 0px auto;
   flex-direction: column;
 }
-/* line 1307, ../scss/breakpoints/_base.scss */
+/* line 1306, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row {
   flex-direction: row;
   align-items: center;
   align-self: center;
 }
-/* line 1311, ../scss/breakpoints/_base.scss */
+/* line 1310, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row svg {
   vertical-align: middle;
 }
-/* line 1314, ../scss/breakpoints/_base.scss */
+/* line 1313, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row span {
   vertical-align: middle;
 }
-/* line 1319, ../scss/breakpoints/_base.scss */
+/* line 1318, ../scss/breakpoints/_base.scss */
 #footer div#contact_info {
   align-items: center;
 }
-/* line 1322, ../scss/breakpoints/_base.scss */
+/* line 1321, ../scss/breakpoints/_base.scss */
 #footer div span {
   margin: 0px 4px;
 }
-/* line 1325, ../scss/breakpoints/_base.scss */
+/* line 1324, ../scss/breakpoints/_base.scss */
 #footer div .icon {
   background-color: rgba(255, 255, 255, 0);
   padding: 2px;
 }
-/* line 1328, ../scss/breakpoints/_base.scss */
+/* line 1327, ../scss/breakpoints/_base.scss */
 #footer div .icon svg {
   height: 30px;
   width: 30px;
@@ -2752,6 +2751,12 @@ tweeners.
   /* line 125, ../scss/breakpoints/_481up.scss */
   #stat_list li span {
     margin: 0 7px;
+  }
+
+  /* line 133, ../scss/breakpoints/_481up.scss */
+  .image-gallery .gallery-image .review {
+    font-size: 18px;
+    width: 50%;
   }
 }
 /*********************
@@ -3055,7 +3060,16 @@ you can add resource intensive styles.
   .image-gallery .gal_nav.prev {
     left: 10px;
   }
-  /* line 407, ../scss/breakpoints/_768up.scss */
+  /* line 408, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gallery-image .review {
+    font-size: 30px;
+    width: 600px;
+  }
+  /* line 411, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gallery-image .review .five-star {
+    margin-bottom: 50px;
+  }
+  /* line 417, ../scss/breakpoints/_768up.scss */
   .image-gallery.fullscreen {
     position: absolute;
     top: 0px;
@@ -3066,22 +3080,22 @@ you can add resource intensive styles.
     overflow: hidden;
     max-height: none;
   }
-  /* line 416, ../scss/breakpoints/_768up.scss */
+  /* line 426, ../scss/breakpoints/_768up.scss */
   .image-gallery.fullscreen .gal_nav {
     display: none;
   }
 
   /* start property*/
-  /* line 424, ../scss/breakpoints/_768up.scss */
+  /* line 434, ../scss/breakpoints/_768up.scss */
   #property_details div {
     flex-direction: unset;
   }
-  /* line 427, ../scss/breakpoints/_768up.scss */
+  /* line 437, ../scss/breakpoints/_768up.scss */
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  /* line 433, ../scss/breakpoints/_768up.scss */
+  /* line 443, ../scss/breakpoints/_768up.scss */
   #footer {
     position: absolute;
     bottom: 0px;

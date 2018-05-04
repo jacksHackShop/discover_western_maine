@@ -404,6 +404,16 @@ body{
 			left: 10px;
 		}
 	}
+	.gallery-image{
+		.review{
+			font-size:30px;
+			width: 600px;
+			.five-star{
+				margin-bottom: 50px;
+			}
+		}
+	}
+
 	&.fullscreen{
 		position: absolute;
 		top: 0px;
