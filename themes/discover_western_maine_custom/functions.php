@@ -418,6 +418,17 @@ function fontLoader(){
   return $link_tag;
 }
 
+// register 1080p size for images
+add_image_size( 'hd', 1600, 1600, false );
+
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+ 
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'hd' => __( 'Full HD' ),
+    ) );
+}
+
 // start image gallery code
 
 function buildImageGallery($class_list, $field_name){
@@ -429,7 +440,6 @@ function buildImageGallery($class_list, $field_name){
     array_push($images_array, $image);
 
   }
-  var_dump($images_array[0]['image']);
   $images_dataset = json_encode($images_array);
   $five_star_class =  $images_array[0]['is_a_review'] ? 'five-star active' : 'five-star';
   echo "<div class='image-gallery {$string_class_list}' data-image-target='0' data-image-set='
@@ -441,7 +451,7 @@ function buildImageGallery($class_list, $field_name){
             </svg>
           </div>";
   // add two image div for transition
-  echo   "<div class='gallery-image active' style='background-image:url(\"{$images_array[0]['image']}\")'>
+  echo   "<div class='gallery-image active' style='background-image:url(\"{$images_array[0]['image']['sizes']['hd']}\")'>
            <div class='review'>".
       "<div class='{$five_star_class}'>".getFiveStar()."</div>".
               '<div class="review-text">'.$images_array[0]['text'].'</div>

@@ -127,7 +127,6 @@ jQuery( document ).ajaxComplete(function() {
   // add_house_rules_section_to_new_calendars();
   // make sure the calendar is showing, cause plugin is dumb
   document.getElementById('primary_calendar').style.display = 'block'; 
-  document.getElementById('alternate_calendar').style.display = 'none';
 });
 
 function preselect_new_phone_fields() {
@@ -194,20 +193,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 
-// TODO depricated, update ACF for property image gallery
-function change_gallery_target_old( change_by ){
-  var this_gallery = this;
-  var current_index = this_gallery.dataset.imageTarget * 1;
-  var image_list = JSON.parse(this_gallery.dataset.imageSet);
-  // wrap around image set
-  var index = (current_index + change_by) % image_list.length;  
-  if (index < 0){
-    index = image_list.length - 1;
-  }
-  this_gallery.style.backgroundImage = 'url('+image_list[index]+')';
-  this_gallery.dataset.imageTarget = index;
-}
-
 function change_gallery_target( change_by ){
   var this_gallery = this;
   var current_index = this_gallery.dataset.imageTarget * 1;
@@ -218,10 +203,10 @@ function change_gallery_target( change_by ){
     index = image_list.length - 1;
   }
   this_gallery.dataset.imageTarget = index;
-  
+
   new_img_div = this_gallery.getElementsByClassName('gallery-image inactive')[0];
   current_img_div = this_gallery.getElementsByClassName('gallery-image active')[0];
-  new_img_div.style.backgroundImage = 'url('+image_list[index]['image']+')';
+  new_img_div.style.backgroundImage = 'url('+image_list[index]['image']['sizes']['hd']+')';
   new_img_div.dataset.imageTarget = index;
   new_img_div.getElementsByClassName('review-text')[0].innerHTML = image_list[index]['text'];
   if (image_list[index]['is_a_review']){
