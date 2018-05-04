@@ -448,11 +448,7 @@ body.home_page .icon:hover {
   stroke: #484848;
   fill: #484848;
 }
-/* line 299, ../scss/breakpoints/_768up.scss */
-body.home_page #container {
-  position: static;
-}
-/* line 304, ../scss/breakpoints/_768up.scss */
+/* line 302, ../scss/breakpoints/_768up.scss */
 body.property_page .icon:hover {
   border-radius: 10px;
   background-color: #000000 !important;
@@ -460,7 +456,7 @@ body.property_page .icon:hover {
   stroke: #ffffff;
   fill: #ffffff;
 }
-/* line 313, ../scss/breakpoints/_768up.scss */
+/* line 311, ../scss/breakpoints/_768up.scss */
 body.about_page .icon:hover {
   border-radius: 10px;
   background-color: #cacaca !important;
@@ -469,27 +465,27 @@ body.about_page .icon:hover {
   fill: #484848;
 }
 
-/* line 323, ../scss/breakpoints/_768up.scss */
+/* line 321, ../scss/breakpoints/_768up.scss */
 #container {
   position: relative;
   padding-bottom: 80px;
 }
 
-/* line 327, ../scss/breakpoints/_768up.scss */
+/* line 326, ../scss/breakpoints/_768up.scss */
 #header {
   display: flex;
   align-items: baseline;
   /* For the maine next to the banner */
 }
-/* line 330, ../scss/breakpoints/_768up.scss */
+/* line 329, ../scss/breakpoints/_768up.scss */
 #header h1 {
   font-size: 7vw;
 }
-/* line 333, ../scss/breakpoints/_768up.scss */
+/* line 332, ../scss/breakpoints/_768up.scss */
 #header a {
   position: relative;
 }
-/* line 337, ../scss/breakpoints/_768up.scss */
+/* line 336, ../scss/breakpoints/_768up.scss */
 #header .maine_svg {
   display: inline-block !important;
   height: 37px;
@@ -499,7 +495,7 @@ body.about_page .icon:hover {
   bottom: 50%;
   stroke-width: 3px;
 }
-/* line 347, ../scss/breakpoints/_768up.scss */
+/* line 346, ../scss/breakpoints/_768up.scss */
 #header #pages {
   display: block;
   position: relative;
@@ -511,62 +507,62 @@ body.about_page .icon:hover {
   right: 0;
   /* For the maine next to the nav links */
 }
-/* line 357, ../scss/breakpoints/_768up.scss */
+/* line 356, ../scss/breakpoints/_768up.scss */
 #header #pages .maine_svg {
   height: 24px;
   width: 24px;
   bottom: 50%;
   stroke-width: 3px;
 }
-/* line 364, ../scss/breakpoints/_768up.scss */
+/* line 363, ../scss/breakpoints/_768up.scss */
 #header #pages a {
   color: inherit !important;
   transition: unset;
   margin: 0px 10px;
   position: relative;
 }
-/* line 370, ../scss/breakpoints/_768up.scss */
+/* line 369, ../scss/breakpoints/_768up.scss */
 #header #pages a .underline {
   position: absolute;
   bottom: -5px;
   left: calc(calc(100% - 75px) / 2);
 }
-/* line 377, ../scss/breakpoints/_768up.scss */
+/* line 376, ../scss/breakpoints/_768up.scss */
 #header #pages a:hover .underline {
   display: inline-block;
 }
-/* line 381, ../scss/breakpoints/_768up.scss */
+/* line 380, ../scss/breakpoints/_768up.scss */
 #header #pages.show {
   right: 0px;
 }
-/* line 383, ../scss/breakpoints/_768up.scss */
+/* line 382, ../scss/breakpoints/_768up.scss */
 #header #pages.show a {
   margin-bottom: 0px;
 }
-/* line 389, ../scss/breakpoints/_768up.scss */
+/* line 388, ../scss/breakpoints/_768up.scss */
 #header #hamburger {
   display: none;
 }
 
 /* start home page */
-/* line 395, ../scss/breakpoints/_768up.scss */
+/* line 394, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav {
   top: calc(50% - 40px);
 }
-/* line 397, ../scss/breakpoints/_768up.scss */
+/* line 396, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav svg {
   height: 40px;
   width: 40px;
 }
-/* line 401, ../scss/breakpoints/_768up.scss */
+/* line 400, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav.next {
   right: 10px;
 }
-/* line 404, ../scss/breakpoints/_768up.scss */
+/* line 403, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav.prev {
   left: 10px;
 }
-/* line 408, ../scss/breakpoints/_768up.scss */
+/* line 407, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen {
   position: absolute;
   top: 0px;
@@ -577,22 +573,22 @@ body.about_page .icon:hover {
   overflow: hidden;
   max-height: none;
 }
-/* line 417, ../scss/breakpoints/_768up.scss */
+/* line 416, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen .gal_nav {
   display: none;
 }
 
 /* start property*/
-/* line 425, ../scss/breakpoints/_768up.scss */
+/* line 424, ../scss/breakpoints/_768up.scss */
 #property_details div {
   flex-direction: unset;
 }
-/* line 428, ../scss/breakpoints/_768up.scss */
+/* line 427, ../scss/breakpoints/_768up.scss */
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* line 434, ../scss/breakpoints/_768up.scss */
+/* line 433, ../scss/breakpoints/_768up.scss */
 #footer {
   position: absolute;
   bottom: 0px;
