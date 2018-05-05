@@ -30,8 +30,10 @@
 			<div id="content">
 
 				<div id="inner-content" class="cf">
-					<h2><?php echo get_field('property_title'); ?> Rules</h2>
-					<div id="rules_text"><?php echo get_field('rules'); ?></div>
+					<div id="rules_wrapper">
+						<h2><?php echo get_field('property_title'); ?> Rules</h2>
+						<div id="rules_text"><?php echo get_field('rules'); ?></div>
+					</div>
 
 				</div>
 

@@ -2585,8 +2585,17 @@ body.about_page .icon {
 }
 
 /* END ABOUT PAGE */
-/* START FOOTER STYLES */
+/* START RULES PAGE */
 /* line 1291, ../scss/breakpoints/_base.scss */
+#rules_wrapper {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* END RULES PAGE */
+/* START FOOTER STYLES */
+/* line 1298, ../scss/breakpoints/_base.scss */
 #footer {
   display: flex;
   position: absolute;
@@ -2595,45 +2604,45 @@ body.about_page .icon {
   margin: 10px 0px;
   width: 100%;
 }
-/* line 1299, ../scss/breakpoints/_base.scss */
+/* line 1306, ../scss/breakpoints/_base.scss */
 #footer div {
   position: relative;
   display: inline-flex;
   margin: auto;
 }
-/* line 1303, ../scss/breakpoints/_base.scss */
+/* line 1310, ../scss/breakpoints/_base.scss */
 #footer div.footer_container {
   margin: 0px auto;
   flex-direction: column;
 }
-/* line 1306, ../scss/breakpoints/_base.scss */
+/* line 1313, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row {
   flex-direction: row;
   align-items: center;
   align-self: center;
 }
-/* line 1310, ../scss/breakpoints/_base.scss */
+/* line 1317, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row svg {
   vertical-align: middle;
 }
-/* line 1313, ../scss/breakpoints/_base.scss */
+/* line 1320, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row span {
   vertical-align: middle;
 }
-/* line 1318, ../scss/breakpoints/_base.scss */
+/* line 1325, ../scss/breakpoints/_base.scss */
 #footer div#contact_info {
   align-items: center;
 }
-/* line 1321, ../scss/breakpoints/_base.scss */
+/* line 1328, ../scss/breakpoints/_base.scss */
 #footer div span {
   margin: 0px 4px;
 }
-/* line 1324, ../scss/breakpoints/_base.scss */
+/* line 1331, ../scss/breakpoints/_base.scss */
 #footer div .icon {
   background-color: rgba(255, 255, 255, 0);
   padding: 2px;
 }
-/* line 1327, ../scss/breakpoints/_base.scss */
+/* line 1334, ../scss/breakpoints/_base.scss */
 #footer div .icon svg {
   height: 30px;
   width: 30px;
