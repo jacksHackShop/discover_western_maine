@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               }
     });
     }
-    if (galleries){
+    if (galleries.length > 0){
         var auto_scroll_interval = window.setInterval(function(){
             change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
         }, 8000);
