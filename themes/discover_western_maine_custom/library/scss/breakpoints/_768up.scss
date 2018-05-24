@@ -306,6 +306,37 @@ body{
 			stroke:$white;
 			fill:$white;
 		}
+		
+		#gallery-nav{
+			position: relative;
+			.slick-custom-arrow {
+			    position: absolute;
+			    font-size: 20px;
+			    top: 55px;
+			    cursor: pointer;
+			    display: block !important;
+    		}
+    		#slick-custom-prev {
+				left: calc(20% - 20px);
+    		}
+    		#slick-custom-next {
+    			right: calc(20% - 20px);
+    		}
+			.slick-nav{
+				width: 60%;
+	    		margin-left: 20%;
+				.slick-nav-img {
+					img{
+						height: 150px;
+	    				max-width: 200px;
+	    				margin: 0 10px;
+					}
+				}
+			}
+			.slick-dots {
+				display: block !important;
+			}
+		}
 	}
 	&.about_page{
 		.icon:hover{
@@ -406,8 +437,9 @@ body{
 	}
 	.gallery-image{
 		.review{
-			font-size:30px;
-			width: 600px;
+			width: 50%;
+		    position: absolute;
+		    left: 0;
 			.five-star{
 				margin-bottom: 50px;
 			}

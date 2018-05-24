@@ -30,6 +30,17 @@
 				<div id="inner-content" class="cf">
 
 					<?php buildImageGallery(['fullscreen', 'attributed'], 'image_gallery'); ?>
+                    <div id="about-properties">
+                        <?php $summeries = get_field('property_summery');
+                        foreach ($summeries as $summery) : ?>
+                        <div class="image" style="background-image:url(<?php echo $summery['thumbnail']['sizes']['thumbnail']; ?>);">
+                            <div class="text"><?php echo $summery['summery']; ?></div>
+                        </div>
+                        <?php endforeach;?>
+                        <div class="text">
+                            <?php echo get_field('general_summery'); ?>
+                        </div>
+                    </div>
 					
 
 				</div>

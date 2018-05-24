@@ -136,3 +136,34 @@ do they need tweaking?
 		}
 	}
 }
+
+
+#content{
+	#inner-content{
+		font-size: $small;
+	}
+}
+
+body.about_page{
+	#section-nav{
+		margin-top: 20px;
+   		margin-bottom: 60px;
+		.selector{
+			padding: 10px 15px;
+			margin: 0 10px;
+		}
+	}
+}
+
+body.property_page {
+	#gallery-nav{
+		.slick-nav{
+			.slick-nav-img {
+				img{
+    				height: 100px;
+    				margin: 0 5px;
+				}
+			}
+		}
+	}
+}

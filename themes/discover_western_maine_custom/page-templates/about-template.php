@@ -18,45 +18,34 @@
 ?>
 <body <?php body_class('about_page'); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container" class="cf">
-      <div id="header" class="about_nav">
-		
-				<?php 
-          // custom navigation function
-          echo buildCustomNav();
-        ?>
-      </div>
-  
+	<div id="container" class="cf">
+	    <div id="header" class="about_nav">
+			
+					<?php 
+	          // custom navigation function
+	          echo buildCustomNav();
+	        ?>
+	    </div>
+	  
 			<div id="content">
 
 				<div id="inner-content" class="cf">
-					<?php $text_image_pairs = get_field('image_text_pair'); 
-					foreach ($text_image_pairs as $pair){
-						echo "<div class='text_image_pair'>";
-						
-						// set text's class based whether or not we have a image to split the screen with
-						// NOTE that $pair == false, not null, if the field isn't set in wp.
-						$body_class = $pair['illustration'] ? 'text_body m-all t-all d-1of2' : 'text_body m-all t-all d-all' ;
-
-						echo "<div class='".$body_class."'>";
-						
-						echo $pair['content']."</div>";
-						// if we have an image, drop it in
-
-						if ($pair['illustration']){
-							echo 	"<div class='illustration_container m-all t-all d-1of2' style='background-image:url(\"{$pair['illustration']}\")'>";
-							// for img element;
-							//echo "<img src='{$pair['illustration']}'>";
-							echo "</div>";
-						}
-						echo "</div>";
-						
-					 } ?>
-					
-					<div id="map">
-						<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1kKNL0uASSf5ujuSH-zWT4eJJ_7fnyo6F"></iframe>
+					<div id="section-nav">
+						<?php $sections = get_field('page_section');
+						foreach ($sections as $section) : ?>
+							<div class="selector"><?php echo $section['section_title'];?></div>
+						<?php endforeach;?>
 					</div>
-
+					<div id="active-section">
+						INITIAL text
+					</div>
+					<div id="overflow-hider">
+						<?php foreach ($sections as $section) : ?>
+							<div id="<?php echo $section['section_title']; ?>" class="section">
+								<?php echo $section['section_content']; ?>
+							</div>
+						<?php endforeach;?>
+					</div>
 				</div>
 
 			</div>
