@@ -15,8 +15,15 @@
 ?>
 
 <?php 
+
+
 	get_header(); 
 	the_post(); 
+	// enqueue slick js
+	function enqueueSlick(){
+		wp_enqueue_script('slickjs', get_template_directory_uri()."/library/js/libs/slick/slick.min.js", ['jquery']);
+	}	
+	add_action('wp_enqueue_scripts', 'enqueueSlick');
 ?>
 <body <?php body_class('property_page'); ?> itemscope itemtype="http://schema.org/WebPage">
 
@@ -32,8 +39,36 @@
     </div>
 
 		<div id="content" style="font-family: <?php echo $font;?>">										
-			<?php buildImageGallery(['property'], 'image_gallery');
-			?>
+			<div class="slick-gallery">
+				<?php $raw_image_gallery = get_field('image_gallery'); 
+					$size = 'hd';
+					foreach ($raw_image_gallery as $image) : ?>
+					<div>
+						<img src="<?php echo $image['image']['sizes'][$size]; ?>">
+					</div>
+				<?php endforeach;?>
+			</div>
+			<div id="gallery-nav">
+				<div id="slick-custom-prev" class="slick-custom-arrow"><</div>
+				<div class="slick-nav">
+					<?php $size = 'thumbnail'; 
+					foreach ($raw_image_gallery as $image) : ?>
+						<div class="slick-nav-img">
+							<img src="<?php echo $image['image']['sizes'][$size]; ?>">
+						</div>
+					<?php endforeach;?>
+				</div>
+				<div id="slick-custom-next" class="slick-custom-arrow">></div>
+			</div>
+			<!-- load jquery for slick gallery.  needs to be here for some reason
+			<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js">
+	        </script>
+	        <script
+			  src="https://code.jquery.com/jquery-migrate-3.0.1.min.js">
+	        </script>-->
+			<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/slick/slick.min.js">
+	        </script>
 			<div id="inner-content" class="cf">
 				<div class="stats m-all t-1of2 d-1of2">
 					<ul id="stat_list">

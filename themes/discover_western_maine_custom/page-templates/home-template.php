@@ -30,6 +30,21 @@
 				<div id="inner-content" class="cf">
 
 					<?php buildImageGallery(['fullscreen', 'attributed'], 'image_gallery'); ?>
+                    <div id="about-properties-wrapper">
+                        <div id="about-properties">
+                            <div id="property-thumbnails">
+                                <?php $summeries = get_field('property_summery');
+                                foreach ($summeries as $summery) : ?>
+                                <div class="property-thumbnail" style="background-image:url(<?php echo $summery['thumbnail']['sizes']['thumbnail']; ?>);" data-text="<?php echo $summery['summery']; ?>">
+                                </div>
+                                <?php endforeach;?>
+                            </div>
+                            <div id="property-text" class="text" data-text="<?php echo get_field('general_summery'); ?>">
+                                <?php echo get_field('general_summery'); ?>
+                            </div>
+
+                        </div>
+                    </div>
 					
 
 				</div>
@@ -38,4 +53,3 @@
 
 
 <?php get_footer(); ?>
-<span id="yeahbud">Like these photos of Maine as much as we do?  Find more at <a href="http://www.yeahbudphotography.com" target="_blank">Yeah Bud! Photography</a></span>
