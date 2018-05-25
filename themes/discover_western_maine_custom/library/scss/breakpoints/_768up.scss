@@ -296,7 +296,17 @@ body{
 			stroke:$dark-gray;
 			fill:$dark-gray;
 		}
-		
+
+		#about-properties-wrapper{
+			position: absolute;
+		    width: 50%;
+		    left: 50%;
+		    #about-properties{
+		    	padding:15px;
+		    	background-color: rgba(100,100,100,.4);
+		    	border-radius: 5px;
+		    }
+		}
 	}
 	&.property_page{
 		.icon:hover{
@@ -324,7 +334,7 @@ body{
     		}
 			.slick-nav{
 				width: 60%;
-	    		margin-left: 20%;
+	    		margin: 10px 20%;
 				.slick-nav-img {
 					img{
 						height: 150px;
@@ -436,12 +446,16 @@ body{
 		}
 	}
 	.gallery-image{
-		.review{
-			width: 50%;
-		    position: absolute;
-		    left: 0;
-			.five-star{
-				margin-bottom: 50px;
+		.review-wrapper{
+			position:absolute;
+			width:50%;
+			left:0;
+			.review{
+				width: 96%;
+				max-width:400px;
+			    .five-star{
+					margin-bottom: 50px;
+				}
 			}
 		}
 	}

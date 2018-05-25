@@ -36,8 +36,8 @@
 							<div class="selector"><?php echo $section['section_title'];?></div>
 						<?php endforeach;?>
 					</div>
-					<div id="active-section">
-						INITIAL text
+					<div id="section-wrapper">
+						<div id="active-section"></div>
 					</div>
 					<div id="overflow-hider">
 						<?php foreach ($sections as $section) : ?>

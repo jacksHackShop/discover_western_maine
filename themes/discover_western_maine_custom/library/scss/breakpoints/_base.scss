@@ -895,6 +895,9 @@ FOOTER STYLES
 .no_mobile{
 	display:none;
 }
+#footer #footer_wrapper #yeahbud{
+	display:none;
+}
 #content{
 	margin-bottom: 40px;
 
@@ -924,49 +927,55 @@ body{
 		    right: 0;
 		}
 
-		.maine_svg{
+		.maine_svg {
 			fill:$white;
 			stroke: $white;
 		}
-		.icon{
+		.icon {
 			fill: $white;
 			stroke: $white;
 		}
-		#about-properties{
-			position: absolute;
-		    width: 40%;
-		    left: 55%;
-			.image {
-				height: 100px;
-				width: 100px;
-				display: inline-block;
-				.text{
-					display:none;
+
+		#about-properties-wrapper {
+			
+			#about-properties{
+				max-width:400px;
+				width: 90%;
+				margin:auto;
+				#property-thumbnails {
+					margin:auto;
+					display:flex;
+					justify-content:center;
+					.property-thumbnail {
+						margin: 0 5px;
+						height: 100px;
+						width: 100px;
+						display: inline-block;
+						
+					}
+					.text {
+					    position: relative;
+					    left: 0;
+					    right: 0;
+					    bottom: 0;
+					}
 				}
-				&:hover .text {
-					display: initial;
-				}
-			}
-			.text {
-			    position: absolute;
-			    top: 100px;
-			    left: 0;
-			    right: 0;
-			    bottom: 0;
-			}
-			&:hover .text {
-				display:none;
 			}
 
 		}
-		#yeahbud {
-    		bottom: 0px;
+		#footer #footer_wrapper #yeahbud {
+			display:initial;
+    		bottom: -34px;
     		position: absolute;
     		font-size: 8pt;
-    		width: 400px;
-    		margin: 5px calc(50% - 200px);
+    		width: 100%;
+    		text-align:center;
+    		margin: 5px auto;
     		a {
     			text-decoration: underline;
+    		}
+    		div {
+
     		}
 		}
 		.gal_nav{
@@ -1052,6 +1061,8 @@ body{
 			right:0;
 			left:0;
 			opacity:1;
+			width: 90%;
+    		margin: auto;
 		}
 
 
@@ -1219,23 +1230,27 @@ body{
   		&.active {
   			opacity:1;
   		}
-	  	.review{
-	  		width: 60%;
-	    	font-size: 12px;
-	    	text-shadow: 0px 0px 1px #929292;
-	  		.five-star{
-	  			display:none;
-	  			margin: 0 auto;
-	    		width: 50%;
-	    		height: 1em;
-	    		&.active{
-	    			display:block;
-	    		}
-	  		}
-	  		.review-text {
-	  			text-align: center;
-	  		}
-	  	}
+  		.review-wrapper{
+  			width:60%;
+		  	.review{
+		  		width:96%;
+		    	font-size: 12px;
+		    	margin:auto;
+		    	text-shadow: 0px 0px 1px #929292;
+		  		.five-star{
+		  			display:none;
+		  			margin: 0 auto;
+		    		width: 10em;
+		    		height: 1em;
+		    		&.active{
+		    			display:block;
+		    		}
+		  		}
+		  		.review-text {
+		  			text-align: center;
+		  		}
+		  	}
+		}
 	}
 	.gal_nav{
 		position: absolute;
@@ -1392,7 +1407,7 @@ body{
 	position: absolute;
 	align-items: center;
 	height:100px;
-	margin: 10px 0px;
+	margin: 13px 0px;
 	width: 100%;
 
 	div {

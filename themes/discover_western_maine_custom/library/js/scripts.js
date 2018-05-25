@@ -175,15 +175,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var calendar_toggle = document.getElementById('toggle_calendar');
     if (calendar_toggle){
         calendar_toggle.addEventListener('click', function(e){
-              if(calendar_toggle.checked){
-                    document.getElementById('primary_calendar').style.display = 'none';  
-                    document.getElementById('alternate_calendar').style.display = 'block';
-              }
-              else {
-                    document.getElementById('primary_calendar').style.display = 'block';  
-                    document.getElementById('alternate_calendar').style.display = 'none';
-              }
+            if(calendar_toggle.checked){
+                document.getElementById('primary_calendar').style.display = 'none';  
+                document.getElementById('alternate_calendar').style.display = 'block';
+            }
+            else {
+                document.getElementById('primary_calendar').style.display = 'block';  
+                document.getElementById('alternate_calendar').style.display = 'none';
+            }
     });
+}
+
+    // set up listeners for home page property summeries
+    var start_events = ['mouseenter', 'touchstart'];
+    var thumbnails = document.getElementsByClassName('property-thumbnail');
+    for(var i = 0 ; i < thumbnails.length; i++) {
+        var element = thumbnails[i]; 
+        start_events.forEach(function (event){
+            element.addEventListener(event, function(e) {
+                document.getElementById('property-text').innerHTML = e.target.dataset.text;
+            });
+        });
+        element.addEventListener('mouseout', function (e) {
+            document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
+        });
     }
 
     // set up listeners for about page
@@ -202,6 +217,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             setTimeout(function(){grow(active, content)},300);
         });
     }
+    if (selectors.length > 0){
+        selectors[0].click();
+    }
 
     // if we have a slick gallery, load it
     if (document.getElementsByClassName('slick-gallery').length > 0){
@@ -219,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             asNavFor: '.slick-gallery',
             prevArrow: document.getElementById('slick-custom-prev'),
             nextArrow: document.getElementById('slick-custom-next'),
-            dots: true,
+            dots: false,
             variableWidth: true,
             centerMode: true,
             focusOnSelect: true
