@@ -9,15 +9,22 @@ if you're not using font icons. Here you can add them in one neat
 place.
 
 ******************************************************************/
-
-.home_page{
-	#header{
-		h1{
-			font-size:$h1-max;
-		}
-		#pages{
-		    margin-left: auto;
-			margin-right: 70px;			
-		}
-	}
+body{
+    .home_page{
+    	#header{
+    		h1{
+    			font-size:$h1-max;
+    		}
+    		#pages{
+    		    margin-left: auto;
+    			margin-right: 70px;			
+    		}
+    	}
+        #footer #footer_wrapper #yeahbud{
+            width: 600px;
+            bottom: -22px;
+            font-size: 14px;
+            margin: 5px calc(50% - 300px);
+        }
+    }
 }

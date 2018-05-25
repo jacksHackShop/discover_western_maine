@@ -452,17 +452,21 @@ function buildImageGallery($class_list, $field_name){
           </div>";
   // add two image div for transition
   echo   "<div class='gallery-image active' style='background-image:url(\"{$images_array[0]['image']['sizes']['hd']}\")'>
-           <div class='review'>".
-      "<div class='{$five_star_class}'>".getFiveStar()."</div>".
-              '<div class="review-text">'.$images_array[0]['text'].'</div>
+           <div class='review-wrapper'>
+             <div class='review'>".
+        "<div class='{$five_star_class}'>".getFiveStar()."</div>".
+                '<div class="review-text">'.$images_array[0]['text'].'</div>
+              </div>
             </div>
           </div>
           <div class="gallery-image inactive">
-           <div class="review">'.
-              "<div class='five-star'>".getFiveStar()."</div>".
-              '<div class="review-text"></div>
+            <div class="review-wrapper">
+             <div class="review">'.
+                "<div class='five-star'>".getFiveStar()."</div>".
+                '<div class="review-text"></div>
+              </div>
             </div>
-          </div>';
+            </div>';
   echo    '<div class="gal_nav next">
             <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" opacity=".7" r="16"></circle>

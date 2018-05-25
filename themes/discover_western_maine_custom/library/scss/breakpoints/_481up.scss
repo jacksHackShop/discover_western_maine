@@ -130,9 +130,52 @@ do they need tweaking?
 
 .image-gallery{
 	.gallery-image{
-		.review{
-			font-size:18px;
-			width: 50%;
+		.review-wrapper{
+			.review{
+				font-size:18px;
+				
+			}
+		}
+	}
+}
+
+
+#content{
+	#inner-content{
+		font-size: $small;
+	}
+}
+body.home_page {
+	#footer #footer_wrapper #yeahbud {
+		width:400px;
+		bottom:-17px;
+		margin: 5px calc(50% - 200px);
+		div{
+			display:inline;
+		}
+	}
+}
+
+body.about_page {
+	#section-nav {
+		margin-top: 20px;
+   		margin-bottom: 60px;
+		.selector{
+			padding: 10px 15px;
+			margin: 0 10px;
+		}
+	}
+}
+
+body.property_page {
+	#gallery-nav {
+		.slick-nav {
+			.slick-nav-img {
+				img{
+    				height: 100px;
+    				margin: 0 5px;
+				}
+			}
 		}
 	}
 }

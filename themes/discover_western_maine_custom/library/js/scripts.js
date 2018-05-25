@@ -175,22 +175,112 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var calendar_toggle = document.getElementById('toggle_calendar');
     if (calendar_toggle){
         calendar_toggle.addEventListener('click', function(e){
-              if(calendar_toggle.checked){
-                    document.getElementById('primary_calendar').style.display = 'none';  
-                    document.getElementById('alternate_calendar').style.display = 'block';
-              }
-              else {
-                    document.getElementById('primary_calendar').style.display = 'block';  
-                    document.getElementById('alternate_calendar').style.display = 'none';
-              }
+            if(calendar_toggle.checked){
+                document.getElementById('primary_calendar').style.display = 'none';  
+                document.getElementById('alternate_calendar').style.display = 'block';
+            }
+            else {
+                document.getElementById('primary_calendar').style.display = 'block';  
+                document.getElementById('alternate_calendar').style.display = 'none';
+            }
     });
+}
+
+    // set up listeners for home page property summeries
+    var start_events = ['mouseenter', 'touchstart'];
+    var thumbnails = document.getElementsByClassName('property-thumbnail');
+    for(var i = 0 ; i < thumbnails.length; i++) {
+        var element = thumbnails[i]; 
+        start_events.forEach(function (event){
+            element.addEventListener(event, function(e) {
+                document.getElementById('property-text').innerHTML = e.target.dataset.text;
+            });
+        });
+        element.addEventListener('mouseout', function (e) {
+            document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
+        });
     }
+
+    // set up listeners for about page
+    var selectors = document.getElementsByClassName('selector');
+    for (var i = 0; i < selectors.length; i++) {
+        selectors[i].addEventListener('click', function(e){
+            // clear active class from the buttons
+            for (var j = 0; j < selectors.length; j++) {
+                selectors[j].classList.remove('active');
+            }
+            // reapply it to the target
+            e.target.classList.add('active');
+            var active =  document.getElementById('active-section');
+            active.classList.add('hide');
+            var content = document.getElementById(e.target.textContent);
+            setTimeout(function(){grow(active, content)},300);
+        });
+    }
+    if (selectors.length > 0){
+        selectors[0].click();
+    }
+
+    // if we have a slick gallery, load it
+    if (document.getElementsByClassName('slick-gallery').length > 0){
+        jQuery('.slick-gallery').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            adaptiveHeight: true,
+            asNavFor: '.slick-nav'
+        });
+        jQuery('.slick-nav').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slick-gallery',
+            prevArrow: document.getElementById('slick-custom-prev'),
+            nextArrow: document.getElementById('slick-custom-next'),
+            dots: false,
+            variableWidth: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    
+    }
+
     if (galleries.length > 0){
         var auto_scroll_interval = window.setInterval(function(){
             change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
         }, 8000);
         imageGalleryPreload('image-gallery');
     }
+
+// about page animation
+function fadeIn(element, content_ele){
+    element.innerHTML = content_ele.innerHTML;
+    element.classList.remove('hide');
+}
+
+function grow(element, content_ele){
+    element.style.height = content_ele.offsetHeight + 'px';
+    setTimeout(function(){fadeIn(element, content_ele)},300);
+}
+
+    /*  slick js slicder sync init code from site
+     $('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+    */
+
 });
 
 // returns the appropriate image size based on the size if the gallery div
