@@ -20,6 +20,25 @@ body{
     			margin-right: 70px;			
     		}
     	}
+        .image-gallery .gallery-image .image-overlay .review-wrapper .review {
+            font-size: 32px;
+            font: 600px;
+        }
+        #about-properties-wrapper {
+            
+            #about-properties {
+                max-width: 800px;
+                #property-thumbnails {
+                    .property-thumbnail{
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+                #property-text{
+                    font-size:28px;
+                }
+            }
+        }
         #footer #footer_wrapper #yeahbud{
             width: 600px;
             bottom: -22px;
