@@ -269,38 +269,42 @@ do they need tweaking?
 }
 
 /* line 134, ../scss/breakpoints/_481up.scss */
-.image-gallery .gallery-image .review-wrapper .review {
+.image-gallery .gallery-image .image-overlay .review-wrapper {
+  width: 60%;
+}
+/* line 136, ../scss/breakpoints/_481up.scss */
+.image-gallery .gallery-image .image-overlay .review-wrapper .review {
   font-size: 18px;
 }
 
-/* line 144, ../scss/breakpoints/_481up.scss */
+/* line 147, ../scss/breakpoints/_481up.scss */
 #content #inner-content {
   font-size: 18px;
 }
 
-/* line 149, ../scss/breakpoints/_481up.scss */
+/* line 152, ../scss/breakpoints/_481up.scss */
 body.home_page #footer #footer_wrapper #yeahbud {
   width: 400px;
   bottom: -17px;
   margin: 5px calc(50% - 200px);
 }
-/* line 153, ../scss/breakpoints/_481up.scss */
+/* line 156, ../scss/breakpoints/_481up.scss */
 body.home_page #footer #footer_wrapper #yeahbud div {
   display: inline;
 }
 
-/* line 160, ../scss/breakpoints/_481up.scss */
+/* line 163, ../scss/breakpoints/_481up.scss */
 body.about_page #section-nav {
   margin-top: 20px;
   margin-bottom: 60px;
 }
-/* line 163, ../scss/breakpoints/_481up.scss */
+/* line 166, ../scss/breakpoints/_481up.scss */
 body.about_page #section-nav .selector {
   padding: 10px 15px;
   margin: 0 10px;
 }
 
-/* line 174, ../scss/breakpoints/_481up.scss */
+/* line 177, ../scss/breakpoints/_481up.scss */
 body.property_page #gallery-nav .slick-nav .slick-nav-img img {
   height: 100px;
   margin: 0 5px;
@@ -495,8 +499,8 @@ body.home_page #about-properties-wrapper {
 /* line 304, ../scss/breakpoints/_768up.scss */
 body.home_page #about-properties-wrapper #about-properties {
   padding: 15px;
-  background-color: rgba(100, 100, 100, 0.4);
-  border-radius: 5px;
+  background-color: rgba(100, 100, 100, 0.3);
+  box-shadow: 0 0 8px 0px #676767;
 }
 /* line 312, ../scss/breakpoints/_768up.scss */
 body.property_page .icon:hover {
@@ -647,22 +651,22 @@ body.about_page .icon:hover {
 .image-gallery .gal_nav.prev {
   left: 10px;
 }
-/* line 449, ../scss/breakpoints/_768up.scss */
-.image-gallery .gallery-image .review-wrapper {
+/* line 450, ../scss/breakpoints/_768up.scss */
+.image-gallery .gallery-image .image-overlay .review-wrapper {
   position: absolute;
   width: 50%;
   left: 0;
 }
-/* line 453, ../scss/breakpoints/_768up.scss */
-.image-gallery .gallery-image .review-wrapper .review {
+/* line 454, ../scss/breakpoints/_768up.scss */
+.image-gallery .gallery-image .image-overlay .review-wrapper .review {
   width: 96%;
   max-width: 400px;
 }
-/* line 456, ../scss/breakpoints/_768up.scss */
-.image-gallery .gallery-image .review-wrapper .review .five-star {
+/* line 457, ../scss/breakpoints/_768up.scss */
+.image-gallery .gallery-image .image-overlay .review-wrapper .review .five-star {
   margin-bottom: 50px;
 }
-/* line 463, ../scss/breakpoints/_768up.scss */
+/* line 465, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen {
   position: absolute;
   top: 0px;
@@ -673,22 +677,22 @@ body.about_page .icon:hover {
   overflow: hidden;
   max-height: none;
 }
-/* line 472, ../scss/breakpoints/_768up.scss */
+/* line 474, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen .gal_nav {
   display: none;
 }
 
 /* start property*/
-/* line 480, ../scss/breakpoints/_768up.scss */
+/* line 482, ../scss/breakpoints/_768up.scss */
 #property_details div {
   flex-direction: unset;
 }
-/* line 483, ../scss/breakpoints/_768up.scss */
+/* line 485, ../scss/breakpoints/_768up.scss */
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* line 489, ../scss/breakpoints/_768up.scss */
+/* line 491, ../scss/breakpoints/_768up.scss */
 #footer {
   position: absolute;
   bottom: 0px;

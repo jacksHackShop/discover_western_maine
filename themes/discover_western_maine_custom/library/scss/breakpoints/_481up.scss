@@ -130,10 +130,13 @@ do they need tweaking?
 
 .image-gallery{
 	.gallery-image{
-		.review-wrapper{
-			.review{
-				font-size:18px;
-				
+		.image-overlay{
+			.review-wrapper{
+				width:60%;
+				.review{
+					font-size:18px;
+					
+				}
 			}
 		}
 	}

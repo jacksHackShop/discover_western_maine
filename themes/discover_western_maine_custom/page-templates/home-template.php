@@ -28,7 +28,6 @@
 			<div id="content">
 
 				<div id="inner-content" class="cf">
-
 					<?php buildImageGallery(['fullscreen', 'attributed'], 'image_gallery'); ?>
                     <div id="about-properties-wrapper">
                         <div id="about-properties">

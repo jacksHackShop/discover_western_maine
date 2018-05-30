@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     for( var i = 0; i < galleries.length; i++ ){
         var this_gallery = galleries[i];
         this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
-        this_gallery.children[3].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
+        this_gallery.children[2].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
     }
 
     // if toggle calendar exsists, set up listener for it

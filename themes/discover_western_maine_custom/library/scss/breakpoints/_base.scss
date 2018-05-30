@@ -951,6 +951,7 @@ body{
 						height: 100px;
 						width: 100px;
 						display: inline-block;
+						background-size: cover;
 						
 					}
 					.text {
@@ -1230,26 +1231,37 @@ body{
   		&.active {
   			opacity:1;
   		}
-  		.review-wrapper{
-  			width:60%;
-		  	.review{
-		  		width:96%;
-		    	font-size: 12px;
-		    	margin:auto;
-		    	text-shadow: 0px 0px 1px #929292;
-		  		.five-star{
-		  			display:none;
-		  			margin: 0 auto;
-		    		width: 10em;
-		    		height: 1em;
-		    		&.active{
-		    			display:block;
-		    		}
-		  		}
-		  		.review-text {
-		  			text-align: center;
-		  		}
-		  	}
+  		.image-overlay{
+  			position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    background-color: rgba(100,100,100,.5);
+		    box-shadow: 0 0 8px 0px #676767;
+	  		.review-wrapper{
+	  			padding: 15% 0%;
+	  			width: 90%;
+	  			margin: auto;
+			  	.review{
+			  		width:96%;
+			    	font-size: 12px;
+			    	margin:auto;
+			    	text-shadow: 0px 0px 1px #929292;
+			  		.five-star{
+			  			display:none;
+			  			margin: 0 auto;
+			    		width: 10em;
+			    		height: 1em;
+			    		&.active{
+			    			display:block;
+			    		}
+			  		}
+			  		.review-text {
+			  			text-align: center;
+			  		}
+			  	}
+			}
 		}
 	}
 	.gal_nav{
