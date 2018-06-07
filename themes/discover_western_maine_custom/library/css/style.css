@@ -3151,7 +3151,11 @@ you can add resource intensive styles.
   /* end .footer-links */
   /* start chris styles*/
   /* add hover styles for icons */
-  /* line 292, ../scss/breakpoints/_768up.scss */
+  /* line 291, ../scss/breakpoints/_768up.scss */
+  body.home_page {
+    overflow: hidden;
+  }
+  /* line 293, ../scss/breakpoints/_768up.scss */
   body.home_page .icon:hover {
     border-radius: 10px;
     background-color: #ffffff !important;
@@ -3159,14 +3163,15 @@ you can add resource intensive styles.
     stroke: #484848;
     fill: #484848;
   }
-  /* line 300, ../scss/breakpoints/_768up.scss */
+  /* line 301, ../scss/breakpoints/_768up.scss */
   body.home_page #about-properties-wrapper {
     position: absolute;
     width: 90%;
-    height: 415px;
+    padding: 15px;
+    height: 200%;
     left: 5%;
   }
-  /* line 305, ../scss/breakpoints/_768up.scss */
+  /* line 307, ../scss/breakpoints/_768up.scss */
   body.home_page #about-properties-wrapper #about-properties {
     width: 100%;
     height: 100%;
@@ -3175,17 +3180,17 @@ you can add resource intensive styles.
     background-color: rgba(100, 100, 100, 0.5);
     box-shadow: 0 0 8px 0px #676767;
   }
-  /* line 313, ../scss/breakpoints/_768up.scss */
+  /* line 315, ../scss/breakpoints/_768up.scss */
   body.home_page #about-properties-wrapper #about-properties #property-thumbnails .property-thumbnail {
     width: 150px;
     height: 150px;
   }
-  /* line 319, ../scss/breakpoints/_768up.scss */
+  /* line 321, ../scss/breakpoints/_768up.scss */
   body.home_page #about-properties-wrapper #about-properties #property-text .five-star {
     margin-bottom: 30px;
     margin-top: 20px;
   }
-  /* line 328, ../scss/breakpoints/_768up.scss */
+  /* line 330, ../scss/breakpoints/_768up.scss */
   body.property_page .icon:hover {
     border-radius: 10px;
     background-color: #000000 !important;
@@ -3193,30 +3198,30 @@ you can add resource intensive styles.
     stroke: #ffffff;
     fill: #ffffff;
   }
-  /* line 336, ../scss/breakpoints/_768up.scss */
+  /* line 338, ../scss/breakpoints/_768up.scss */
   body.property_page .slick-gallery .slick-arrow {
     display: inline-block !important;
     width: 50px;
     height: 50px;
     z-index: 2;
   }
-  /* line 341, ../scss/breakpoints/_768up.scss */
+  /* line 343, ../scss/breakpoints/_768up.scss */
   body.property_page .slick-gallery .slick-arrow:before {
     font-size: 30px;
   }
-  /* line 345, ../scss/breakpoints/_768up.scss */
+  /* line 347, ../scss/breakpoints/_768up.scss */
   body.property_page .slick-gallery .slick-next {
     right: 0;
   }
-  /* line 348, ../scss/breakpoints/_768up.scss */
+  /* line 350, ../scss/breakpoints/_768up.scss */
   body.property_page .slick-gallery .slick-prev {
     left: 0;
   }
-  /* line 352, ../scss/breakpoints/_768up.scss */
+  /* line 354, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav {
     position: relative;
   }
-  /* line 355, ../scss/breakpoints/_768up.scss */
+  /* line 357, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav .slick-custom-arrow {
     position: absolute;
     font-size: 20px;
@@ -3224,30 +3229,30 @@ you can add resource intensive styles.
     cursor: pointer;
     display: block !important;
   }
-  /* line 362, ../scss/breakpoints/_768up.scss */
+  /* line 364, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav #slick-custom-prev {
     left: calc(20% - 20px);
   }
-  /* line 365, ../scss/breakpoints/_768up.scss */
+  /* line 367, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav #slick-custom-next {
     right: calc(20% - 20px);
   }
-  /* line 368, ../scss/breakpoints/_768up.scss */
+  /* line 370, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav .slick-nav {
     width: 60%;
     margin: 10px 20%;
   }
-  /* line 372, ../scss/breakpoints/_768up.scss */
+  /* line 374, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav .slick-nav .slick-nav-img img {
     height: 150px;
     max-width: 200px;
     margin: 0 10px;
   }
-  /* line 379, ../scss/breakpoints/_768up.scss */
+  /* line 381, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav .slick-dots {
     display: block !important;
   }
-  /* line 385, ../scss/breakpoints/_768up.scss */
+  /* line 387, ../scss/breakpoints/_768up.scss */
   body.about_page .icon:hover {
     border-radius: 10px;
     background-color: #cacaca !important;
@@ -3256,27 +3261,27 @@ you can add resource intensive styles.
     fill: #484848;
   }
 
-  /* line 395, ../scss/breakpoints/_768up.scss */
+  /* line 397, ../scss/breakpoints/_768up.scss */
   #container {
     position: relative;
     padding-bottom: 80px;
   }
 
-  /* line 400, ../scss/breakpoints/_768up.scss */
+  /* line 402, ../scss/breakpoints/_768up.scss */
   #header {
     display: flex;
     align-items: baseline;
     /* For the maine next to the banner */
   }
-  /* line 403, ../scss/breakpoints/_768up.scss */
+  /* line 405, ../scss/breakpoints/_768up.scss */
   #header h1 {
     font-size: 7vw;
   }
-  /* line 406, ../scss/breakpoints/_768up.scss */
+  /* line 408, ../scss/breakpoints/_768up.scss */
   #header a {
     position: relative;
   }
-  /* line 410, ../scss/breakpoints/_768up.scss */
+  /* line 412, ../scss/breakpoints/_768up.scss */
   #header .maine_svg {
     display: inline-block !important;
     height: 37px;
@@ -3286,7 +3291,7 @@ you can add resource intensive styles.
     bottom: 50%;
     stroke-width: 3px;
   }
-  /* line 420, ../scss/breakpoints/_768up.scss */
+  /* line 422, ../scss/breakpoints/_768up.scss */
   #header #pages {
     display: block;
     position: relative;
@@ -3298,77 +3303,77 @@ you can add resource intensive styles.
     right: 0;
     /* For the maine next to the nav links */
   }
-  /* line 430, ../scss/breakpoints/_768up.scss */
+  /* line 432, ../scss/breakpoints/_768up.scss */
   #header #pages .maine_svg {
     height: 24px;
     width: 24px;
     bottom: 50%;
     stroke-width: 3px;
   }
-  /* line 437, ../scss/breakpoints/_768up.scss */
+  /* line 439, ../scss/breakpoints/_768up.scss */
   #header #pages a {
     color: inherit !important;
     transition: unset;
     margin: 0px 10px;
     position: relative;
   }
-  /* line 443, ../scss/breakpoints/_768up.scss */
+  /* line 445, ../scss/breakpoints/_768up.scss */
   #header #pages a .underline {
     position: absolute;
     bottom: -5px;
     left: calc(calc(100% - 75px) / 2);
   }
-  /* line 450, ../scss/breakpoints/_768up.scss */
+  /* line 452, ../scss/breakpoints/_768up.scss */
   #header #pages a:hover .underline {
     display: inline-block;
   }
-  /* line 454, ../scss/breakpoints/_768up.scss */
+  /* line 456, ../scss/breakpoints/_768up.scss */
   #header #pages.show {
     right: 0px;
   }
-  /* line 456, ../scss/breakpoints/_768up.scss */
+  /* line 458, ../scss/breakpoints/_768up.scss */
   #header #pages.show a {
     margin-bottom: 0px;
   }
-  /* line 462, ../scss/breakpoints/_768up.scss */
+  /* line 464, ../scss/breakpoints/_768up.scss */
   #header #hamburger {
     display: none;
   }
 
   /* start home page */
-  /* line 468, ../scss/breakpoints/_768up.scss */
+  /* line 470, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav {
     top: calc(50% - 40px);
   }
-  /* line 470, ../scss/breakpoints/_768up.scss */
+  /* line 472, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav svg {
     height: 40px;
     width: 40px;
   }
-  /* line 474, ../scss/breakpoints/_768up.scss */
+  /* line 476, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav.next {
     right: 10px;
   }
-  /* line 477, ../scss/breakpoints/_768up.scss */
+  /* line 479, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav.prev {
     left: 10px;
   }
-  /* line 483, ../scss/breakpoints/_768up.scss */
+  /* line 485, ../scss/breakpoints/_768up.scss */
   .image-gallery .gallery-image .image-overlay .review-wrapper {
     position: absolute;
     width: 50%;
     left: 0;
   }
-  /* line 487, ../scss/breakpoints/_768up.scss */
+  /* line 489, ../scss/breakpoints/_768up.scss */
   .image-gallery .gallery-image .image-overlay .review-wrapper .review {
     width: 96%;
     max-width: 400px;
   }
-  /* line 490, ../scss/breakpoints/_768up.scss */
+  /* line 492, ../scss/breakpoints/_768up.scss */
   .image-gallery .gallery-image .image-overlay .review-wrapper .review .five-star {
     margin-bottom: 50px;
   }
-  /* line 498, ../scss/breakpoints/_768up.scss */
+  /* line 500, ../scss/breakpoints/_768up.scss */
   .image-gallery.fullscreen {
     position: absolute;
     top: 0px;
@@ -3379,22 +3384,22 @@ you can add resource intensive styles.
     overflow: hidden;
     max-height: none;
   }
-  /* line 507, ../scss/breakpoints/_768up.scss */
+  /* line 509, ../scss/breakpoints/_768up.scss */
   .image-gallery.fullscreen .gal_nav {
     display: none;
   }
 
   /* start property*/
-  /* line 515, ../scss/breakpoints/_768up.scss */
+  /* line 517, ../scss/breakpoints/_768up.scss */
   #property_details div {
     flex-direction: unset;
   }
-  /* line 518, ../scss/breakpoints/_768up.scss */
+  /* line 520, ../scss/breakpoints/_768up.scss */
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  /* line 524, ../scss/breakpoints/_768up.scss */
+  /* line 526, ../scss/breakpoints/_768up.scss */
   #footer {
     position: absolute;
     bottom: 0px;
@@ -3613,25 +3618,21 @@ This is for people viewing full screen on a modern full hd display.
     font-size: 32px;
     font: 600px;
   }
-  /* line 29, ../scss/breakpoints/_1600up.scss */
-  body .home_page #about-properties-wrapper {
-    height: 665px;
-  }
-  /* line 31, ../scss/breakpoints/_1600up.scss */
+  /* line 30, ../scss/breakpoints/_1600up.scss */
   body .home_page #about-properties-wrapper #about-properties {
     max-width: 1400px;
   }
-  /* line 34, ../scss/breakpoints/_1600up.scss */
+  /* line 33, ../scss/breakpoints/_1600up.scss */
   body .home_page #about-properties-wrapper #about-properties #property-thumbnails .property-thumbnail {
     width: 250px;
     height: 250px;
   }
-  /* line 39, ../scss/breakpoints/_1600up.scss */
+  /* line 38, ../scss/breakpoints/_1600up.scss */
   body .home_page #about-properties-wrapper #about-properties #property-text {
     font-size: 28px;
     margin: 70px;
   }
-  /* line 45, ../scss/breakpoints/_1600up.scss */
+  /* line 44, ../scss/breakpoints/_1600up.scss */
   body .home_page #footer #footer_wrapper #yeahbud {
     width: 600px;
     bottom: -22px;
@@ -3639,7 +3640,7 @@ This is for people viewing full screen on a modern full hd display.
     margin: 5px calc(50% - 300px);
   }
 
-  /* line 55, ../scss/breakpoints/_1600up.scss */
+  /* line 54, ../scss/breakpoints/_1600up.scss */
   body.property_page .slick-gallery img.portrait {
     height: 800px;
   }
