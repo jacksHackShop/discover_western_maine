@@ -289,6 +289,7 @@ mobile. Make sure to double check these!
 /* add hover styles for icons */
 body{
 	&.home_page{
+		overflow: hidden;
 		.icon:hover{
 			border-radius:10px;
 			background-color:$white !important;
@@ -300,7 +301,8 @@ body{
 		#about-properties-wrapper{
 			position: absolute;
 		    width: 90%;
-		    height: 415px;
+		    padding: 15px;
+		    height: 200%;
 		    left: 5%;
 		    #about-properties{
 		    	width:100%;
