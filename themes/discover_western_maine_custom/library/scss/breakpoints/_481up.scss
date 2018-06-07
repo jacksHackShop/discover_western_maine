@@ -149,6 +149,16 @@ do they need tweaking?
 	}
 }
 body.home_page {
+	#about-properties-wrapper #about-properties #property-thumbnails .property-thumbnail {
+		height:75px;
+		width:75px;
+	}
+	#property-text{
+		.review{
+			font-size:18px;
+					
+		}
+	}
 	#footer #footer_wrapper #yeahbud {
 		width:400px;
 		bottom:-17px;

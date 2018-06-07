@@ -299,12 +299,28 @@ body{
 
 		#about-properties-wrapper{
 			position: absolute;
-		    width: 50%;
-		    left: 50%;
+		    width: 90%;
+		    height: 415px;
+		    left: 5%;
 		    #about-properties{
+		    	width:100%;
+		    	height: 100%;
+		    	max-width: 900px;
 		    	padding:15px;
-		    	background-color: rgba(100,100,100,.3);
+		    	background-color: rgba(100,100,100,.5);
 		    	box-shadow: 0 0 8px 0px #676767;
+		    	#property-thumbnails{
+		    		.property-thumbnail{
+		    			width:150px;
+		    			height: 150px;
+		    		}
+		    	}
+		    	#property-text{
+		    		.five-star{
+						margin-bottom: 30px;
+						margin-top: 20px;
+					}
+		    	}
 		    }
 		}
 	}
@@ -316,9 +332,26 @@ body{
 			stroke:$white;
 			fill:$white;
 		}
-		
+		.slick-gallery{
+			.slick-arrow{
+				display: inline-block !important;
+				width: 50px;
+				height: 50px;
+				z-index: 2;
+				&:before{
+					font-size:30px;
+				}
+			}
+			.slick-next{
+				right:0;
+			}
+			.slick-prev{
+				left:0;
+			}
+		}
 		#gallery-nav{
 			position: relative;
+			
 			.slick-custom-arrow {
 			    position: absolute;
 			    font-size: 20px;
