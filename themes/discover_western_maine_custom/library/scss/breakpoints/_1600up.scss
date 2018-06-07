@@ -24,18 +24,21 @@ body{
             font-size: 32px;
             font: 600px;
         }
+        
+
         #about-properties-wrapper {
-            
+            height: 665px;
             #about-properties {
-                max-width: 800px;
+                max-width: 1400px;
                 #property-thumbnails {
                     .property-thumbnail{
-                        width: 200px;
-                        height: 200px;
+                        width: 250px;
+                        height: 250px;
                     }
                 }
                 #property-text{
                     font-size:28px;
+                    margin: 70px;
                 }
             }
         }
@@ -46,4 +49,9 @@ body{
             margin: 5px calc(50% - 300px);
         }
     }
+
+}
+
+body.property_page .slick-gallery img.portrait {
+    height: 800px;
 }

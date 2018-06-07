@@ -38,7 +38,7 @@
                                 </div>
                                 <?php endforeach;?>
                             </div>
-                            <div id="property-text" class="text" data-text="<?php echo get_field('general_summery'); ?>">
+                            <div id="property-text" class="text show-review">
                                 <?php echo get_field('general_summery'); ?>
                             </div>
 

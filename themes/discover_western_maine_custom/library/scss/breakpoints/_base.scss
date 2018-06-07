@@ -948,8 +948,8 @@ body{
 					justify-content:center;
 					.property-thumbnail {
 						margin: 0 5px;
-						height: 100px;
-						width: 100px;
+						height: 50px;
+						width: 50px;
 						display: inline-block;
 						background-size: cover;
 						
@@ -960,8 +960,26 @@ body{
 					    right: 0;
 					    bottom: 0;
 					}
+				   
+				  	
+				}
+				#property-text{
+					margin: 20px;
+					 .five-star{
+			  			display:none;
+			  			margin: 10px auto;
+			    		width: 10em;
+			    		height: 1em;
+			    		&.active{
+			    			display:block;
+			    		}
+			  		}
+			  		.review-text {
+			  			text-align: center;
+			  		}
 				}
 			}
+
 
 		}
 		#footer #footer_wrapper #yeahbud {
@@ -1000,8 +1018,20 @@ body{
 
 		}
 		.slick-gallery{
+			.slick-arrow{
+				display:none !important;
+				&:before{
+					color: lightgray;
+				}
+			}
 			img {
-				width:100%;
+				margin: auto;
+				&.portrait{
+					height: 600px;
+				}
+				&.landscape{
+					width: 100%;
+				}
 			}
 		}
 		#gallery-nav{
@@ -1232,6 +1262,7 @@ body{
   			opacity:1;
   		}
   		.image-overlay{
+  			display: none; /* THE REST IS DEPRICATEDz */
   			position: absolute;
 		    top: 0;
 		    bottom: 0;
@@ -1427,9 +1458,14 @@ body{
 		display: inline-flex;
 		margin:auto;
 		&.footer_container{
+			font-size: 12px;
 			margin: 0px auto;
 			flex-direction: column;
+			.title{
+				font-size: 16px;
+			}
 			.footer_row{
+				height: 34px;
 				flex-direction: row;
 				align-items:center;
 				align-self:center;
