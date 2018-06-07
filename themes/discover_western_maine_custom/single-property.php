@@ -43,8 +43,9 @@
 				<?php $raw_image_gallery = get_field('image_gallery'); 
 					$size = 'hd';
 					foreach ($raw_image_gallery as $image) : ?>
+						<?php $ratio = $image['image']['width'] > $image['image']['height'] ? 'landscape' : 'portrait'; ?>
 					<div>
-						<img src="<?php echo $image['image']['sizes'][$size]; ?>">
+						<img src="<?php echo $image['image']['sizes'][$size]; ?>" class="<?php echo $ratio; ?>">
 					</div>
 				<?php endforeach;?>
 			</div>
@@ -70,7 +71,7 @@
 			<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/slick/slick.min.js">
 	        </script>
 			<div id="inner-content" class="cf">
-				<div class="stats m-all t-1of2 d-1of2">
+				<div class="stats m-all t-1of2 d-1of3">
 					<ul id="stat_list">
 					<?php 
 						$stats = get_field('stats');
@@ -92,7 +93,7 @@
 					?>
 					</ul>
 				</div>
-				<div class="blurb m-all t-1of2 d-1of2">
+				<div class="blurb m-all t-1of2 d-2of3">
 					<h3 id="property_title">The <?php the_field('title');?></h3>
 					<div class="text_body">
 						<?php the_field('property_intro'); ?>

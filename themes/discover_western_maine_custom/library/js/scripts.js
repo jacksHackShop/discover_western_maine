@@ -183,8 +183,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 document.getElementById('primary_calendar').style.display = 'block';  
                 document.getElementById('alternate_calendar').style.display = 'none';
             }
-    });
-}
+        });
+    }
 
     // set up listeners for home page property summeries
     var start_events = ['mouseenter', 'touchstart'];
@@ -194,11 +194,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
         start_events.forEach(function (event){
             element.addEventListener(event, function(e) {
                 document.getElementById('property-text').innerHTML = e.target.dataset.text;
+                document.getElementById('property-text').classList.remove('show-review');
             });
         });
         element.addEventListener('mouseout', function (e) {
             document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
+            document.getElementById('property-text').classList.add('show-review');
+
         });
+
+        document.getElementById('property-text').dataset.text = document.getElementsByClassName('review')[0].innerHTML;
+    }
+    // if there are property thumbnails, load the review text
+    if (thumbnails.length > 0) {
+        document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
     }
 
     // set up listeners for about page
@@ -226,8 +235,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         jQuery('.slick-gallery').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
-            fade: true,
+            arrows: true,
             adaptiveHeight: true,
             asNavFor: '.slick-nav'
         });
@@ -242,6 +250,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             centerMode: true,
             focusOnSelect: true
         });
+
+        document.getElementsByClassName('slick-gallery')[0].addEventListener('click', function(e){
+            jQuery('.slick-gallery').slick('slickNext');
+        });
     
     }
 
@@ -251,6 +263,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }, 8000);
         imageGalleryPreload('image-gallery');
     }
+});
 
 // about page animation
 function fadeIn(element, content_ele){
@@ -263,25 +276,7 @@ function grow(element, content_ele){
     setTimeout(function(){fadeIn(element, content_ele)},300);
 }
 
-    /*  slick js slicder sync init code from site
-     $('.slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.slider-for',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
-});
-    */
 
-});
 
 // returns the appropriate image size based on the size if the gallery div
 function getImageSize(element){
@@ -331,6 +326,11 @@ function change_gallery_target( change_by ){
     new_img_div.getElementsByClassName('five-star')[0].classList.add('active');
   } else {
     new_img_div.getElementsByClassName('five-star')[0].classList.remove('active');
+  }
+  document.getElementById('property-text').dataset.text = new_img_div.getElementsByClassName('review')[0].innerHTML ;
+  // check if the review is displayed and if it is update the html
+  if (document.getElementById('property-text').classList.contains('show-review')) {
+    document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
   }
   // swap the divs
   new_img_div.classList.remove('inactive');

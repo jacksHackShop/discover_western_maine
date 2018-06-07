@@ -22,6 +22,20 @@ be seen on the Desktop.
 	}
 }
 
+body{
+    &.home_page{
+        #about-properties-wrapper{
+            #about-properties{                
+                #property-thumbnails{
+                    .property-thumbnail{
+                        width:175px;
+                        height: 175px;
+                    }
+                }
+            }
+        }
+    }
+}
 
 #header{
 	
@@ -58,6 +72,11 @@ be seen on the Desktop.
 		&.footer_container{
 			flex-direction: row;
 			margin:0;
+            font-size:14px;
+            .title {
+                font-size: 18px
+            }
+
 		}
 		span{
 			margin: 0px 4px;
