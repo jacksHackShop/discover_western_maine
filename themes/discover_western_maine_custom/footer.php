@@ -53,11 +53,6 @@
               <span>&copy;2018 Maine Away</span>
             </div>
           </div>
-          <div id="yeahbud">
-            <div>Like these photos of Maine as much as we do?</div>
-            <div>Find more at <a href="http://www.yeahbudphotography.com" target="_blank">Yeah Bud! Photography</a>
-            </div>
-          </div>
         </div>
 			</div>
 
