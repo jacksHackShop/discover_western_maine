@@ -233,6 +233,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // if we have a slick gallery, load it
     if (document.getElementsByClassName('slick-gallery').length > 0){
         jQuery('.slick-gallery').slick({
+            lazyLoad: "progressive",
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
@@ -240,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             asNavFor: '.slick-nav'
         });
         jQuery('.slick-nav').slick({
+            lazyLoad: "progressive",
             slidesToShow: 3,
             slidesToScroll: 1,
             asNavFor: '.slick-gallery',
