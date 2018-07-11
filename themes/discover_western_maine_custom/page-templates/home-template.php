@@ -16,38 +16,36 @@
 <?php get_header(); ?>
 <body <?php body_class('home_page'); ?> itemscope itemtype="http://schema.org/WebPage">
 
-		<div id="container" class="home_page cf">
-      <div id="header" class="home_nav">
-		
-				<?php 
-          // custom navigation function
-          echo buildCustomNav();
-        ?>
-      </div>
-  
+	<div id="container" class="home_page cf">
+        <div id="header" class="home_nav">
+    		<?php 
+              // custom navigation function
+                echo buildCustomNav();
+            ?>
+        </div>
 			<div id="content">
-
 				<div id="inner-content" class="cf">
 					<?php buildImageGallery(['fullscreen', 'attributed'], 'image_gallery'); ?>
                     <div id="about-properties-wrapper">
                         <div id="about-properties">
                             <div id="property-thumbnails">
-                                <?php $summeries = get_field('property_summery');
-                                foreach ($summeries as $summery) : ?>
-                                <div class="property-thumbnail" style="background-image:url(<?php echo $summery['thumbnail']['sizes']['thumbnail']; ?>);" data-text="<?php echo $summery['summery']; ?>">
-                                </div>
+                                <?php $summaries = get_field('property_summary');
+                                foreach ($summaries as $summary) : ?>
+                                    <?php $summary_html = $summary['summary'];
+                                    if ($summary['property_link'] != '') {
+                                        $summary_html .= "<a class='button' href='{$summary['property_link']}'>Checkout {$summary['title']}</a>";
+                                    } ?>
+                                    <div class="property-thumbnail" style="background-image:url(<?php echo $summary['thumbnail']['sizes']['thumbnail']; ?>);" data-text="<?php echo $summary_html; ?>">
+                                    </div>
                                 <?php endforeach;?>
                             </div>
                             <div id="property-text" class="text show-review">
-                                <?php echo get_field('general_summery'); ?>
+                                <?php echo get_field('general_summary'); ?>
                             </div>
 
                         </div>
                     </div>
-					
-
 				</div>
-
 			</div>
 
 
