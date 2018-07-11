@@ -909,6 +909,11 @@ FOOTER STYLES
 		}
 	}
 }
+
+.admin-bar #div-header{
+	padding-top:47px;
+} 
+
 body{
 	&.home_page{
 		background-color: $dark-gray;
@@ -952,6 +957,7 @@ body{
 						width: 50px;
 						display: inline-block;
 						background-size: cover;
+						background-position: center;
 						
 					}
 					.text {
