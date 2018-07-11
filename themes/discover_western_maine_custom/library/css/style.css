@@ -3162,11 +3162,31 @@ you can add resource intensive styles.
   }
 
   /* add hover styles for icons */
+<<<<<<< HEAD
   /* line 294, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 290, ../scss/breakpoints/_768up.scss */
+  html {
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  /* line 296, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.home_page {
+    min-height: 950px;
+    height: 100%;
+    position: relative;
+  }
+  /* line 300, ../scss/breakpoints/_768up.scss */
+  body.home_page #container {
     overflow: hidden;
   }
+<<<<<<< HEAD
   /* line 296, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 303, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.home_page .icon:hover {
     border-radius: 10px;
     background-color: #ffffff !important;
@@ -3174,34 +3194,55 @@ you can add resource intensive styles.
     stroke: #484848;
     fill: #484848;
   }
+<<<<<<< HEAD
   /* line 304, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 311, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.home_page #about-properties-wrapper {
-    position: absolute;
-    width: 90%;
-    padding: 15px;
-    height: 200%;
-    left: 5%;
+    padding: 0 15px;
+    height: 100%;
   }
+<<<<<<< HEAD
   /* line 310, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 314, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.home_page #about-properties-wrapper #about-properties {
     width: 100%;
-    height: 100%;
+    height: 2000px;
     max-width: 900px;
-    padding: 15px;
+    padding: 0 15px;
     background-color: rgba(100, 100, 100, 0.5);
     box-shadow: 0 0 8px 0px #676767;
   }
+<<<<<<< HEAD
   /* line 318, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 321, ../scss/breakpoints/_768up.scss */
+  body.home_page #about-properties-wrapper #about-properties #property-thumbnails {
+    padding-top: 20px;
+  }
+  /* line 323, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.home_page #about-properties-wrapper #about-properties #property-thumbnails .property-thumbnail {
     width: 150px;
     height: 150px;
   }
+<<<<<<< HEAD
   /* line 324, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 329, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.home_page #about-properties-wrapper #about-properties #property-text .five-star {
     margin-bottom: 30px;
     margin-top: 20px;
   }
+<<<<<<< HEAD
   /* line 333, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 338, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.property_page .icon:hover {
     border-radius: 10px;
     background-color: #000000 !important;
@@ -3209,13 +3250,18 @@ you can add resource intensive styles.
     stroke: #ffffff;
     fill: #ffffff;
   }
+<<<<<<< HEAD
   /* line 341, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 346, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.property_page .slick-gallery .slick-arrow {
     display: inline-block !important;
     width: 50px;
     height: 50px;
     z-index: 2;
   }
+<<<<<<< HEAD
   /* line 346, ../scss/breakpoints/_768up.scss */
   body.property_page .slick-gallery .slick-arrow:before {
     font-size: 30px;
@@ -3233,6 +3279,25 @@ you can add resource intensive styles.
     position: relative;
   }
   /* line 360, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 351, ../scss/breakpoints/_768up.scss */
+  body.property_page .slick-gallery .slick-arrow:before {
+    font-size: 30px;
+  }
+  /* line 355, ../scss/breakpoints/_768up.scss */
+  body.property_page .slick-gallery .slick-next {
+    right: 0;
+  }
+  /* line 358, ../scss/breakpoints/_768up.scss */
+  body.property_page .slick-gallery .slick-prev {
+    left: 0;
+  }
+  /* line 362, ../scss/breakpoints/_768up.scss */
+  body.property_page #gallery-nav {
+    position: relative;
+  }
+  /* line 365, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.property_page #gallery-nav .slick-custom-arrow {
     position: absolute;
     font-size: 20px;
@@ -3240,6 +3305,7 @@ you can add resource intensive styles.
     cursor: pointer;
     display: block !important;
   }
+<<<<<<< HEAD
   /* line 367, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav #slick-custom-prev {
     left: calc(20% - 20px);
@@ -3249,21 +3315,44 @@ you can add resource intensive styles.
     right: calc(20% - 20px);
   }
   /* line 373, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 372, ../scss/breakpoints/_768up.scss */
+  body.property_page #gallery-nav #slick-custom-prev {
+    left: calc(20% - 20px);
+  }
+  /* line 375, ../scss/breakpoints/_768up.scss */
+  body.property_page #gallery-nav #slick-custom-next {
+    right: calc(20% - 20px);
+  }
+  /* line 378, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.property_page #gallery-nav .slick-nav {
     width: 60%;
     margin: 10px 20%;
   }
+<<<<<<< HEAD
   /* line 377, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 382, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.property_page #gallery-nav .slick-nav .slick-nav-img img {
     height: 150px;
     max-width: 200px;
     margin: 0 10px;
   }
+<<<<<<< HEAD
   /* line 384, ../scss/breakpoints/_768up.scss */
   body.property_page #gallery-nav .slick-dots {
     display: block !important;
   }
   /* line 390, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 389, ../scss/breakpoints/_768up.scss */
+  body.property_page #gallery-nav .slick-dots {
+    display: block !important;
+  }
+  /* line 395, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   body.about_page .icon:hover {
     border-radius: 10px;
     background-color: #cacaca !important;
@@ -3272,18 +3361,27 @@ you can add resource intensive styles.
     fill: #484848;
   }
 
+<<<<<<< HEAD
   /* line 400, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 405, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #container {
     position: relative;
     padding-bottom: 80px;
   }
 
+<<<<<<< HEAD
   /* line 405, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 410, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header {
     display: flex;
     align-items: baseline;
     /* For the maine next to the banner */
   }
+<<<<<<< HEAD
   /* line 408, ../scss/breakpoints/_768up.scss */
   #header h1 {
     font-size: 7vw;
@@ -3293,6 +3391,17 @@ you can add resource intensive styles.
     position: relative;
   }
   /* line 415, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 413, ../scss/breakpoints/_768up.scss */
+  #header h1 {
+    font-size: 7vw;
+  }
+  /* line 416, ../scss/breakpoints/_768up.scss */
+  #header a {
+    position: relative;
+  }
+  /* line 420, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header .maine_svg {
     display: inline-block !important;
     height: 37px;
@@ -3302,7 +3411,11 @@ you can add resource intensive styles.
     bottom: 50%;
     stroke-width: 3px;
   }
+<<<<<<< HEAD
   /* line 425, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 430, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header #pages {
     display: block;
     position: relative;
@@ -3314,26 +3427,39 @@ you can add resource intensive styles.
     right: 0;
     /* For the maine next to the nav links */
   }
+<<<<<<< HEAD
   /* line 435, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 440, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header #pages .maine_svg {
     height: 24px;
     width: 24px;
     bottom: 50%;
     stroke-width: 3px;
   }
+<<<<<<< HEAD
   /* line 442, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 447, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header #pages a {
     color: inherit !important;
     transition: unset;
     margin: 0px 10px;
     position: relative;
   }
+<<<<<<< HEAD
   /* line 448, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 453, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header #pages a .underline {
     position: absolute;
     bottom: -5px;
     left: calc(calc(100% - 75px) / 2);
   }
+<<<<<<< HEAD
   /* line 455, ../scss/breakpoints/_768up.scss */
   #header #pages a:hover .underline {
     display: inline-block;
@@ -3347,20 +3473,44 @@ you can add resource intensive styles.
     margin-bottom: 0px;
   }
   /* line 467, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 460, ../scss/breakpoints/_768up.scss */
+  #header #pages a:hover .underline {
+    display: inline-block;
+  }
+  /* line 464, ../scss/breakpoints/_768up.scss */
+  #header #pages.show {
+    right: 0px;
+  }
+  /* line 466, ../scss/breakpoints/_768up.scss */
+  #header #pages.show a {
+    margin-bottom: 0px;
+  }
+  /* line 472, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #header #hamburger {
     display: none;
   }
 
   /* start home page */
+<<<<<<< HEAD
   /* line 473, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav {
     top: calc(50% - 40px);
   }
   /* line 475, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 478, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gal_nav {
+    top: calc(50% - 40px);
+  }
+  /* line 480, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   .image-gallery .gal_nav svg {
     height: 40px;
     width: 40px;
   }
+<<<<<<< HEAD
   /* line 479, ../scss/breakpoints/_768up.scss */
   .image-gallery .gal_nav.next {
     right: 10px;
@@ -3370,47 +3520,87 @@ you can add resource intensive styles.
     left: 10px;
   }
   /* line 488, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 484, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gal_nav.next {
+    right: 10px;
+  }
+  /* line 487, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gal_nav.prev {
+    left: 10px;
+  }
+  /* line 493, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   .image-gallery .gallery-image .image-overlay .review-wrapper {
     position: absolute;
     width: 50%;
     left: 0;
   }
+<<<<<<< HEAD
   /* line 492, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 497, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   .image-gallery .gallery-image .image-overlay .review-wrapper .review {
     width: 96%;
     max-width: 400px;
   }
+<<<<<<< HEAD
   /* line 495, ../scss/breakpoints/_768up.scss */
   .image-gallery .gallery-image .image-overlay .review-wrapper .review .five-star {
     margin-bottom: 50px;
   }
   /* line 503, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 500, ../scss/breakpoints/_768up.scss */
+  .image-gallery .gallery-image .image-overlay .review-wrapper .review .five-star {
+    margin-bottom: 50px;
+  }
+  /* line 508, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   .image-gallery.fullscreen {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     left: 0px;
     z-index: -1;
     margin: 0px;
     height: 100%;
     overflow: hidden;
     max-height: none;
+    min-height: 100vh;
   }
+<<<<<<< HEAD
   /* line 512, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 518, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   .image-gallery.fullscreen .gal_nav {
     display: none;
   }
 
   /* start property*/
+<<<<<<< HEAD
   /* line 520, ../scss/breakpoints/_768up.scss */
   #property_details div {
     flex-direction: unset;
   }
   /* line 523, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 526, ../scss/breakpoints/_768up.scss */
+  #property_details div {
+    flex-direction: unset;
+  }
+  /* line 529, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #property_details div:nth-child(even) {
     flex-direction: row-reverse;
   }
 
+<<<<<<< HEAD
   /* line 529, ../scss/breakpoints/_768up.scss */
+=======
+  /* line 535, ../scss/breakpoints/_768up.scss */
+>>>>>>> f9f1c1394012291abd516cfe93c73b86c7d3343e
   #footer {
     position: absolute;
     bottom: 0px;
