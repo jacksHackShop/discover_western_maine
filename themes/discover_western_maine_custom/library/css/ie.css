@@ -495,24 +495,34 @@ mobile. Make sure to double check these!
   padding-top: 32px;
 }
 
-/* add hover styles for icons */
 /* line 293, ../scss/breakpoints/_768up.scss */
+.desktop {
+  display: block;
+}
+
+/* line 297, ../scss/breakpoints/_768up.scss */
+.mobile {
+  display: none;
+}
+
+/* add hover styles for icons */
+/* line 302, ../scss/breakpoints/_768up.scss */
 html {
   min-height: 100vh;
   height: 100%;
 }
 
-/* line 299, ../scss/breakpoints/_768up.scss */
+/* line 308, ../scss/breakpoints/_768up.scss */
 body.home_page {
   min-height: 950px;
   height: 100%;
   position: relative;
 }
-/* line 303, ../scss/breakpoints/_768up.scss */
+/* line 312, ../scss/breakpoints/_768up.scss */
 body.home_page #container {
   overflow: hidden;
 }
-/* line 306, ../scss/breakpoints/_768up.scss */
+/* line 315, ../scss/breakpoints/_768up.scss */
 body.home_page .icon:hover {
   border-radius: 10px;
   background-color: #ffffff !important;
@@ -520,12 +530,12 @@ body.home_page .icon:hover {
   stroke: #484848;
   fill: #484848;
 }
-/* line 314, ../scss/breakpoints/_768up.scss */
+/* line 323, ../scss/breakpoints/_768up.scss */
 body.home_page #about-properties-wrapper {
   padding: 0 15px;
   height: 100%;
 }
-/* line 317, ../scss/breakpoints/_768up.scss */
+/* line 326, ../scss/breakpoints/_768up.scss */
 body.home_page #about-properties-wrapper #about-properties {
   width: 100%;
   height: 2000px;
@@ -534,21 +544,21 @@ body.home_page #about-properties-wrapper #about-properties {
   background-color: rgba(100, 100, 100, 0.5);
   box-shadow: 0 0 8px 0px #676767;
 }
-/* line 324, ../scss/breakpoints/_768up.scss */
+/* line 333, ../scss/breakpoints/_768up.scss */
 body.home_page #about-properties-wrapper #about-properties #property-thumbnails {
   padding-top: 20px;
 }
-/* line 326, ../scss/breakpoints/_768up.scss */
+/* line 335, ../scss/breakpoints/_768up.scss */
 body.home_page #about-properties-wrapper #about-properties #property-thumbnails .property-thumbnail {
   width: 150px;
   height: 150px;
 }
-/* line 332, ../scss/breakpoints/_768up.scss */
+/* line 341, ../scss/breakpoints/_768up.scss */
 body.home_page #about-properties-wrapper #about-properties #property-text .five-star {
   margin-bottom: 30px;
   margin-top: 20px;
 }
-/* line 341, ../scss/breakpoints/_768up.scss */
+/* line 350, ../scss/breakpoints/_768up.scss */
 body.property_page .icon:hover {
   border-radius: 10px;
   background-color: #000000 !important;
@@ -556,30 +566,30 @@ body.property_page .icon:hover {
   stroke: #ffffff;
   fill: #ffffff;
 }
-/* line 349, ../scss/breakpoints/_768up.scss */
+/* line 358, ../scss/breakpoints/_768up.scss */
 body.property_page .slick-gallery .slick-arrow {
   display: inline-block !important;
   width: 50px;
   height: 50px;
   z-index: 2;
 }
-/* line 354, ../scss/breakpoints/_768up.scss */
+/* line 363, ../scss/breakpoints/_768up.scss */
 body.property_page .slick-gallery .slick-arrow:before {
   font-size: 30px;
 }
-/* line 358, ../scss/breakpoints/_768up.scss */
+/* line 367, ../scss/breakpoints/_768up.scss */
 body.property_page .slick-gallery .slick-next {
   right: 0;
 }
-/* line 361, ../scss/breakpoints/_768up.scss */
+/* line 370, ../scss/breakpoints/_768up.scss */
 body.property_page .slick-gallery .slick-prev {
   left: 0;
 }
-/* line 365, ../scss/breakpoints/_768up.scss */
+/* line 374, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav {
   position: relative;
 }
-/* line 368, ../scss/breakpoints/_768up.scss */
+/* line 377, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav .slick-custom-arrow {
   position: absolute;
   font-size: 20px;
@@ -587,30 +597,30 @@ body.property_page #gallery-nav .slick-custom-arrow {
   cursor: pointer;
   display: block !important;
 }
-/* line 375, ../scss/breakpoints/_768up.scss */
+/* line 384, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav #slick-custom-prev {
   left: calc(20% - 20px);
 }
-/* line 378, ../scss/breakpoints/_768up.scss */
+/* line 387, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav #slick-custom-next {
   right: calc(20% - 20px);
 }
-/* line 381, ../scss/breakpoints/_768up.scss */
+/* line 390, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav .slick-nav {
   width: 60%;
   margin: 10px 20%;
 }
-/* line 385, ../scss/breakpoints/_768up.scss */
+/* line 394, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav .slick-nav .slick-nav-img img {
   height: 150px;
   max-width: 200px;
   margin: 0 10px;
 }
-/* line 392, ../scss/breakpoints/_768up.scss */
+/* line 401, ../scss/breakpoints/_768up.scss */
 body.property_page #gallery-nav .slick-dots {
   display: block !important;
 }
-/* line 398, ../scss/breakpoints/_768up.scss */
+/* line 407, ../scss/breakpoints/_768up.scss */
 body.about_page .icon:hover {
   border-radius: 10px;
   background-color: #cacaca !important;
@@ -619,27 +629,27 @@ body.about_page .icon:hover {
   fill: #484848;
 }
 
-/* line 408, ../scss/breakpoints/_768up.scss */
+/* line 417, ../scss/breakpoints/_768up.scss */
 #container {
   position: relative;
   padding-bottom: 80px;
 }
 
-/* line 413, ../scss/breakpoints/_768up.scss */
+/* line 422, ../scss/breakpoints/_768up.scss */
 #header {
   display: flex;
   align-items: baseline;
   /* For the maine next to the banner */
 }
-/* line 416, ../scss/breakpoints/_768up.scss */
+/* line 425, ../scss/breakpoints/_768up.scss */
 #header h1 {
   font-size: 7vw;
 }
-/* line 419, ../scss/breakpoints/_768up.scss */
+/* line 428, ../scss/breakpoints/_768up.scss */
 #header a {
   position: relative;
 }
-/* line 423, ../scss/breakpoints/_768up.scss */
+/* line 432, ../scss/breakpoints/_768up.scss */
 #header .maine_svg {
   display: inline-block !important;
   height: 37px;
@@ -649,7 +659,7 @@ body.about_page .icon:hover {
   bottom: 50%;
   stroke-width: 3px;
 }
-/* line 433, ../scss/breakpoints/_768up.scss */
+/* line 442, ../scss/breakpoints/_768up.scss */
 #header #pages {
   display: block;
   position: relative;
@@ -661,77 +671,77 @@ body.about_page .icon:hover {
   right: 0;
   /* For the maine next to the nav links */
 }
-/* line 443, ../scss/breakpoints/_768up.scss */
+/* line 452, ../scss/breakpoints/_768up.scss */
 #header #pages .maine_svg {
   height: 24px;
   width: 24px;
   bottom: 50%;
   stroke-width: 3px;
 }
-/* line 450, ../scss/breakpoints/_768up.scss */
+/* line 459, ../scss/breakpoints/_768up.scss */
 #header #pages a {
   color: inherit !important;
   transition: unset;
   margin: 0px 10px;
   position: relative;
 }
-/* line 456, ../scss/breakpoints/_768up.scss */
+/* line 465, ../scss/breakpoints/_768up.scss */
 #header #pages a .underline {
   position: absolute;
   bottom: -5px;
   left: calc(calc(100% - 75px) / 2);
 }
-/* line 463, ../scss/breakpoints/_768up.scss */
+/* line 472, ../scss/breakpoints/_768up.scss */
 #header #pages a:hover .underline {
   display: inline-block;
 }
-/* line 467, ../scss/breakpoints/_768up.scss */
+/* line 476, ../scss/breakpoints/_768up.scss */
 #header #pages.show {
   right: 0px;
 }
-/* line 469, ../scss/breakpoints/_768up.scss */
+/* line 478, ../scss/breakpoints/_768up.scss */
 #header #pages.show a {
   margin-bottom: 0px;
 }
-/* line 475, ../scss/breakpoints/_768up.scss */
+/* line 484, ../scss/breakpoints/_768up.scss */
 #header #hamburger {
   display: none;
 }
 
 /* start home page */
-/* line 481, ../scss/breakpoints/_768up.scss */
+/* line 490, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav {
   top: calc(50% - 40px);
 }
-/* line 483, ../scss/breakpoints/_768up.scss */
+/* line 492, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav svg {
   height: 40px;
   width: 40px;
 }
-/* line 487, ../scss/breakpoints/_768up.scss */
+/* line 496, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav.next {
   right: 10px;
 }
-/* line 490, ../scss/breakpoints/_768up.scss */
+/* line 499, ../scss/breakpoints/_768up.scss */
 .image-gallery .gal_nav.prev {
   left: 10px;
 }
-/* line 496, ../scss/breakpoints/_768up.scss */
+/* line 505, ../scss/breakpoints/_768up.scss */
 .image-gallery .gallery-image .image-overlay .review-wrapper {
   position: absolute;
   width: 50%;
   left: 0;
 }
-/* line 500, ../scss/breakpoints/_768up.scss */
+/* line 509, ../scss/breakpoints/_768up.scss */
 .image-gallery .gallery-image .image-overlay .review-wrapper .review {
   width: 96%;
   max-width: 400px;
 }
-/* line 503, ../scss/breakpoints/_768up.scss */
+/* line 512, ../scss/breakpoints/_768up.scss */
 .image-gallery .gallery-image .image-overlay .review-wrapper .review .five-star {
   margin-bottom: 50px;
 }
-/* line 511, ../scss/breakpoints/_768up.scss */
+/* line 520, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen {
   position: absolute;
   bottom: 0px;
@@ -743,22 +753,22 @@ body.about_page .icon:hover {
   max-height: none;
   min-height: 100vh;
 }
-/* line 521, ../scss/breakpoints/_768up.scss */
+/* line 530, ../scss/breakpoints/_768up.scss */
 .image-gallery.fullscreen .gal_nav {
   display: none;
 }
 
 /* start property*/
-/* line 529, ../scss/breakpoints/_768up.scss */
+/* line 538, ../scss/breakpoints/_768up.scss */
 #property_details div {
   flex-direction: unset;
 }
-/* line 532, ../scss/breakpoints/_768up.scss */
+/* line 541, ../scss/breakpoints/_768up.scss */
 #property_details div:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-/* line 538, ../scss/breakpoints/_768up.scss */
+/* line 547, ../scss/breakpoints/_768up.scss */
 #footer {
   position: absolute;
   bottom: 0px;
