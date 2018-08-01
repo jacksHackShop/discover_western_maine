@@ -289,6 +289,15 @@ mobile. Make sure to double check these!
 .admin-bar #div-header{
 	padding-top:32px;
 } 
+
+.desktop {
+	display:block;
+}
+
+.mobile {
+	display:none;
+}
+
 /* add hover styles for icons */
 html{
 	min-height:100vh;
