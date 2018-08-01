@@ -195,6 +195,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             element.addEventListener(event, function(e) {
                 document.getElementById('property-text').innerHTML = e.target.dataset.text;
                 document.getElementById('property-text').classList.remove('show-review');
+                var property_links = document.getElementsByClassName('mobile-property-link');
+		        for (var i = 0; i < property_links.length; i++) {
+		         	property_links[i].addEventListener('touchstart', function(touch_event) {
+		         		touch_event.target.click();
+		         	});
+		        }
             });
         });
         element.addEventListener('mouseout', function (e) {
@@ -202,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             document.getElementById('property-text').classList.add('show-review');
 
         });
+
 
         document.getElementById('property-text').dataset.text = document.getElementsByClassName('review')[0].innerHTML;
     }

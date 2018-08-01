@@ -33,9 +33,12 @@
                                 foreach ($summaries as $summary) : ?>
                                     <?php $summary_html = $summary['summary'];
                                     if ($summary['property_link'] != '') {
-                                        $summary_html .= "<a class='button' href='{$summary['property_link']}'>Checkout {$summary['title']}</a>";
+                                        $summary_html .= "<br/><a class='mobile button mobile-property-link' href='{$summary['property_link']}'>Click here to learn more</a>";
                                     } ?>
                                     <div class="property-thumbnail" style="background-image:url(<?php echo $summary['thumbnail']['sizes']['thumbnail']; ?>);" data-text="<?php echo $summary_html; ?>">
+                                        <?php if ($summary['property_link'] != ''):?>
+                                        <a class="desktop desktop-property-link" href="<?php echo $summary['property_link'];?>"></a>
+                                        <?php endif ;?>
                                     </div>
                                 <?php endforeach;?>
                             </div>
