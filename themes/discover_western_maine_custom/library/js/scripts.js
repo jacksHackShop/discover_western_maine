@@ -116,7 +116,6 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
-  get_calendar_info($);
 
 }); /* end of as page load scripts */
 
@@ -367,16 +366,3 @@ function change_gallery_target( change_by ){
 
 // end gallery code
 /* END CHRIS CODE */
-
-
-/* JACK CALENDAR CODE */
-
-function get_calendar_info($){
-  $.getJSON( 'https://calendar.google.com/calendar/embed?src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&ctz=America%2FNew_York', function(data){
-    console.log(data);
-  });
-}
-
-
-
-/* END JACK CALENDAR CODE */
