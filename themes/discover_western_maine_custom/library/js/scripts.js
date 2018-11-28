@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //JACK GOOGLE CALENDAR HACK
 
   //jQuery("#primary_calendar").load('https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=fd7ike4kdciuq9362qr02j2he0o52gc5%40import.calendar.google.com&amp;color=%231B887A&amp;src=0sf8fkp61gku81s7hdkavqa7hee1j9oq%40import.calendar.google.com&amp;color=%231B887A&amp;src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&amp;color=%231B887A&amp;ctz=America%2FNew_York');
-
+/*
   var cabin_cal_url = 'https://calendar.google.com/calendar/embed';
   var parameters = 'showTitle=0&showPrint=0&showCalendars=0&height=600&wkst=1&bgcolor=%23FFFFFF&src=fd7ike4kdciuq9362qr02j2he0o52gc5%40import.calendar.google.com&color=%231B887A&src=0sf8fkp61gku81s7hdkavqa7hee1j9oq%40import.calendar.google.com&color=%231B887A&src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&color=%231B887A&ctz=America%2FNew_York';
 
@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     'http://localhost/main_away/wp-content/themes/discover_western_maine_custom/proxy.php', args
   );
 
-
+*/
 
 });
 
