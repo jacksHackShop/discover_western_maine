@@ -160,118 +160,134 @@ function add_house_rules_section_to_new_calendars(){
 
 
 // Start gallery code
-document.addEventListener("DOMContentLoaded", function(event) { 
-    var galleries = document.getElementsByClassName('image-gallery') || [];
+document.addEventListener("DOMContentLoaded", function(event) {
+  var galleries = document.getElementsByClassName('image-gallery') || [];
 
-    var SMOOTH_SCROLL_STEP = 30;
+  var SMOOTH_SCROLL_STEP = 30;
 
-    for( var i = 0; i < galleries.length; i++ ){
-        var this_gallery = galleries[i];
-        this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
-        this_gallery.children[2].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
-    }
+  for( var i = 0; i < galleries.length; i++ ){
+      var this_gallery = galleries[i];
+      this_gallery.children[0].addEventListener('click',change_gallery_target.bind( this_gallery, -1 ));
+      this_gallery.children[2].addEventListener('click',change_gallery_target.bind( this_gallery, 1 ));        
+  }
 
-    // if toggle calendar exsists, set up listener for it
-    var calendar_toggle = document.getElementById('toggle_calendar');
-    if (calendar_toggle){
-        calendar_toggle.addEventListener('click', function(e){
-            if(calendar_toggle.checked){
-                document.getElementById('primary_calendar').style.display = 'none';  
-                document.getElementById('alternate_calendar').style.display = 'block';
-            }
-            else {
-                document.getElementById('primary_calendar').style.display = 'block';  
-                document.getElementById('alternate_calendar').style.display = 'none';
-            }
-        });
-    }
+  // if toggle calendar exsists, set up listener for it
+  var calendar_toggle = document.getElementById('toggle_calendar');
+  if (calendar_toggle){
+      calendar_toggle.addEventListener('click', function(e){
+          if(calendar_toggle.checked){
+              document.getElementById('primary_calendar').style.display = 'none';  
+              document.getElementById('alternate_calendar').style.display = 'block';
+          }
+          else {
+              document.getElementById('primary_calendar').style.display = 'block';  
+              document.getElementById('alternate_calendar').style.display = 'none';
+          }
+      });
+  }
 
-    // set up listeners for home page property summeries
-    var start_events = ['mouseenter', 'touchstart'];
-    var thumbnails = document.getElementsByClassName('property-thumbnail');
-    for(var i = 0 ; i < thumbnails.length; i++) {
-        var element = thumbnails[i]; 
-        start_events.forEach(function (event){
-            element.addEventListener(event, function(e) {
-                document.getElementById('property-text').innerHTML = e.target.dataset.text;
-                document.getElementById('property-text').classList.remove('show-review');
-                var property_links = document.getElementsByClassName('mobile-property-link');
-		        for (var i = 0; i < property_links.length; i++) {
-		         	property_links[i].addEventListener('touchstart', function(touch_event) {
-		         		touch_event.target.click();
-		         	});
-		        }
-            });
-        });
-        element.addEventListener('mouseout', function (e) {
-            document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
-            document.getElementById('property-text').classList.add('show-review');
+  // set up listeners for home page property summeries
+  var start_events = ['mouseenter', 'touchstart'];
+  var thumbnails = document.getElementsByClassName('property-thumbnail');
+  for(var i = 0 ; i < thumbnails.length; i++) {
+      var element = thumbnails[i]; 
+      start_events.forEach(function (event){
+          element.addEventListener(event, function(e) {
+              document.getElementById('property-text').innerHTML = e.target.dataset.text;
+              document.getElementById('property-text').classList.remove('show-review');
+              var property_links = document.getElementsByClassName('mobile-property-link');
+	        for (var i = 0; i < property_links.length; i++) {
+	         	property_links[i].addEventListener('touchstart', function(touch_event) {
+	         		touch_event.target.click();
+	         	});
+	        }
+          });
+      });
+      element.addEventListener('mouseout', function (e) {
+          document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
+          document.getElementById('property-text').classList.add('show-review');
 
-        });
+      });
 
 
-        document.getElementById('property-text').dataset.text = document.getElementsByClassName('review')[0].innerHTML;
-    }
-    // if there are property thumbnails, load the review text
-    if (thumbnails.length > 0) {
-        document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
-    }
+      document.getElementById('property-text').dataset.text = document.getElementsByClassName('review')[0].innerHTML;
+  }
+  // if there are property thumbnails, load the review text
+  if (thumbnails.length > 0) {
+      document.getElementById('property-text').innerHTML = document.getElementById('property-text').dataset.text;
+  }
 
-    // set up listeners for about page
-    var selectors = document.getElementsByClassName('selector');
-    for (var i = 0; i < selectors.length; i++) {
-        selectors[i].addEventListener('click', function(e){
-            // clear active class from the buttons
-            for (var j = 0; j < selectors.length; j++) {
-                selectors[j].classList.remove('active');
-            }
-            // reapply it to the target
-            e.target.classList.add('active');
-            var active =  document.getElementById('active-section');
-            active.classList.add('hide');
-            var content = document.getElementById(e.target.textContent);
-            setTimeout(function(){grow(active, content)},300);
-        });
-    }
-    if (selectors.length > 0){
-        selectors[0].click();
-    }
+  // set up listeners for about page
+  var selectors = document.getElementsByClassName('selector');
+  for (var i = 0; i < selectors.length; i++) {
+      selectors[i].addEventListener('click', function(e){
+          // clear active class from the buttons
+          for (var j = 0; j < selectors.length; j++) {
+              selectors[j].classList.remove('active');
+          }
+          // reapply it to the target
+          e.target.classList.add('active');
+          var active =  document.getElementById('active-section');
+          active.classList.add('hide');
+          var content = document.getElementById(e.target.textContent);
+          setTimeout(function(){grow(active, content)},300);
+      });
+  }
+  if (selectors.length > 0){
+      selectors[0].click();
+  }
 
-    // if we have a slick gallery, load it
-    if (document.getElementsByClassName('slick-gallery').length > 0){
-        jQuery('.slick-gallery').slick({
-            lazyLoad: "progressive",
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
-            adaptiveHeight: true,
-            asNavFor: '.slick-nav'
-        });
-        jQuery('.slick-nav').slick({
-            lazyLoad: "progressive",
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: '.slick-gallery',
-            prevArrow: document.getElementById('slick-custom-prev'),
-            nextArrow: document.getElementById('slick-custom-next'),
-            dots: false,
-            variableWidth: true,
-            centerMode: true,
-            focusOnSelect: true
-        });
+  // if we have a slick gallery, load it
+  if (document.getElementsByClassName('slick-gallery').length > 0){
+      jQuery('.slick-gallery').slick({
+          lazyLoad: "progressive",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          adaptiveHeight: true,
+          asNavFor: '.slick-nav'
+      });
+      jQuery('.slick-nav').slick({
+          lazyLoad: "progressive",
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.slick-gallery',
+          prevArrow: document.getElementById('slick-custom-prev'),
+          nextArrow: document.getElementById('slick-custom-next'),
+          dots: false,
+          variableWidth: true,
+          centerMode: true,
+          focusOnSelect: true
+      });
 
-        document.getElementsByClassName('slick-gallery')[0].addEventListener('click', function(e){
-            jQuery('.slick-gallery').slick('slickNext');
-        });
-    
-    }
+      document.getElementsByClassName('slick-gallery')[0].addEventListener('click', function(e){
+          jQuery('.slick-gallery').slick('slickNext');
+      });
+  
+  }
 
-    if (galleries.length > 0){
-        var auto_scroll_interval = window.setInterval(function(){
-            change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
-        }, 8000);
-        imageGalleryPreload('image-gallery');
-    }
+  if (galleries.length > 0){
+      var auto_scroll_interval = window.setInterval(function(){
+          change_gallery_target.apply(document.getElementsByClassName('image-gallery')[0], [1]);
+      }, 8000);
+      imageGalleryPreload('image-gallery');
+  }
+
+  //JACK GOOGLE CALENDAR HACK
+
+  //jQuery("#primary_calendar").load('https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=fd7ike4kdciuq9362qr02j2he0o52gc5%40import.calendar.google.com&amp;color=%231B887A&amp;src=0sf8fkp61gku81s7hdkavqa7hee1j9oq%40import.calendar.google.com&amp;color=%231B887A&amp;src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&amp;color=%231B887A&amp;ctz=America%2FNew_York');
+
+  var cabin_cal_url = 'https://calendar.google.com/calendar/embed';
+  var parameters = 'showTitle=0&showPrint=0&showCalendars=0&height=600&wkst=1&bgcolor=%23FFFFFF&src=fd7ike4kdciuq9362qr02j2he0o52gc5%40import.calendar.google.com&color=%231B887A&src=0sf8fkp61gku81s7hdkavqa7hee1j9oq%40import.calendar.google.com&color=%231B887A&src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&color=%231B887A&ctz=America%2FNew_York';
+
+  var args = JSON.parse('{"' + decodeURI(parameters).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+  args.csurl = cabin_cal_url;
+  jQuery('#primary_calendar').load(
+    'http://localhost/main_away/wp-content/themes/discover_western_maine_custom/proxy.php', args
+  );
+
+
+
 });
 
 // about page animation
