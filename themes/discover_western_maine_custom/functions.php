@@ -553,11 +553,18 @@ add_role(
 
 
 function google_maps_embed_api(){
-  wp_register_script('google_maps_embed_js', "https://maps.googleapis.com/maps/api/js?key=AIzaSyCjcHWNX3KXqGSIK9ih1akD06ZchY2UHrE&callback=init_maps", array( 'bones-js' ), '', true);
+  wp_register_script('google_maps_embed_js', "https://maps.googleapis.com/maps/api/js?key=AIzaSyCSjhFe4t__rB4AcRJxFTPb8BY3M8tSfOg&callback=init_maps", array( 'bones-js' ), '', true);
   wp_enqueue_script('google_maps_embed_js');
 }
 /* COMMENT  \/ THIS \/  OUT IF NO MAPS ARE BEING USED */
 add_action( 'wp_enqueue_scripts', 'google_maps_embed_api', 9999 );
+
+function my_acf_google_map_api( $api ){
+  $api['key'] = 'AIzaSyCSjhFe4t__rB4AcRJxFTPb8BY3M8tSfOg';
+  return $api;
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 
