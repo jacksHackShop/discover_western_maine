@@ -273,6 +273,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       imageGalleryPreload('image-gallery');
   }
 
+  $ = $ || jQuery;
 
   $('.calendars_wrapper').each(function(){
     var d = new Date();
@@ -301,7 +302,7 @@ function fadeIn(element, content_ele){
 }
 
 function grow(element, content_ele){
-    element.style.height = content_ele.offsetHeight + 'px';
+    element.style.height = (content_ele.offsetHeight + 150) + 'px';
     setTimeout(function(){fadeIn(element, content_ele)},300);
 }
 

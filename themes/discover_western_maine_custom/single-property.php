@@ -102,15 +102,14 @@
 				<?php
 					$cal_parser = new CalFileParser();
 					$events = [];
-					if( null !== get_field('icals') ):
-						$icals = get_field('icals');
+					if( null !== get_field('calendars_to_sync') ):
+						$icals = get_field('calendars_to_sync');
+						echo "hello";
 						
 						foreach( $icals as $ical ){
-							$events = array_merge( $events, $cal_parser->parse( $ical ) );
+						echo "foo";
+							$events = array_merge( $events, $cal_parser->parse( $ical['ical_link'] ) );
 						}
-						//'https://calendar.google.com/calendar/ical/1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com/public/basic.ics'
-						//'https://calendar.glampinghub.com/AgYOUlBXAgMFAAdSAAhXV1taWgNSUgMBWghUBgRSA1Y%253D.ics'
-						//'http://www.homeaway.com/icalendar/a5e0b6258bfe45b89793c7c76f1f87b4.ics'
 					?>
 					<div class="calendar_container text_body m-all t-1of3 d-1of3">
 						<h1>Availability</h1>
