@@ -1536,6 +1536,7 @@ body{
 					position:relative;
 					opacity:.99;
 					font-size:150%;
+					transition:background-color 1s;
 					&:after{    
 						content: '';
 				    position: absolute;
@@ -1553,6 +1554,13 @@ body{
 						bottom:1px;
 						left:2px;
 						right:2px;
+					}
+					&:hover{
+						background-color:rgba(20,100,40,.7);
+
+					}
+					&.booked:hover{
+						background-color:rgba(100,40,20,.7);
 					}
 					&.booked:after{
 				    content:'/';
