@@ -1591,3 +1591,102 @@ body{
 #booking_details{
 	width:100%;
 }
+
+.gmap_listing_explorer_wrapper{
+  height: 30vw;
+  max-height: 600px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+	.listings_header{
+		position:absolute;
+		top:0;
+		left:0;
+		width:275px;
+		margin:0;
+		padding:3px 15px 2px;
+		font-size:1.3em;
+		background-color:$wsv_red;
+		color:white;
+    z-index: 1;
+		&:after{
+	    content: '';
+	    position: absolute;
+	    left: 11px;
+	    top: 100%;
+	    width: 0;
+	    height: 0;
+	    border-left: 11px solid transparent;
+	    border-right: 11px solid transparent;
+	    border-top: 11px solid $wsv_red;
+	    clear: both;
+	    transition: all 1s;
+		}
+	}
+	.listings{
+		position:absolute;
+		left:0;
+		top:33.5px;
+		right:calc(100% - 275px);
+		bottom:0;
+		height:calc(100% - 33.5px);
+		overflow:auto;
+		&::-webkit-scrollbar {
+    	width: .5em;
+		}
+		&::-webkit-scrollbar-track {
+	    background-color:#ccc;
+		}
+		 
+		&::-webkit-scrollbar-thumb {
+		  background-color: $wsv_red;
+		}
+		.listing{
+			position:relative;
+			padding: 10px 0;
+			border-bottom: dotted 1px $wsv_red;
+			cursor:pointer;
+			&:last-child{
+				border-bottom: none;
+			}
+			.short{
+				padding:2px;
+				position:relative;
+				overflow:auto;
+				.pin{
+					float:left;
+					width:14%;
+					padding:10px 1% 0 2%;
+				}
+				.title_block{
+					float:right;
+					padding: 0;
+					width:85%;
+					text-align:center;
+					h2{
+						padding-top: 10px;
+						font-size: 1.3em;
+					} h2, p{
+						margin:0;
+					}
+				}
+			}
+			.long{
+				max-height:0px;
+				transition: max-height 1s ease-out;
+				overflow:hidden;
+				padding:2px;
+			}
+			&.expanded .long{
+				max-height:1000px;
+			}
+		}
+	}
+	.map{
+		position:absolute;
+		left:275px;
+		top:0;
+		right:0;
+		bottom:0;
+	}
+}
