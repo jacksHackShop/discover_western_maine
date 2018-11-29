@@ -1606,7 +1606,7 @@ body{
 		margin:0;
 		padding:3px 15px 2px;
 		font-size:1.3em;
-		background-color:$wsv_red;
+		background-color:$red;
 		color:white;
     z-index: 1;
 		&:after{
@@ -1618,7 +1618,7 @@ body{
 	    height: 0;
 	    border-left: 11px solid transparent;
 	    border-right: 11px solid transparent;
-	    border-top: 11px solid $wsv_red;
+	    border-top: 11px solid $red;
 	    clear: both;
 	    transition: all 1s;
 		}
@@ -1639,12 +1639,12 @@ body{
 		}
 		 
 		&::-webkit-scrollbar-thumb {
-		  background-color: $wsv_red;
+		  background-color: $red;
 		}
 		.listing{
 			position:relative;
 			padding: 10px 0;
-			border-bottom: dotted 1px $wsv_red;
+			border-bottom: dotted 1px $red;
 			cursor:pointer;
 			&:last-child{
 				border-bottom: none;
