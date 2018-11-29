@@ -1566,12 +1566,6 @@ body{
 				color: $white;
 			}
 			.calendar tbody td{
-				&.past{
-					opacity:.5;
-					&:hover{
-						background-color:rgba(0,0,0,.3);
-					}
-				}
 				&:hover{
 					background-color:rgba(20,190,40,.5);
 					transition:background-color .3s;
@@ -1579,9 +1573,18 @@ body{
 				&.booked:hover{
 					background-color:rgba(220,40,20,.5);
 				}
-			}
-			&.booked:after{
-		    content:'/';
+				&.past{
+					opacity:.5;
+					&:hover{
+						background-color:rgba(0,0,0,.3);
+					}
+					&.booked:after{
+				    content:'';
+					}
+				}
+				&.booked:after{
+			    content:'/';
+				}
 			}
 		}
 	}
