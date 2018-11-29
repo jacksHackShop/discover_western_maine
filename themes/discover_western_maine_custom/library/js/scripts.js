@@ -400,7 +400,7 @@ function init_maps(){
 }
 
 var build_directions_link_map = function( dom_element, map_style ){
-  var $dom_element = jQuery(dom_element);
+  var $dom_element = jQuery(dom_element) || jQuery(this);
   var this_map_div = $dom_element.find('.map')[0] || $dom_element.append( '<div class="map"></div>' )[0];
   var starting_loc = { lat : parseFloat($dom_element.data("centerMarker")["position"]['lat']), lng : parseFloat($dom_element.data("centerMarker")["position"]['lng']) } || {lat: 42.7756411, lng: -71.1429567};
   var marker_data = {};
@@ -422,6 +422,7 @@ var build_directions_link_map = function( dom_element, map_style ){
 }
 
 var build_map_listing_explorer = function( dom_element, map_style ){
+  var dom_element = dom_element || this;
   var this_listings = jQuery(dom_element).find('.listings')[0] || jQuery(dom_element).append( '<div class="listings"></div>' )[0];
   var this_map_div = jQuery(dom_element).find('.map')[0] || jQuery(dom_element).append( '<div class="map"></div>' )[0];
   var marker_data = JSON.parse(dom_element.dataset["markers"]) || [];
