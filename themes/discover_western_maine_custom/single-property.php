@@ -137,7 +137,7 @@
 														foreach( $events as $event ){//Check if there is an event on this day
 															if( $event["DTSTART"] <= $day_to_check &&
 																	$event["DTEND"] >= $day_to_check ){
-																$style_classes_for_day .= 'booked';
+																$style_classes_for_day .= ' booked';
 																break;
 															}
 														}
