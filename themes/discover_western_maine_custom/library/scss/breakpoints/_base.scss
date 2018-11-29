@@ -1540,22 +1540,16 @@ body{
 					&:after{    
 						content: '';
 				    position: absolute;
-				    top: -9px;
-				    bottom: -5px;
-				    left: -4px;
-				    right: -1px;
+		        top: -8px;
+				    bottom: 0;
+				    left: 0;
+				    right: 0;
 				    z-index: -1;
 				    font-size: 150%;
 				    font-style: italic;
 					}
 					&.today{
 						border:solid 2px $red;
-					}
-					&.today:after{
-						top:-9px;
-						bottom:1px;
-						left:2px;
-						right:2px;
 					}
 				}
 			}
