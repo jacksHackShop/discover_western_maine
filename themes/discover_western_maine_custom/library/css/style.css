@@ -2880,11 +2880,11 @@ body .icon {
 }
 /* line 1558, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td:hover {
-  background-color: rgba(20, 190, 40, 0.7);
+  background-color: rgba(20, 190, 40, 0.5);
 }
 /* line 1561, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td.booked:hover {
-  background-color: rgba(220, 40, 20, 0.7);
+  background-color: rgba(220, 40, 20, 0.5);
 }
 /* line 1564, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td.booked:after {
@@ -2896,7 +2896,7 @@ body .icon {
 }
 /* line 1569, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td.past:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 /* line 1576, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month.active {
