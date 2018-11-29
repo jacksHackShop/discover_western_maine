@@ -1557,7 +1557,7 @@ body{
 					}
 					&:hover{
 						background-color:rgba(20,190,40,.5);
-						transition:background-color 1s;
+						transition:background-color .3s;
 					}
 					&.booked:hover{
 						background-color:rgba(220,40,20,.5);
