@@ -123,7 +123,7 @@
 											<tr>
 												<?php 
 													for( $day_of_month = 0; $day_of_month < date('w', mktime( 0, 0, 0, $month_num, 1 )); $day_of_month++ ){ 
-														echo '<td></td>';
+														echo '<td class="placeholder"></td>';
 													}//Create empty days at start of month
 													for( $day_of_month = 1; $day_of_month <= date('d', mktime( 0, 0, 0, $month_num + 1, 0)); $day_of_month++ ){
 														if( ( date('w', mktime( 0, 0, 0, $month_num, 1) - 1 ) + $day_of_month ) % 7 == 0 ){ echo '</tr><tr>';}

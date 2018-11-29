@@ -1578,6 +1578,9 @@ body{
 				    content:'';
 					}
 				}
+				&.placeholder{
+					background-color:transparent !important;
+				}
 				&.booked:after{
 			    content:'/';
 				}

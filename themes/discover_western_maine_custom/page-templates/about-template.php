@@ -31,6 +31,9 @@
 
 				<div id="inner-content" class="cf">
 					<div id="section-nav">
+						<?php if( get_field('show_map') && get_field('visit_map') && count( get_field('visit_map') ) > 0 ): ?>
+							<div class="selector">Map</div>
+						<?php endif; ?>
 						<?php $sections = get_field('page_section');
 						foreach ($sections as $section) : ?>
 							<div class="selector"><?php echo $section['section_title'];?></div>
@@ -40,6 +43,15 @@
 						<div id="active-section"></div>
 					</div>
 					<div id="overflow-hider">
+						<?php if( get_field('show_map') && get_field('visit_map') && count( get_field('visit_map') ) > 0 ): ?>
+							<div id="Map" class="section">
+								<div class="gmap_listing_explorer_wrapper" data-markers='<?php echo htmlspecialchars( json_encode( get_field('visit_map') ), ENT_QUOTES, 'UTF-8'); ?>' data-initial-zoom='</php echo get_field("initial_map_zoom"); ?>'>
+									<h2 class="listings_header">LOCATIONS</h2>
+									<div class="listings"></div>
+									<div class="map"></div>
+								</div>
+							</div>
+						<?php endif; ?>
 						<?php foreach ($sections as $section) : ?>
 							<div id="<?php echo $section['section_title']; ?>" class="section">
 								<?php echo $section['section_content']; ?>

@@ -375,3 +375,308 @@ function change_gallery_target( change_by ){
 
 // end gallery code
 /* END CHRIS CODE */
+
+
+
+
+
+
+
+
+
+
+/*############################################################################*/
+/*############################################################################*/
+/*##################################START MAP#################################*/
+/*############################################################################*/
+/*############################################################################*/
+
+
+function init_maps(){
+  var site_wide_map_style = new google.maps.StyledMapType(styled_map_args, {name: 'site_wide_map_style'});
+
+  jQuery('.gmap_listing_explorer_wrapper').each(function(){
+    build_map_listing_explorer(this, site_wide_map_style);
+  });
+  jQuery('a.gmap_directions_link_wrapper').each(function(){
+    build_directions_link_map(this, site_wide_map_style);
+  });
+}
+
+var build_directions_link_map = function( dom_element, map_style ){
+  var $dom_element = jQuery(dom_element);
+  var this_map_div = $dom_element.find('.map')[0] || $dom_element.append( '<div class="map"></div>' )[0];
+  var starting_loc = { lat : parseFloat($dom_element.data("centerMarker")["position"]['lat']), lng : parseFloat($dom_element.data("centerMarker")["position"]['lng']) } || {lat: 42.7756411, lng: -71.1429567};
+  var marker_data = {};
+  marker_data['pin_icon'] = $dom_element.data("centerMarker")["icon"] || [];
+  marker_data['position'] = starting_loc;
+  var marker_title = $dom_element.data("centerMarker")['address'] || 'Hello World';
+
+  this_map = new google.maps.Map(this_map_div, {
+    center: starting_loc,
+    zoom: 11,
+    disableDefaultUI: true
+  });
+  this_map.mapTypes.set('styled_map', map_style);
+  this_map.setMapTypeId('styled_map');
+  add_marker( this_map, marker_data );
+
+  dom_element.target = "_blank";
+  dom_element.href = 'https://maps.google.com/?q='+starting_loc["lat"]+','+starting_loc["lng"];
+}
+
+var build_map_listing_explorer = function( dom_element, map_style ){
+  var this_listings = jQuery(dom_element).find('.listings')[0] || jQuery(dom_element).append( '<div class="listings"></div>' )[0];
+  var this_map_div = jQuery(dom_element).find('.map')[0] || jQuery(dom_element).append( '<div class="map"></div>' )[0];
+  var marker_data = JSON.parse(dom_element.dataset["markers"]) || [];
+  var this_initial_zoom = parseInt(dom_element.dataset["initial_zoom"]) || 11;
+
+  var starting_loc = {lat: 42.7756411, lng: -71.1429567};
+  if( marker_data[0] ){
+    starting_loc = {lat: parseFloat(marker_data[0]["position"]["lat"]), lng: parseFloat(marker_data[0]["position"]["lng"])}
+  }
+  this_map = new google.maps.Map(this_map_div, {
+    center: starting_loc,
+    zoom: 11,
+    disableDefaultUI: true
+  });
+  this_map.mapTypes.set('styled_map', map_style);
+  this_map.setMapTypeId('styled_map');
+
+  for( var i = 0; i < marker_data.length; i++ ){
+    add_marker(this_map, marker_data[i], i, select_location.bind( dom_element, this_map, i ));
+    add_listing(this_listings, this_map, marker_data[i], select_location.bind( dom_element, this_map, i ));
+  }
+}
+
+var add_marker = function( map, marker_data, listing_id, click_action ){
+  //Expected marker_data keyset : [ 'pin_icon', 'position'* : ['lat','lng'], 'title'* ]
+  //Set up map pin
+  var icon_properties = build_icon_properties(marker_data["pin_icon"]);
+  var marker_title = marker_data["title"] || 'Hello World';
+  var this_marker = new google.maps.Marker({
+    position: {lat: parseFloat(marker_data["position"]["lat"]), lng: parseFloat(marker_data["position"]["lng"])},
+    title: marker_title,
+    map: map,
+    icon: icon_properties
+  });
+  if( listing_id )
+    this_marker.listing_id = listing_id;
+  if( click_action )
+    this_marker.addListener('click', click_action);
+  //end map pin
+}
+
+var build_icon_properties = function( image_properties ){
+  var icon_props = {//DEFAULT PIN
+      'url' : directory_uri.stylesheet_directory_uri + '/library/images/pin.png',
+      'scaledSize': new google.maps.Size(26, 34),
+      'origin': null,
+      'anchor': new google.maps.Point(13, 0) }
+  if( image_properties['url'] && !isNaN(image_properties['height'] + 1.5) && !isNaN(image_properties['width'] + 1.5)  ){
+    icon_props['url'] = image_properties['url'];
+    icon_props['scaledSize'] = new google.maps.Size(34, image_properties['height'] * 34 / image_properties['width']);
+    icon_props['anchor'] = new google.maps.Point(17, image_properties['height'] * 17 / image_properties['width']) ;
+  }
+  return icon_props;
+}
+
+var add_listing = function( dom_target, map, listing_data, click_action ){
+  var icon_url = listing_data["pin_icon"]['url'] || directory_uri.stylesheet_directory_uri + '/library/images/pin.png';
+  //set up listing
+  var $listing_element = 
+      jQuery(jQuery.parseHTML(
+          '<div class="listing" data-lat="'+listing_data["position"]["lat"]+'" data-lng="'+listing_data["position"]["lng"]+'">'+
+            '<div class="short">'+
+              '<img class="pin" src="'+icon_url+'">'+
+              '<div class="title_block">'+
+                '<h2>'+listing_data["title"]+'</h2>'+
+                '<p>'+listing_data["times"]+'</p>'+
+              '<a class="directions_link" target="_blank" href="https://maps.google.com/?q='+listing_data["position"]["lat"]+','+listing_data["position"]["lng"]+'">Get Directions</a>'+
+            '</div></div>'+
+            '<div class="long">'+listing_data["more"]+'</div>'+
+          '</div>')[0]);
+  if( click_action )
+    $listing_element.on('click', click_action);
+  jQuery(dom_target).append( $listing_element );
+  //Store collapsed listing height so we know where scroll targets are during transitions
+  $listing_element.data( "collapsedHeight", $listing_element[0].offsetHeight );
+  //end listing
+}
+
+var select_location = function( map, id ){
+
+  var all_listings = jQuery(this).find('.listing');
+  all_listings.removeClass('expanded');
+  map.panTo( {lat: parseFloat(all_listings[id].dataset["lat"]), lng: parseFloat(all_listings[id].dataset["lng"])} );
+  jQuery(all_listings[id]).addClass('expanded');
+  var target_scroll_top = 0;
+  if( id !== 0 ){
+    target_scroll_top += 4.0;
+    for( var i = 0; i < id; i++ )
+      target_scroll_top += parseFloat(jQuery(all_listings[i]).data('collapsedHeight'));
+  }
+  jQuery(this).find('.listings').delay( 800 ).animate({
+      scrollTop: target_scroll_top 
+    }, 700, 'swing')
+}
+
+var styled_map_args = 
+[
+    {
+        "featureType": "all",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "weight": "2.00"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#7c7c7c"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#7b7b7b"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#c2c2c2"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#efefef"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#dfdfdf"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#9b8534"
+            },
+            {
+                "weight": "3"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": "100"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#c8d7d4"
+            }
+        ]
+    }
+];

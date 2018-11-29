@@ -2906,11 +2906,15 @@ body .icon {
   content: '';
 }
 /* line 1581, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month.active .calendar tbody td.placeholder {
+  background-color: transparent !important;
+}
+/* line 1584, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month.active .calendar tbody td.booked:after {
   content: '/';
 }
 
-/* line 1588, ../scss/breakpoints/_base.scss */
+/* line 1591, ../scss/breakpoints/_base.scss */
 #booking_details {
   width: 100%;
 }

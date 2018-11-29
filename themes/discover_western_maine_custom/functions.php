@@ -548,4 +548,18 @@ add_role(
 /** END OF CUSTOM FUNCTIONS  **/
 
 
-/* DON'T DELETE THIS CLOSING TAG */ ?>
+/* DON'T DELETE THIS CLOSING TAG */ 
+
+
+
+function google_maps_embed_api(){
+  wp_register_script('google_maps_embed_js', "https://maps.googleapis.com/maps/api/js?key=AIzaSyCjcHWNX3KXqGSIK9ih1akD06ZchY2UHrE&callback=init_maps", array( 'bones-js' ), '', true);
+  wp_enqueue_script('google_maps_embed_js');
+}
+/* COMMENT  \/ THIS \/  OUT IF NO MAPS ARE BEING USED */
+add_action( 'wp_enqueue_scripts', 'google_maps_embed_api', 9999 );
+
+
+
+
+?>
