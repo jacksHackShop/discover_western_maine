@@ -1540,7 +1540,7 @@ body{
 					&:after{    
 						content: '';
 				    position: absolute;
-				    top: -10px;
+				    top: -9px;
 				    bottom: -5px;
 				    left: -4px;
 				    right: -1px;
@@ -1548,9 +1548,11 @@ body{
 				    font-size: 150%;
 				    font-style: italic;
 					}
-					&.today:after{
+					&.today{
 						border:solid 2px $red;
-						top:3px;
+					}
+					&.today:after{
+						top:-9px;
 						bottom:1px;
 						left:2px;
 						right:2px;
