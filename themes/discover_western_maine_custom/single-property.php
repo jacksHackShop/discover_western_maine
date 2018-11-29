@@ -101,6 +101,7 @@
 				</div>
 				<?php
 					$cal_parser = new CalFileParser();
+					$cal_parser->set_timezone( date_default_timezone_get() );
 					$events = [];
 					if( null !== get_field('calendars_to_sync') ):
 						$icals = get_field('calendars_to_sync');
