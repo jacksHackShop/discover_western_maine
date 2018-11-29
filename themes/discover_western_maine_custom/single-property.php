@@ -99,15 +99,66 @@
 						<?php the_field('property_intro'); ?>
 					</div>
 				</div>
-				<div class="calendar_container">
-					<h1>Availability</h1>
-					<div id="primary_calendar" class="calendar active">
-						<?php echo file_get_contents('https://calendar.google.com/calendar/embed?src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&ctz=America%2FNew_York'); ?>
+				<?php
+					$cal_parser = new CalFileParser();
+					$events = [];
+					if( null !== get_field('icals') ):
+						$icals = get_field('icals');
+						
+						foreach( $icals as $ical ){
+							$events = array_merge( $events, $cal_parser->parse( $ical ) );
+						}
+						//'https://calendar.google.com/calendar/ical/1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com/public/basic.ics'
+						//'https://calendar.glampinghub.com/AgYOUlBXAgMFAAdSAAhXV1taWgNSUgMBWghUBgRSA1Y%253D.ics'
+						//'http://www.homeaway.com/icalendar/a5e0b6258bfe45b89793c7c76f1f87b4.ics'
+					?>
+					<div class="calendar_container text_body m-all t-1of3 d-1of3">
+						<h1>Availability</h1>
+						<div class="calendars_wrapper">
+							<?php 
+								for($month_num = date('m'); $month_num <= date('m') + 11; $month_num++): 
+							?>
+								<div class="calendar_month" data-month="<?php echo ( ( $month_num - 1 ) % 12 + 1) ?>">
+									<a onclick="month_filter_click(this, <?php echo ( ( $month_num - 1 ) % 12 + 1) ?>);"><?php echo date('F', mktime( 0, 0, 0, $month_num, 1)); ?></a>
+									<table class="calendar">
+										<tbody>
+											<tr>
+												<?php 
+													for( $day_of_month = 0; $day_of_month < date('w', mktime( 0, 0, 0, $month_num, 1 )); $day_of_month++ ){ 
+														echo '<td></td>';
+													}//Create empty days at start of month
+													for( $day_of_month = 1; $day_of_month <= date('d', mktime( 0, 0, 0, $month_num + 1, 0)); $day_of_month++ ){
+														if( ( date('w', mktime( 0, 0, 0, $month_num, 1) - 1 ) + $day_of_month ) % 7 == 0 ){ echo '</tr><tr>';}
+														$style_classes_for_day = '';
+														if( date("m.d.y",  mktime( 0, 0, 0, $month_num, $day_of_month ) ) == date("m.d.y") ){ //Is it today??
+															$style_classes_for_day .= ' today'; 
+														}
+														if( mktime( 0, 0, 0, $month_num, $day_of_month ) < mktime( 0, 0, 0 ) ){ //Is it a date in the past??
+															$style_classes_for_day .= ' past';
+														}
+														$day_to_check = DateTime::createFromFormat ( "U" , mktime( 0,0,0, $month_num, $day_of_month ));
+														foreach( $events as $event ){//Check if there is an event on this day
+															if( $event["DTSTART"] <= $day_to_check &&
+																	$event["DTEND"] >= $day_to_check ){
+																$style_classes_for_day .= 'booked';
+																break;
+															}
+														}
+														echo '<td data-date="'.$day_to_check->format('Y-m-d H:i:s').'" class="'.$style_classes_for_day.'">'.$day_of_month.'</td>';
+													}//Create the rest of the month, new rows every 7(with the empty cell offset) ?>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							<?php endfor; ?>
+						</div>
 					</div>
-					<div>
-						<script type="text/javascript"></script>
-					</div>
+				<?php endif; ?>
+				<div class="detail text_body m-all t-1of2 d-1of2">
+					<h1>Booking Details</h1>
+					<?php the_field('booking_details'); ?>
 				</div>
+
 				<div id="property_details">
 					<!-- half quote  half about -->	
 					<?php 

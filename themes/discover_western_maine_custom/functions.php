@@ -14,6 +14,8 @@ require_once( 'library/bones.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
+include('library/CalFileParser.php');
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.

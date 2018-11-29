@@ -2676,33 +2676,14 @@ body .icon {
 }
 
 /* line 1379, ../scss/breakpoints/_base.scss */
-.calendar_container {
-  overflow: hidden;
-  width: 100%;
-}
-/* line 1382, ../scss/breakpoints/_base.scss */
-.calendar_container #toggle_calendar {
-  margin-left: 2em;
-}
-/* line 1385, ../scss/breakpoints/_base.scss */
-.calendar_container .calendar_title {
-  text-align: center;
-  font-size: 2em;
-}
-/* line 1391, ../scss/breakpoints/_base.scss */
-.calendar_container .calendar.hidden {
-  display: none;
-}
-
-/* line 1399, ../scss/breakpoints/_base.scss */
 #property_details h5 {
   font-size: 1.1em;
 }
-/* line 1403, ../scss/breakpoints/_base.scss */
+/* line 1383, ../scss/breakpoints/_base.scss */
 #property_details .detail_row {
   display: flex;
 }
-/* line 1405, ../scss/breakpoints/_base.scss */
+/* line 1385, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial {
   display: flex;
   align-items: center;
@@ -2710,39 +2691,39 @@ body .icon {
   background-color: #cacaca;
   overflow: hidden;
 }
-/* line 1411, ../scss/breakpoints/_base.scss */
+/* line 1391, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper {
   margin: 0px 10px;
 }
-/* line 1413, ../scss/breakpoints/_base.scss */
+/* line 1393, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper p {
   font-size: 1.5em;
   margin: 0 5%;
   text-align: center;
   padding: 0 60px;
 }
-/* line 1419, ../scss/breakpoints/_base.scss */
+/* line 1399, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper .quote {
   height: 60px;
   width: 60px;
   position: relative;
 }
-/* line 1427, ../scss/breakpoints/_base.scss */
+/* line 1407, ../scss/breakpoints/_base.scss */
 #property_details .detail_row .testimonial .testimonial-wrapper .close {
   left: calc(100% - 60px);
 }
-/* line 1433, ../scss/breakpoints/_base.scss */
+/* line 1413, ../scss/breakpoints/_base.scss */
 #property_details div {
   flex-direction: column;
 }
 
 /* END PROPERTY PAGE */
 /* START ABOUT PAGE */
-/* line 1440, ../scss/breakpoints/_base.scss */
+/* line 1420, ../scss/breakpoints/_base.scss */
 .text_image_pair .text_body {
   padding: 2em;
 }
-/* line 1443, ../scss/breakpoints/_base.scss */
+/* line 1423, ../scss/breakpoints/_base.scss */
 .text_image_pair .illustration_container {
   background-size: cover;
   background-position: center;
@@ -2750,7 +2731,7 @@ body .icon {
   max-height: 600px;
 }
 
-/* line 1451, ../scss/breakpoints/_base.scss */
+/* line 1431, ../scss/breakpoints/_base.scss */
 #map iframe {
   width: 100%;
   height: 80vh;
@@ -2758,7 +2739,7 @@ body .icon {
 
 /* END ABOUT PAGE */
 /* START RULES PAGE */
-/* line 1458, ../scss/breakpoints/_base.scss */
+/* line 1438, ../scss/breakpoints/_base.scss */
 #rules_wrapper {
   width: 80%;
   max-width: 600px;
@@ -2767,7 +2748,7 @@ body .icon {
 
 /* END RULES PAGE */
 /* START FOOTER STYLES */
-/* line 1465, ../scss/breakpoints/_base.scss */
+/* line 1445, ../scss/breakpoints/_base.scss */
 #footer {
   display: flex;
   position: absolute;
@@ -2776,51 +2757,51 @@ body .icon {
   margin: 13px 0px;
   width: 100%;
 }
-/* line 1473, ../scss/breakpoints/_base.scss */
+/* line 1453, ../scss/breakpoints/_base.scss */
 #footer div {
   position: relative;
   display: inline-flex;
   margin: auto;
 }
-/* line 1477, ../scss/breakpoints/_base.scss */
+/* line 1457, ../scss/breakpoints/_base.scss */
 #footer div.footer_container {
   font-size: 12px;
   margin: 0px auto;
   flex-direction: column;
 }
-/* line 1481, ../scss/breakpoints/_base.scss */
+/* line 1461, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .title {
   font-size: 16px;
 }
-/* line 1484, ../scss/breakpoints/_base.scss */
+/* line 1464, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row {
   height: 34px;
   flex-direction: row;
   align-items: center;
   align-self: center;
 }
-/* line 1489, ../scss/breakpoints/_base.scss */
+/* line 1469, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row svg {
   vertical-align: middle;
 }
-/* line 1492, ../scss/breakpoints/_base.scss */
+/* line 1472, ../scss/breakpoints/_base.scss */
 #footer div.footer_container .footer_row span {
   vertical-align: middle;
 }
-/* line 1497, ../scss/breakpoints/_base.scss */
+/* line 1477, ../scss/breakpoints/_base.scss */
 #footer div#contact_info {
   align-items: center;
 }
-/* line 1500, ../scss/breakpoints/_base.scss */
+/* line 1480, ../scss/breakpoints/_base.scss */
 #footer div span {
   margin: 0px 4px;
 }
-/* line 1503, ../scss/breakpoints/_base.scss */
+/* line 1483, ../scss/breakpoints/_base.scss */
 #footer div .icon {
   background-color: rgba(255, 255, 255, 0);
   padding: 2px;
 }
-/* line 1506, ../scss/breakpoints/_base.scss */
+/* line 1486, ../scss/breakpoints/_base.scss */
 #footer div .icon svg {
   height: 30px;
   width: 30px;
@@ -2829,6 +2810,97 @@ body .icon {
 
 /* END FOOTER STYLES */
 /* END CHRIS STYLES */
+/* line 1501, ../scss/breakpoints/_base.scss */
+.calendar_container {
+  float: left;
+  clear: left;
+}
+
+/* line 1507, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month {
+  text-align: center;
+  max-height: 3em;
+  transition: all .7s ease-out;
+  overflow: hidden;
+}
+/* line 1512, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month a {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  padding: 3px 10px;
+  font-size: 150%;
+  background-color: #000000;
+  color: #ffffff;
+  transition: all .7s ease-out;
+}
+/* line 1522, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar {
+  table-layout: fixed;
+  transition: max-height .7s ease-out;
+  text-align: center;
+  display: inline-block;
+  text-align: center;
+}
+/* line 1528, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody {
+  margin: auto;
+  display: inline-block;
+}
+/* line 1531, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody td {
+  width: 1.5em;
+  height: 1.5em;
+  font-weight: bold;
+  cursor: default;
+  position: relative;
+  opacity: .99;
+  font-size: 150%;
+}
+/* line 1539, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody td:after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -4px;
+  right: -1px;
+  z-index: -1;
+  font-size: 150%;
+  font-style: italic;
+}
+/* line 1550, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody td.today:after {
+  border: solid 2px #f01d4f;
+  top: 3px;
+  bottom: 1px;
+  left: 2px;
+  right: 2px;
+}
+/* line 1557, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody td.booked:after {
+  content: '/';
+}
+/* line 1560, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody td.past {
+  opacity: .5;
+}
+/* line 1566, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month.active {
+  max-height: 20em;
+  margin-bottom: 5px;
+}
+/* line 1569, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month.active a {
+  background-color: #f01d4f;
+  color: #ffffff;
+}
+
+/* line 1576, ../scss/breakpoints/_base.scss */
+#booking_details {
+  width: 100%;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

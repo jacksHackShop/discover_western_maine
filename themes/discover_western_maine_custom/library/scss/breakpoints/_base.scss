@@ -1375,26 +1375,6 @@ body{
 
 }
 
-
-.calendar_container{
-	overflow:hidden;
-	width: 100%;
-	#toggle_calendar{
-		margin-left:2em;
-	}
-	.calendar_title {
-	    text-align: center;
-	    font-size: 2em;
-	}
-
-	.calendar{
-		&.hidden{
-			display:none;
-		}
-	}
-	
-}
-
 #property_details{
 	h5{
 		font-size:1.1em;
@@ -1517,3 +1497,82 @@ body{
 
 
 /* END CHRIS STYLES */
+
+.calendar_container{
+	float:left;
+	clear:left;
+}
+
+.calendars_wrapper{
+	.calendar_month {
+		text-align:center;
+		max-height: 3em;
+		transition:all .7s ease-out;
+		overflow:hidden;
+		a{
+			cursor:pointer;
+			width:100%;
+			display:block;
+			padding:3px 10px;
+			font-size:150%;
+			background-color:$black;
+			color:$white;
+			transition:all .7s ease-out;
+		}
+		.calendar{
+			table-layout:fixed;
+			transition:max-height .7s ease-out;
+			text-align:center;
+			display: inline-block;
+			text-align:center;
+			tbody{
+				margin: auto;
+	  		display: inline-block;
+				td{
+					width:1.5em;
+					height:1.5em;
+					font-weight:bold;
+					cursor:default;
+					position:relative;
+					opacity:.99;
+					font-size:150%;
+					&:after{    
+						content: '';
+				    position: absolute;
+				    top: -5px;
+				    bottom: -5px;
+				    left: -4px;
+				    right: -1px;
+				    z-index: -1;
+				    font-size: 150%;
+				    font-style: italic;
+					}
+					&.today:after{
+						border:solid 2px $red;
+						top:3px;
+						bottom:1px;
+						left:2px;
+						right:2px;
+					}
+					&.booked:after{
+				    content:'/';
+					}
+					&.past{
+						opacity:.5;
+					}
+				}
+			}
+		}
+		&.active{
+			max-height:20em;
+			margin-bottom:5px;
+			a{
+				background-color: $red;
+				color: $white;
+			}
+		}
+	}
+}
+#booking_details{
+	width:100%;
+}

@@ -273,22 +273,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
       imageGalleryPreload('image-gallery');
   }
 
-  //JACK GOOGLE CALENDAR HACK
 
-  //jQuery("#primary_calendar").load('https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=fd7ike4kdciuq9362qr02j2he0o52gc5%40import.calendar.google.com&amp;color=%231B887A&amp;src=0sf8fkp61gku81s7hdkavqa7hee1j9oq%40import.calendar.google.com&amp;color=%231B887A&amp;src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&amp;color=%231B887A&amp;ctz=America%2FNew_York');
-/*
-  var cabin_cal_url = 'https://calendar.google.com/calendar/embed';
-  var parameters = 'showTitle=0&showPrint=0&showCalendars=0&height=600&wkst=1&bgcolor=%23FFFFFF&src=fd7ike4kdciuq9362qr02j2he0o52gc5%40import.calendar.google.com&color=%231B887A&src=0sf8fkp61gku81s7hdkavqa7hee1j9oq%40import.calendar.google.com&color=%231B887A&src=1nbrf2hqkmuarf9gcfvolkqgbh30iclu%40import.calendar.google.com&color=%231B887A&ctz=America%2FNew_York';
-
-  var args = JSON.parse('{"' + decodeURI(parameters).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
-  args.csurl = cabin_cal_url;
-  jQuery('#primary_calendar').load(
-    'http://localhost/main_away/wp-content/themes/discover_western_maine_custom/proxy.php', args
-  );
-
-*/
+  $('.calendars_wrapper').each(function(){
+    var d = new Date();
+    filter_to_month( this, d.getMonth() + 1 );
+  });
 
 });
+
+function month_filter_click( clicked, month_id ){
+  $ = $ || jQuery;
+  filter_to_month( $(clicked).closest('.calendars_wrapper'), month_id );
+}
+
+function filter_to_month( this_cal, month_id ){
+  $ = $ || jQuery;
+  $(this_cal).find('.calendar_month').removeClass('active');
+  $(this_cal).find('.event').removeClass('open visible');
+    $(this_cal).find('.calendar_month[data-month="' + month_id + '"]').addClass('active');
+    $(this_cal).find('.event[data-month="' + month_id + '"]').addClass('visible');
+}
 
 // about page animation
 function fadeIn(element, content_ele){
@@ -300,6 +304,10 @@ function grow(element, content_ele){
     element.style.height = content_ele.offsetHeight + 'px';
     setTimeout(function(){fadeIn(element, content_ele)},300);
 }
+
+
+
+
 
 
 
