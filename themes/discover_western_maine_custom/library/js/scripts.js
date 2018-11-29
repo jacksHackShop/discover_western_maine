@@ -395,14 +395,8 @@ function change_gallery_target( change_by ){
 function init_maps(){
   var site_wide_map_style = new google.maps.StyledMapType(styled_map_args, {name: 'site_wide_map_style'});
 
-  jQuery('.gmap_listing_explorer_wrapper').each(function(){
-    build_map_listing_explorer(this, site_wide_map_style);
-  },
-    function(){
-      jQuery('a.gmap_directions_link_wrapper').each(function(){
-        build_directions_link_map(this, site_wide_map_style);
-    });
-  });
+  jQuery('.gmap_listing_explorer_wrapper').each( build_map_listing_explorer.bind(this, this, site_wide_map_style), function(){
+    jQuery('a.gmap_directions_link_wrapper').each( build_directions_link_map.bind(this, this, site_wide_map_style) );} );
 }
 
 var build_directions_link_map = function( dom_element, map_style ){
