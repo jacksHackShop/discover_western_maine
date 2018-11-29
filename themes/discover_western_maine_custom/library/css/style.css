@@ -2880,32 +2880,36 @@ body .icon {
 }
 /* line 1558, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td:hover {
-  background-color: rgba(20, 100, 40, 0.7);
+  background-color: rgba(20, 190, 40, 0.7);
 }
-/* line 1562, ../scss/breakpoints/_base.scss */
+/* line 1561, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td.booked:hover {
-  background-color: rgba(100, 40, 20, 0.7);
+  background-color: rgba(220, 40, 20, 0.7);
 }
-/* line 1565, ../scss/breakpoints/_base.scss */
+/* line 1564, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td.booked:after {
   content: '/';
 }
-/* line 1568, ../scss/breakpoints/_base.scss */
+/* line 1567, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month .calendar tbody td.past {
   opacity: .5;
 }
-/* line 1574, ../scss/breakpoints/_base.scss */
+/* line 1569, ../scss/breakpoints/_base.scss */
+.calendars_wrapper .calendar_month .calendar tbody td.past:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* line 1576, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month.active {
   max-height: 20em;
   margin-bottom: 5px;
 }
-/* line 1577, ../scss/breakpoints/_base.scss */
+/* line 1579, ../scss/breakpoints/_base.scss */
 .calendars_wrapper .calendar_month.active a {
   background-color: #f01d4f;
   color: #ffffff;
 }
 
-/* line 1584, ../scss/breakpoints/_base.scss */
+/* line 1586, ../scss/breakpoints/_base.scss */
 #booking_details {
   width: 100%;
 }

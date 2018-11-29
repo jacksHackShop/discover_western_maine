@@ -1556,17 +1556,19 @@ body{
 						right:2px;
 					}
 					&:hover{
-						background-color:rgba(20,100,40,.7);
-
+						background-color:rgba(20,190,40,.7);
 					}
 					&.booked:hover{
-						background-color:rgba(100,40,20,.7);
+						background-color:rgba(220,40,20,.7);
 					}
 					&.booked:after{
 				    content:'/';
 					}
 					&.past{
 						opacity:.5;
+						&:hover{
+							background-color:rgba(255,255,255,.2);
+						}
 					}
 				}
 			}
