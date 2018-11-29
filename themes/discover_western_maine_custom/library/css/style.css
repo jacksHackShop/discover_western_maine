@@ -2861,7 +2861,7 @@ body .icon {
 .calendars_wrapper .calendar_month .calendar tbody td:after {
   content: '';
   position: absolute;
-  top: -5px;
+  top: -10px;
   bottom: -5px;
   left: -4px;
   right: -1px;
