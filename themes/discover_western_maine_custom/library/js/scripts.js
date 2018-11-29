@@ -469,7 +469,6 @@ var add_marker = function( map, marker_data, listing_id, click_action ){
 
 var build_icon_properties = function( image_properties ){
   var icon_props = {//DEFAULT PIN
-      'url' : directory_uri.stylesheet_directory_uri + '/library/images/pin.png',
       'scaledSize': new google.maps.Size(26, 34),
       'origin': null,
       'anchor': new google.maps.Point(13, 0) }
@@ -482,7 +481,7 @@ var build_icon_properties = function( image_properties ){
 }
 
 var add_listing = function( dom_target, map, listing_data, click_action ){
-  var icon_url = listing_data["pin_icon"]['url'] || directory_uri.stylesheet_directory_uri + '/library/images/pin.png';
+  var icon_url = listing_data["pin_icon"]['url'];
   //set up listing
   var $listing_element = 
       jQuery(jQuery.parseHTML(
