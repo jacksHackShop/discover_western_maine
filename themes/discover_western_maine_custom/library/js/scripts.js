@@ -397,9 +397,11 @@ function init_maps(){
 
   jQuery('.gmap_listing_explorer_wrapper').each(function(){
     build_map_listing_explorer(this, site_wide_map_style);
-  });
-  jQuery('a.gmap_directions_link_wrapper').each(function(){
-    build_directions_link_map(this, site_wide_map_style);
+  },
+    function(){
+      jQuery('a.gmap_directions_link_wrapper').each(function(){
+        build_directions_link_map(this, site_wide_map_style);
+    });
   });
 }
 
