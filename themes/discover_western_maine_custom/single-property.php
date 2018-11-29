@@ -104,10 +104,8 @@
 					$events = [];
 					if( null !== get_field('calendars_to_sync') ):
 						$icals = get_field('calendars_to_sync');
-						echo "hello";
 						
 						foreach( $icals as $ical ){
-						echo "foo";
 							$events = array_merge( $events, $cal_parser->parse( $ical['ical_link'] ) );
 						}
 					?>
