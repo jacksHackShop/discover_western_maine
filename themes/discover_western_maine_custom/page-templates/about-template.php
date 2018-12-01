@@ -32,19 +32,16 @@
 				<div id="inner-content" class="cf">
 					<div id="section-nav">
 						<?php if( get_field('show_map') && get_field('visit_map') && count( get_field('visit_map') ) > 0 ): ?>
-							<div class="selector">Map</div>
+							<div class="selector" onclick='sub_nav_select("Map");'>Map</div>
 						<?php endif; ?>
 						<?php $sections = get_field('page_section');
 						foreach ($sections as $section) : ?>
-							<div class="selector"><?php echo $section['section_title'];?></div>
+							<div class="selector" onclick='sub_nav_select("<?php echo trim($section['section_title']); ?>");'><?php echo $section['section_title'];?></div>
 						<?php endforeach;?>
 					</div>
 					<div id="section-wrapper">
-						<div id="active-section"></div>
-					</div>
-					<div id="overflow-hider">
 						<?php if( get_field('show_map') && get_field('visit_map') && count( get_field('visit_map') ) > 0 ): ?>
-							<div id="Map" class="section">
+							<div data-section-title="Map" class="active about_section">
 								<div class="gmap_listing_explorer_wrapper" data-markers='<?php echo htmlspecialchars( json_encode( get_field('visit_map') ), ENT_QUOTES, 'UTF-8'); ?>' data-initial-zoom='</php echo get_field("initial_map_zoom"); ?>'>
 									<h2 class="listings_header">LOCATIONS</h2>
 									<div class="listings"></div>
@@ -53,7 +50,7 @@
 							</div>
 						<?php endif; ?>
 						<?php foreach ($sections as $section) : ?>
-							<div id="<?php echo $section['section_title']; ?>" class="section">
+							<div data-section-title="<?php echo trim($section['section_title']); ?>" class="about_section">
 								<?php echo $section['section_content']; ?>
 							</div>
 						<?php endforeach;?>

@@ -218,24 +218,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   // set up listeners for about page
-  var selectors = document.getElementsByClassName('selector');
-  for (var i = 0; i < selectors.length; i++) {
-      selectors[i].addEventListener('click', function(e){
-          // clear active class from the buttons
-          for (var j = 0; j < selectors.length; j++) {
-              selectors[j].classList.remove('active');
-          }
-          // reapply it to the target
-          e.target.classList.add('active');
-          var active =  document.getElementById('active-section');
-          active.classList.add('hide');
-          var content = document.getElementById(e.target.textContent);
-          setTimeout(function(){grow(active, content)},300);
-      });
-  }
-  if (selectors.length > 0){
-      selectors[0].click();
-  }
+  // var selectors = document.getElementsByClassName('selector');
+  // for (var i = 0; i < selectors.length; i++) {
+  //     selectors[i].addEventListener('click', function(e){
+  //         // clear active class from the buttons
+  //         for (var j = 0; j < selectors.length; j++) {
+  //             selectors[j].classList.remove('active');
+  //         }
+  //         // reapply it to the target
+  //         e.target.classList.add('active');
+  //         var active =  document.getElementById('active-section');
+  //         active.classList.add('hide');
+  //         var content = document.getElementById(e.target.textContent);
+  //         setTimeout(function(){grow(active, content)},300);
+  //     });
+  // }
+  // if (selectors.length > 0){
+  //     selectors[0].click();
+  // }
 
   // if we have a slick gallery, load it
   if (document.getElementsByClassName('slick-gallery').length > 0){
@@ -281,6 +281,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
 });
+
+function sub_nav_select( target_id ){
+  var $ = $ || jQuery;
+  $(".about_section").removeClass('active');
+  $("[data-section-title='"+target_id+"']").addClass('active');
+}
 
 function month_filter_click( clicked, month_id ){
   $ = $ || jQuery;

@@ -2919,7 +2919,19 @@ body .icon {
   width: 100%;
 }
 
-/* line 1595, ../scss/breakpoints/_base.scss */
+/* line 1598, ../scss/breakpoints/_base.scss */
+.about_section {
+  max-height: 0px;
+  opacity: 0;
+}
+/* line 1601, ../scss/breakpoints/_base.scss */
+.about_section.active {
+  max-height: 1500px;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/* line 1613, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper {
   height: 30vw;
   max-height: 600px;
@@ -2927,7 +2939,7 @@ body .icon {
   overflow: hidden;
   position: relative;
 }
-/* line 1601, ../scss/breakpoints/_base.scss */
+/* line 1619, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings_header {
   position: absolute;
   top: 0;
@@ -2940,7 +2952,7 @@ body .icon {
   color: white;
   z-index: 1;
 }
-/* line 1612, ../scss/breakpoints/_base.scss */
+/* line 1630, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings_header:after {
   content: '';
   position: absolute;
@@ -2954,7 +2966,7 @@ body .icon {
   clear: both;
   transition: all 1s;
 }
-/* line 1626, ../scss/breakpoints/_base.scss */
+/* line 1644, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings {
   position: absolute;
   left: 0;
@@ -2964,69 +2976,69 @@ body .icon {
   height: calc(100% - 33.5px);
   overflow: auto;
 }
-/* line 1634, ../scss/breakpoints/_base.scss */
+/* line 1652, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings::-webkit-scrollbar {
   width: .5em;
 }
-/* line 1637, ../scss/breakpoints/_base.scss */
+/* line 1655, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings::-webkit-scrollbar-track {
   background-color: #ccc;
 }
-/* line 1641, ../scss/breakpoints/_base.scss */
+/* line 1659, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings::-webkit-scrollbar-thumb {
   background-color: #f01d4f;
 }
-/* line 1644, ../scss/breakpoints/_base.scss */
+/* line 1662, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing {
   position: relative;
   padding: 10px 0;
   border-bottom: dotted 1px #f01d4f;
   cursor: pointer;
 }
-/* line 1649, ../scss/breakpoints/_base.scss */
+/* line 1667, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing:last-child {
   border-bottom: none;
 }
-/* line 1652, ../scss/breakpoints/_base.scss */
+/* line 1670, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing .short {
   padding: 2px;
   position: relative;
   overflow: auto;
 }
-/* line 1656, ../scss/breakpoints/_base.scss */
+/* line 1674, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing .short .pin {
   float: left;
   width: 14%;
   padding: 10px 1% 0 2%;
 }
-/* line 1661, ../scss/breakpoints/_base.scss */
+/* line 1679, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing .short .title_block {
   float: right;
   padding: 0;
   width: 85%;
   text-align: center;
 }
-/* line 1666, ../scss/breakpoints/_base.scss */
+/* line 1684, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing .short .title_block h2 {
   padding-top: 10px;
   font-size: 1.3em;
 }
-/* line 1669, ../scss/breakpoints/_base.scss */
+/* line 1687, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing .short .title_block h2, .gmap_listing_explorer_wrapper .listings .listing .short .title_block p {
   margin: 0;
 }
-/* line 1674, ../scss/breakpoints/_base.scss */
+/* line 1692, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing .long {
   max-height: 0px;
   transition: max-height 1s ease-out;
   overflow: hidden;
   padding: 2px;
 }
-/* line 1680, ../scss/breakpoints/_base.scss */
+/* line 1698, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .listings .listing.expanded .long {
   max-height: 1000px;
 }
-/* line 1685, ../scss/breakpoints/_base.scss */
+/* line 1703, ../scss/breakpoints/_base.scss */
 .gmap_listing_explorer_wrapper .map {
   position: absolute;
   left: 275px;

@@ -1592,6 +1592,24 @@ body{
 	width:100%;
 }
 
+
+
+
+.about_section{
+	max-height:0px;
+	opacity:0;
+	&.active{
+		max-height:1500px;
+		opacity:1;
+		transition:opacity 1s;
+	}
+}
+
+
+
+
+
+
 .gmap_listing_explorer_wrapper{
   height: 30vw;
   max-height: 600px;
